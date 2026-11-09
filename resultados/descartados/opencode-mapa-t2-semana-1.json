@@ -1,0 +1,52 @@
+{
+ "id": "opencode-mapa-t2-semana-1",
+ "agente": "opencode",
+ "variante": "mapa",
+ "tarea": "t2-semana",
+ "repeticion": 1,
+ "segundos": 2026.2,
+ "rc": 0,
+ "error": "",
+ "peticiones": 7,
+ "entrada": 86175,
+ "entrada_cache_leida": 0,
+ "salida": 883,
+ "razonamiento": 321,
+ "herramientas": {
+  "bash": 2,
+  "read": 4,
+  "grep": 2,
+  "edit": 1
+ },
+ "documentos_leidos": {},
+ "contexto_por_paso": [
+  8260,
+  9100,
+  12884,
+  13378,
+  13943,
+  14165,
+  14445
+ ],
+ "respuesta_final": "\n\n\n\n\n\n\n\nFound it: `diasDeLaSemana` loops with `<= DIAS_POR_SEMANA`, producing 8 days (offsets 0–7). Let me check usages before fixing.\n\n\n\n\n\n\n\nCausa: en `src/dominio/semana.ts:13` el bucle usaba `desplazamiento <= DIAS_POR_SEMANA`, que genera 8 días (0–7) en vez de 7. Cambiado a `<`. `npm run check` pasa: 62/62 tests en verde.",
+ "duracion_s_agente": 2019.8,
+ "ficheros_cambiados": [
+  "src/dominio/semana.ts"
+ ],
+ "gate_ok": true,
+ "gate_salida": "08ms)\n  ✔ una franja de una pista cerrada responde 409 FRANJA_NO_DISPONIBLE (0.765167ms)\n  ✔ una franja que ya ha empezado responde 409 FRANJA_PASADA (1.331417ms)\n  ✔ una franja se puede reservar hasta el minuto anterior a su inicio (1.434625ms)\n  ✔ un inicio que no es el de una franja responde 400 DATOS_INVALIDOS (1.693708ms)\n  ✔ valida el formato de los campos y los devuelve en detalles (1.111291ms)\n  ✔ una pista que no existe responde 404 PISTA_NO_ENCONTRADA (1.335291ms)\n  ✔ aplica las reglas en el orden documentado (2.233625ms)\n  ✔ no crea ninguna reserva cuando la petición falla (1.227583ms)\n✔ POST /api/reservas (48.043708ms)\n▶ GET /api/reservas/mias\n  ✔ devuelve las reservas del socio en cualquier estado, ordenadas por inicio (0.85825ms)\n  ✔ solo incluye reservas del socio identificado (1.336958ms)\n✔ GET /api/reservas/mias (2.269584ms)\n▶ dominio/tiempo\n  ✔ suma minutos y horas cruzando días, meses y años (0.484416ms)\n  ✔ suma días teniendo en cuenta los años bisiestos (0.095125ms)\n  ✔ calcula los minutos entre dos momentos (0.067041ms)\n  ✔ valida fechas y fechas con hora sin zona (0.202167ms)\n  ✔ numera los días de la semana de lunes (1) a domingo (7) (0.406084ms)\n  ✔ genera las franjas del día de 08:00 a 23:00 (0.349875ms)\n  ✔ reconoce el inicio de una franja (0.067042ms)\n  ✔ una franja ha empezado desde el minuto de su inicio (0.056625ms)\n✔ dominio/tiempo (2.333125ms)\nℹ tests 62\nℹ suites 9\nℹ pass 62\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 198.318458\n",
+ "ocultos_ok": [
+  "T2.01 diasDeLaSemana devuelve 7 días de lunes a domingo",
+  "T2.02 la disponibilidad de la API devuelve los 7 días de la semana",
+  "T2.03 cada día sigue teniendo sus 10 franjas",
+  "T2.04 la disponibilidad sigue marcando reservas y pistas cerradas"
+ ],
+ "ocultos_fallan": [],
+ "ocultos_total": 4,
+ "ocultos_salida": "",
+ "glosario_infracciones": [],
+ "reloj_infracciones": [],
+ "tests_anadidos": 0,
+ "tests_existentes_tocados": [],
+ "fecha": "2026-11-08 05:03"
+}

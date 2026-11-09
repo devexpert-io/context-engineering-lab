@@ -1,0 +1,33 @@
+{
+ "segundos": 4.1,
+ "rc": 0,
+ "modelo": "gpt-6.1-sol",
+ "respuesta": "KW_CSAYZ",
+ "entrada": 15776,
+ "entrada_detalle": {
+  "input_tokens": 15776,
+  "cached_input_tokens": 11648,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 8,
+  "reasoning_output_tokens": 0
+ },
+ "comandos": 0,
+ "rollout": "<scratch>/codex-home/sessions/2026/11/08/rollout-2026-11-08T00-49-53-01a1b86b-2c8a-7961-ad30-df17ad9cac86.jsonl",
+ "agents_md_recibido_bytes": 3931,
+ "agents_md_recibido_marcas": [
+  "KW_CSAYZ"
+ ],
+ "agente": "codex",
+ "lineas": 50,
+ "tipo": "K",
+ "marcas_esperadas": 1,
+ "marcas_vistas": [
+  "KW_CSAYZ"
+ ],
+ "marcas_inventadas": [],
+ "ultima_marca_vista": {
+  "marca": "KW_CSAYZ",
+  "linea": 50,
+  "byte": 3718
+ }
+}

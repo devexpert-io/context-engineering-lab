@@ -1,0 +1,1 @@
+El gestor tiene que poder bloquear una pista durante un periodo (por ejemplo, por mantenimiento) para que nadie pueda reservar esas franjas. Endpoint: POST /api/gestion/pistas/:pistaId/bloqueos con { inicio, fin, motivo, cancelarReservas? }. Implementa la funcionalidad completa, con sus tests.

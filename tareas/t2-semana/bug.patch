@@ -1,0 +1,13 @@
+diff --git a/src/dominio/semana.ts b/src/dominio/semana.ts
+index bc13505..cffa56f 100644
+--- a/src/dominio/semana.ts
++++ b/src/dominio/semana.ts
+@@ -10,7 +10,7 @@ export function lunesDeLaSemana(fecha: Fecha): Fecha {
+ export function diasDeLaSemana(fecha: Fecha): Fecha[] {
+   const lunes = lunesDeLaSemana(fecha);
+   const dias: Fecha[] = [];
+-  for (let desplazamiento = 0; desplazamiento < DIAS_POR_SEMANA; desplazamiento++) {
++  for (let desplazamiento = 0; desplazamiento <= DIAS_POR_SEMANA; desplazamiento++) {
+     dias.push(sumarDias(lunes, desplazamiento));
+   }
+   return dias;

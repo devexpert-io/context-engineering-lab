@@ -1,0 +1,36 @@
+{
+ "segundos": 106.9,
+ "rc": 0,
+ "modelo": "lmstudio/qwen3.8-27b-mlx",
+ "entrada": 13461,
+ "entrada_detalle": {
+  "total": 14195,
+  "input": 13461,
+  "output": 33,
+  "reasoning": 701,
+  "cache": {
+   "write": 0,
+   "read": 0
+  }
+ },
+ "respuesta": "KW_CSAY, KW_BGKV, KW_9GR7, KW_WBV0, KW_0P60, KW_UTLSZ",
+ "herramientas_usadas": 0,
+ "agente": "opencode",
+ "lineas": 300,
+ "tipo": "K",
+ "marcas_esperadas": 6,
+ "marcas_vistas": [
+  "KW_CSAY",
+  "KW_BGKV",
+  "KW_9GR7",
+  "KW_WBV0",
+  "KW_0P60",
+  "KW_UTLSZ"
+ ],
+ "marcas_inventadas": [],
+ "ultima_marca_vista": {
+  "marca": "KW_UTLSZ",
+  "linea": 300,
+  "byte": 23334
+ }
+}

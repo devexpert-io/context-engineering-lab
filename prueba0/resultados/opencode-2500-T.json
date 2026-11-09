@@ -1,0 +1,21 @@
+{
+ "segundos": 256.0,
+ "rc": 0,
+ "modelo": "lmstudio/qwen3.8-27b-mlx",
+ "entrada": 56903,
+ "entrada_detalle": {
+  "total": 57006,
+  "input": 56903,
+  "output": 4,
+  "reasoning": 99,
+  "cache": {
+   "write": 0,
+   "read": 0
+  }
+ },
+ "respuesta": "OK",
+ "herramientas_usadas": 0,
+ "agente": "opencode",
+ "lineas": 2500,
+ "tipo": "T"
+}

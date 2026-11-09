@@ -1,0 +1,82 @@
+{
+ "KW_CSAY": {
+  "linea": 50,
+  "byte": 3718
+ },
+ "KW_BGKV": {
+  "linea": 100,
+  "byte": 7541
+ },
+ "KW_9GR7": {
+  "linea": 150,
+  "byte": 11359
+ },
+ "KW_WBV0": {
+  "linea": 200,
+  "byte": 15501
+ },
+ "KW_0P60": {
+  "linea": 250,
+  "byte": 19393
+ },
+ "KW_UTLS": {
+  "linea": 300,
+  "byte": 23334
+ },
+ "KW_6FAV": {
+  "linea": 350,
+  "byte": 27246
+ },
+ "KW_TVIH": {
+  "linea": 400,
+  "byte": 31453
+ },
+ "KW_71QF": {
+  "linea": 450,
+  "byte": 35290
+ },
+ "KW_MA3P": {
+  "linea": 500,
+  "byte": 39011
+ },
+ "KW_QZOD": {
+  "linea": 550,
+  "byte": 42943
+ },
+ "KW_ME7O": {
+  "linea": 600,
+  "byte": 46990
+ },
+ "KW_NAO0": {
+  "linea": 650,
+  "byte": 50949
+ },
+ "KW_NWVU": {
+  "linea": 700,
+  "byte": 55046
+ },
+ "KW_YESX": {
+  "linea": 750,
+  "byte": 58849
+ },
+ "KW_AMNQ": {
+  "linea": 800,
+  "byte": 62995
+ },
+ "KW_89XX": {
+  "linea": 850,
+  "byte": 66881
+ },
+ "KW_CUTU": {
+  "linea": 900,
+  "byte": 70676
+ },
+ "KW_64LE": {
+  "linea": 950,
+  "byte": 74473
+ },
+ "KW_LDUYZ": {
+  "linea": 1000,
+  "byte": 78577
+ }
+}

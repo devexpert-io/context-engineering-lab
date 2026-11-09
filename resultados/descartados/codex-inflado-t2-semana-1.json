@@ -1,0 +1,41 @@
+{
+ "id": "codex-inflado-t2-semana-1",
+ "agente": "codex",
+ "variante": "inflado",
+ "tarea": "t2-semana",
+ "repeticion": 1,
+ "segundos": 1023.2,
+ "rc": "estancado",
+ "error": "Reading additional input from stdin...\n",
+ "peticiones": 1,
+ "herramientas": {
+  "agent_message": 1,
+  "command_execution": 1
+ },
+ "documentos_leidos": {
+  "AGENTS.md": 1
+ },
+ "contexto_por_paso": [
+  29549
+ ],
+ "respuesta_final": "Voy a revisar el cálculo de la semana y el test que falla, corregir la causa y ejecutar `npm run check`.\n",
+ "duracion_s_agente": 4.8,
+ "ficheros_cambiados": [],
+ "gate_ok": false,
+ "gate_salida": "a empezado desde el minuto de su inicio (0.046959ms)\n✔ dominio/tiempo (2.109583ms)\nℹ tests 62\nℹ suites 9\nℹ pass 61\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 212.334625\n\n✖ failing tests:\n\ntest at test/disponibilidad.test.ts:42:3\n✖ devuelve 7 días de lunes a domingo, también si la fecha es domingo o la semana cambia de mes (19.645875ms)\n  AssertionError [ERR_ASSERTION]: semana=2026-11-18\n  + actual - expected\n  ... Skipped lines\n  \n    [\n      '2026-11-16',\n      '2026-11-17',\n      '2026-11-18',\n      '2026-11-19',\n  ...\n      '2026-11-22',\n  +   '2026-11-23'\n    ]\n  \n      at TestContext.<anonymous> (file://<scratch>/p1/codex-inflado-t2-semana-1/repo/test/disponibilidad.test.ts:79:14)\n      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n      at async Test.run (node:internal/test_runner/test:1409:7)\n      at async Promise.all (index 0)\n      at async Suite.run (node:internal/test_runner/test:1905:7)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: [ '2026-11-16', '2026-11-17', '2026-11-18', '2026-11-19', '2026-11-20', '2026-11-21', '2026-11-22', '2026-11-23' ],\n    expected: [ '2026-11-16', '2026-11-17', '2026-11-18', '2026-11-19', '2026-11-20', '2026-11-21', '2026-11-22' ],\n    operator: 'deepStrictEqual',\n    diff: 'simple'\n  }\n",
+ "ocultos_ok": [
+  "T2.03 cada día sigue teniendo sus 10 franjas",
+  "T2.04 la disponibilidad sigue marcando reservas y pistas cerradas"
+ ],
+ "ocultos_fallan": [
+  "T2.01 diasDeLaSemana devuelve 7 días de lunes a domingo",
+  "T2.02 la disponibilidad de la API devuelve los 7 días de la semana"
+ ],
+ "ocultos_total": 4,
+ "ocultos_salida": "        '2026-11-16',\n        '2026-11-17',\n        '2026-11-18',\n        '2026-11-19',\n    ...\n        '2026-11-22',\n    +   '2026-11-23'\n      ]\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected:\n    0: '2026-11-16'\n    1: '2026-11-17'\n    2: '2026-11-18'\n    3: '2026-11-19'\n    4: '2026-11-20'\n    5: '2026-11-21'\n    6: '2026-11-22'\n  actual:\n    0: '2026-11-16'\n    1: '2026-11-17'\n    2: '2026-11-18'\n    3: '2026-11-19'\n    4: '2026-11-20'\n    5: '2026-11-21'\n    6: '2026-11-22'\n    7: '2026-11-23'\n  operator: 'deepStrictEqual'\n  stack: |-\n    TestContext.<anonymous> (file://<scratch>/p1/codex-inflado-t2-semana-1/repo/oculto/oculto.test.ts:31:10)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1402:25)\n    Test.start (node:internal/test_runner/test:1262:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)\n  ...\n# Subtest: T2.02 la disponibilidad de la API devuelve los 7 días de la semana\nnot ok 2 - T2.02 la disponibilidad de la API devuelve los 7 días de la semana\n  ---\n  duration_ms: 13.122\n  type: 'test'\n  location: '<scratch>/p1/codex-inflado-t2-semana-1/repo/oculto/oculto.test.ts:38:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly deep-equal:\n    + actual - expected\n    ... Skipped lines\n    \n      [\n        '2026-11-16',\n        '2026-11-17',\n        '2026-11-18',\n        '2026-11-19',\n    ...\n        '2026-11-22',\n    +   '2026-11-23'\n      ]\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected:\n    0: '2026-11-16'\n    1: '2026-11-17'\n    2: '2026-11-18'\n    3: '2026-11-19'\n    4: '2026-11-20'\n    5: '2026-11-21'\n    6: '2026-11-22'\n  actual:\n    0: '2026-11-16'\n    1: '2026-11-17'\n    2: '2026-11-18'\n    3: '2026-11-19'\n    4: '2026-11-20'\n    5: '2026-11-21'\n    6: '2026-11-22'\n    7: '2026-11-23'\n  operator: 'deepStrictEqual'\n  stack: |-\n    TestContext.<anonymous> (file://<scratch>/p1/codex-inflado-t2-semana-1/repo/oculto/oculto.test.ts:41:10)\n    process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    async Test.run (node:internal/test_runner/test:1409:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)\n  ...\n# Subtest: T2.03 cada día sigue teniendo sus 10 franjas\nok 3 - T2.03 cada día sigue teniendo sus 10 franjas\n  ---\n  duration_ms: 3.25125\n  type: 'test'\n  ...\n# Subtest: T2.04 la disponibilidad sigue marcando reservas y pistas cerradas\nok 4 - T2.04 la disponibilidad sigue marcando reservas y pistas cerradas\n  ---\n  duration_ms: 2.473584\n  type: 'test'\n  ...\n1..4\n# tests 4\n# suites 0\n# pass 2\n# fail 2\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 151.793458\n",
+ "glosario_infracciones": [],
+ "reloj_infracciones": [],
+ "tests_anadidos": 0,
+ "tests_existentes_tocados": [],
+ "fecha": "2026-11-08 07:23"
+}

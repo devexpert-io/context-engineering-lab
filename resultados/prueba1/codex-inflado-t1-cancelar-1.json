@@ -1,0 +1,72 @@
+{
+ "id": "codex-inflado-t1-cancelar-1",
+ "agente": "codex",
+ "variante": "inflado",
+ "tarea": "t1-cancelar",
+ "repeticion": 1,
+ "segundos": 147.0,
+ "rc": 0,
+ "error": "",
+ "peticiones": 10,
+ "herramientas": {
+  "agent_message": 3,
+  "command_execution": 9,
+  "file_change": 2
+ },
+ "documentos_leidos": {
+  "AGENTS.md": 1
+ },
+ "contexto_por_paso": [
+  29571,
+  30043,
+  40431,
+  43546,
+  44610,
+  49756,
+  51042,
+  55086,
+  55721,
+  55889
+ ],
+ "respuesta_final": "Implementado `DELETE /api/reservas/:id` con permisos, plazos y errores en el orden indicado, liberación inmediata de la franja y `canceladaPor`.\n\nLas cancelaciones del gestor generan auditoría y notificación. Documentación actualizada y 20 tests nuevos, sin modificar los existentes.\n\n`npm run check` en verde: 82 tests pasan.",
+ "entrada": 455695,
+ "entrada_cache_leida": 399104,
+ "salida": 6060,
+ "razonamiento": 233,
+ "duracion_s_agente": 145.7,
+ "ficheros_cambiados": [
+  "AGENTS.md",
+  "src/dominio/errores.ts",
+  "src/dominio/reglas.ts",
+  "src/dominio/tipos.ts",
+  "src/http/rutas.ts",
+  "src/servicios/reservas.ts",
+  "test/cancelar-reservas.test.ts"
+ ],
+ "gate_ok": true,
+ "gate_salida": "E (1.080833ms)\n  ✔ una franja de una pista cerrada responde 409 FRANJA_NO_DISPONIBLE (0.826375ms)\n  ✔ una franja que ya ha empezado responde 409 FRANJA_PASADA (1.347875ms)\n  ✔ una franja se puede reservar hasta el minuto anterior a su inicio (1.661458ms)\n  ✔ un inicio que no es el de una franja responde 400 DATOS_INVALIDOS (1.831209ms)\n  ✔ valida el formato de los campos y los devuelve en detalles (1.148333ms)\n  ✔ una pista que no existe responde 404 PISTA_NO_ENCONTRADA (1.337458ms)\n  ✔ aplica las reglas en el orden documentado (2.182208ms)\n  ✔ no crea ninguna reserva cuando la petición falla (1.315917ms)\n✔ POST /api/reservas (51.428375ms)\n▶ GET /api/reservas/mias\n  ✔ devuelve las reservas del socio en cualquier estado, ordenadas por inicio (0.958ms)\n  ✔ solo incluye reservas del socio identificado (1.099834ms)\n✔ GET /api/reservas/mias (2.132ms)\n▶ dominio/tiempo\n  ✔ suma minutos y horas cruzando días, meses y años (0.470458ms)\n  ✔ suma días teniendo en cuenta los años bisiestos (0.0705ms)\n  ✔ calcula los minutos entre dos momentos (0.056416ms)\n  ✔ valida fechas y fechas con hora sin zona (0.162375ms)\n  ✔ numera los días de la semana de lunes (1) a domingo (7) (0.04425ms)\n  ✔ genera las franjas del día de 08:00 a 23:00 (0.655458ms)\n  ✔ reconoce el inicio de una franja (0.047292ms)\n  ✔ una franja ha empezado desde el minuto de su inicio (0.044083ms)\n✔ dominio/tiempo (2.0715ms)\nℹ tests 82\nℹ suites 10\nℹ pass 82\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 211.005375\n",
+ "ocultos_ok": [
+  "T1.01 el socio cancela su reserva con más de 24 h de antelación",
+  "T1.02 al cancelar, la franja queda libre y otro socio puede reservarla",
+  "T1.03 con 24 h justas de antelación el socio todavía puede cancelar",
+  "T1.04 con menos de 24 h el socio recibe FUERA_DE_PLAZO y la reserva sigue confirmada",
+  "T1.05 el gestor puede cancelar con menos de 24 h",
+  "T1.06 si cancela el gestor, se audita y se avisa al socio",
+  "T1.07 nadie cancela una franja que ya ha empezado",
+  "T1.08 un socio no puede cancelar la reserva de otro",
+  "T1.09 una reserva que no existe devuelve 404 RESERVA_NO_ENCONTRADA",
+  "T1.10 una reserva ya cancelada devuelve 409 RESERVA_YA_CANCELADA",
+  "T1.11 la propiedad de la reserva se comprueba antes que su estado",
+  "T1.12 cancelar libera el límite de 2 reservas futuras",
+  "T1.13 los errores de la cancelación siguen el formato común con codigo y mensaje",
+  "T1.14 sin cabecera x-socio-id devuelve 401 NO_AUTENTICADO"
+ ],
+ "ocultos_fallan": [],
+ "ocultos_total": 14,
+ "ocultos_salida": "",
+ "glosario_infracciones": [],
+ "reloj_infracciones": [],
+ "tests_anadidos": 8,
+ "tests_existentes_tocados": [],
+ "fecha": "2026-11-08 09:03"
+}

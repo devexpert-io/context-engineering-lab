@@ -1,0 +1,24 @@
+{
+ "segundos": 6.3,
+ "rc": 0,
+ "modelo": "claude-opus-5-5",
+ "herramientas": 27,
+ "entrada": 57485,
+ "entrada_detalle": {
+  "input_tokens": 2,
+  "cache_creation_input_tokens": 22281,
+  "cache_read_input_tokens": 35202,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 22281
+  },
+  "output_tokens": 4,
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "respuesta": "OK",
+ "coste_usd": 0.1853764,
+ "agente": "claude",
+ "caso": "arroba-agents"
+}

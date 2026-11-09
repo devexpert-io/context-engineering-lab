@@ -1,0 +1,54 @@
+{
+ "segundos": 7.8,
+ "rc": 0,
+ "modelo": "claude-opus-5-5",
+ "herramientas": 0,
+ "entrada": 34992,
+ "entrada_detalle": {
+  "input_tokens": 2,
+  "cache_creation_input_tokens": 34341,
+  "cache_read_input_tokens": 649,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 34341
+  },
+  "output_tokens": 3,
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "respuesta": "KW_CSAY, KW_BGKV, KW_9GR7, KW_WBV0, KW_0P60, KW_UTLS, KW_6FAV, KW_TVIH, KW_71QF, KW_MA3P, KW_QZOD, KW_ME7O, KW_NAO0, KW_NWVU, KW_YESX, KW_AMNQ, KW_89XX, KW_CUTU, KW_64LE, KW_LDUYZ",
+ "coste_usd": 0.28136580000000005,
+ "agente": "claude",
+ "lineas": 1000,
+ "tipo": "K",
+ "marcas_esperadas": 20,
+ "marcas_vistas": [
+  "KW_CSAY",
+  "KW_BGKV",
+  "KW_9GR7",
+  "KW_WBV0",
+  "KW_0P60",
+  "KW_UTLS",
+  "KW_6FAV",
+  "KW_TVIH",
+  "KW_71QF",
+  "KW_MA3P",
+  "KW_QZOD",
+  "KW_ME7O",
+  "KW_NAO0",
+  "KW_NWVU",
+  "KW_YESX",
+  "KW_AMNQ",
+  "KW_89XX",
+  "KW_CUTU",
+  "KW_64LE",
+  "KW_LDUYZ"
+ ],
+ "marcas_inventadas": [],
+ "ultima_marca_vista": {
+  "marca": "KW_LDUYZ",
+  "linea": 1000,
+  "byte": 78577
+ }
+}

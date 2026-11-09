@@ -1,0 +1,60 @@
+{
+ "id": "claude-mapa-t2-semana-0",
+ "agente": "claude",
+ "variante": "mapa",
+ "tarea": "t2-semana",
+ "repeticion": 0,
+ "segundos": null,
+ "rc": null,
+ "error": "",
+ "peticiones": 13,
+ "entrada": 662377,
+ "entrada_cache_leida": 606830,
+ "entrada_cache_escrita": 55519,
+ "salida": 231,
+ "herramientas": {
+  "Bash": 10,
+  "ToolSearch": 1,
+  "TaskStop": 2
+ },
+ "documentos_leidos": {},
+ "contexto_por_paso": [
+  42366,
+  42787,
+  46216,
+  51347,
+  51754,
+  51938,
+  52145,
+  52586,
+  52816,
+  53233,
+  54592,
+  55076,
+  55521
+ ],
+ "modelo": "claude-opus-5-5",
+ "coste_usd": 0.6076499999999999,
+ "duracion_ms_agente": 464033,
+ "turnos": 14,
+ "respuesta_final": "Arreglado. El bucle de `diasDeLaSemana` en `src/dominio/semana.ts:13` tenía un error de uno. Recorría los desplazamientos del 0 al 7 (`desplazamiento <= DIAS_POR_SEMANA`), así que añadía también el lunes de la semana siguiente. Como `hasta` se toma del último elemento, la respuesta además llegaba hasta ese lunes.\n\nEl cambio, en esa única línea:\n\n```ts\nfor (let desplazamiento = 0; desplazamiento < DIAS_POR_SEMANA; desplazamiento++) {\n```\n\nNo he tocado el test. `npm run check` termina en verde: pasan los tipos y los 62 tests, también los del cambio de mes y de año.\n\nLos tests no se podían ejecutar dentro del sandbox porque no deja abrir puertos locales (da `EPERM` y la ejecución se queda colgada). Por eso los lancé fuera del sandbox. Si quieres que corran dentro, activa `sandbox.network.allowLocalBinding: true` en tus ajustes o cámbialo con `/sandbox`.",
+ "ficheros_cambiados": [
+  "src/dominio/semana.ts"
+ ],
+ "gate_ok": true,
+ "gate_salida": " (2.155833ms)\n  ✔ una franja de una pista cerrada responde 409 FRANJA_NO_DISPONIBLE (0.9265ms)\n  ✔ una franja que ya ha empezado responde 409 FRANJA_PASADA (1.576875ms)\n  ✔ una franja se puede reservar hasta el minuto anterior a su inicio (1.363916ms)\n  ✔ un inicio que no es el de una franja responde 400 DATOS_INVALIDOS (1.738917ms)\n  ✔ valida el formato de los campos y los devuelve en detalles (1.199542ms)\n  ✔ una pista que no existe responde 404 PISTA_NO_ENCONTRADA (0.777584ms)\n  ✔ aplica las reglas en el orden documentado (2.5355ms)\n  ✔ no crea ninguna reserva cuando la petición falla (2.679125ms)\n✔ POST /api/reservas (59.138125ms)\n▶ GET /api/reservas/mias\n  ✔ devuelve las reservas del socio en cualquier estado, ordenadas por inicio (0.843542ms)\n  ✔ solo incluye reservas del socio identificado (1.188125ms)\n✔ GET /api/reservas/mias (2.102667ms)\n▶ dominio/tiempo\n  ✔ suma minutos y horas cruzando días, meses y años (0.566ms)\n  ✔ suma días teniendo en cuenta los años bisiestos (0.1845ms)\n  ✔ calcula los minutos entre dos momentos (0.084708ms)\n  ✔ valida fechas y fechas con hora sin zona (0.232959ms)\n  ✔ numera los días de la semana de lunes (1) a domingo (7) (0.064542ms)\n  ✔ genera las franjas del día de 08:00 a 23:00 (1.034625ms)\n  ✔ reconoce el inicio de una franja (0.120666ms)\n  ✔ una franja ha empezado desde el minuto de su inicio (0.086125ms)\n✔ dominio/tiempo (3.160916ms)\nℹ tests 62\nℹ suites 9\nℹ pass 62\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 228.559125\n",
+ "ocultos_ok": [
+  "T2.01 diasDeLaSemana devuelve 7 días de lunes a domingo",
+  "T2.02 la disponibilidad de la API devuelve los 7 días de la semana",
+  "T2.03 cada día sigue teniendo sus 10 franjas",
+  "T2.04 la disponibilidad sigue marcando reservas y pistas cerradas"
+ ],
+ "ocultos_fallan": [],
+ "ocultos_total": 4,
+ "ocultos_salida": "",
+ "glosario_infracciones": [],
+ "reloj_infracciones": [],
+ "tests_anadidos": 0,
+ "tests_existentes_tocados": [],
+ "fecha": "2026-11-08 01:53"
+}

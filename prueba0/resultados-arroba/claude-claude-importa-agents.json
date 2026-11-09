@@ -1,0 +1,24 @@
+{
+ "segundos": 5.2,
+ "rc": 0,
+ "modelo": "claude-opus-5-5",
+ "herramientas": 27,
+ "entrada": 38973,
+ "entrada_detalle": {
+  "input_tokens": 2,
+  "cache_creation_input_tokens": 5595,
+  "cache_read_input_tokens": 33376,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 5595
+  },
+  "output_tokens": 4,
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "respuesta": "OK",
+ "coste_usd": 0.051523200000000005,
+ "agente": "claude",
+ "caso": "claude-importa-agents"
+}

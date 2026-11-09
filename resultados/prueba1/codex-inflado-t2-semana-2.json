@@ -1,0 +1,52 @@
+{
+ "id": "codex-inflado-t2-semana-2",
+ "agente": "codex",
+ "variante": "inflado",
+ "tarea": "t2-semana",
+ "repeticion": 2,
+ "segundos": 27.2,
+ "rc": 0,
+ "error": "",
+ "peticiones": 6,
+ "herramientas": {
+  "agent_message": 2,
+  "command_execution": 5,
+  "file_change": 1
+ },
+ "documentos_leidos": {
+  "AGENTS.md": 1
+ },
+ "contexto_por_paso": [
+  29549,
+  29820,
+  41501,
+  42387,
+  44430,
+  44753
+ ],
+ "respuesta_final": "Corregido en `src/dominio/semana.ts:13`: el bucle recorría de 0 a 7 inclusive, añadiendo el lunes siguiente como octavo día. Cambié `<=` por `<` para devolver exactamente de lunes a domingo.\n\nSin modificar tests. `npm run check` en verde: tipos correctos y 62 tests aprobados.",
+ "entrada": 232440,
+ "entrada_cache_leida": 199424,
+ "salida": 495,
+ "razonamiento": 0,
+ "duracion_s_agente": 25.9,
+ "ficheros_cambiados": [
+  "src/dominio/semana.ts"
+ ],
+ "gate_ok": true,
+ "gate_salida": "E (2.7755ms)\n  ✔ una franja de una pista cerrada responde 409 FRANJA_NO_DISPONIBLE (1.697292ms)\n  ✔ una franja que ya ha empezado responde 409 FRANJA_PASADA (2.567708ms)\n  ✔ una franja se puede reservar hasta el minuto anterior a su inicio (1.61975ms)\n  ✔ un inicio que no es el de una franja responde 400 DATOS_INVALIDOS (2.585667ms)\n  ✔ valida el formato de los campos y los devuelve en detalles (1.63975ms)\n  ✔ una pista que no existe responde 404 PISTA_NO_ENCONTRADA (0.98175ms)\n  ✔ aplica las reglas en el orden documentado (2.810791ms)\n  ✔ no crea ninguna reserva cuando la petición falla (2.849167ms)\n✔ POST /api/reservas (57.795416ms)\n▶ GET /api/reservas/mias\n  ✔ devuelve las reservas del socio en cualquier estado, ordenadas por inicio (1.370208ms)\n  ✔ solo incluye reservas del socio identificado (2.0015ms)\n✔ GET /api/reservas/mias (3.467583ms)\n▶ dominio/tiempo\n  ✔ suma minutos y horas cruzando días, meses y años (0.427542ms)\n  ✔ suma días teniendo en cuenta los años bisiestos (0.122958ms)\n  ✔ calcula los minutos entre dos momentos (0.069084ms)\n  ✔ valida fechas y fechas con hora sin zona (0.185958ms)\n  ✔ numera los días de la semana de lunes (1) a domingo (7) (0.053ms)\n  ✔ genera las franjas del día de 08:00 a 23:00 (0.686167ms)\n  ✔ reconoce el inicio de una franja (0.080917ms)\n  ✔ una franja ha empezado desde el minuto de su inicio (0.065042ms)\n✔ dominio/tiempo (2.332625ms)\nℹ tests 62\nℹ suites 9\nℹ pass 62\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 218.191959\n",
+ "ocultos_ok": [
+  "T2.01 diasDeLaSemana devuelve 7 días de lunes a domingo",
+  "T2.02 la disponibilidad de la API devuelve los 7 días de la semana",
+  "T2.03 cada día sigue teniendo sus 10 franjas",
+  "T2.04 la disponibilidad sigue marcando reservas y pistas cerradas"
+ ],
+ "ocultos_fallan": [],
+ "ocultos_total": 4,
+ "ocultos_salida": "",
+ "glosario_infracciones": [],
+ "reloj_infracciones": [],
+ "tests_anadidos": 0,
+ "tests_existentes_tocados": [],
+ "fecha": "2026-11-08 09:17"
+}

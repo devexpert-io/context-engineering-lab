@@ -1,0 +1,14 @@
+{
+ "segundos": 6055.5,
+ "rc": 1,
+ "modelo": "lmstudio/qwen3.8-27b-mlx",
+ "respuesta": "",
+ "herramientas_usadas": 0,
+ "error": "",
+ "agente": "opencode",
+ "lineas": 2500,
+ "tipo": "K",
+ "marcas_esperadas": 50,
+ "marcas_vistas": [],
+ "marcas_inventadas": []
+}

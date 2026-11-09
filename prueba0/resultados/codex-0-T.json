@@ -1,0 +1,19 @@
+{
+ "segundos": 4.4,
+ "rc": 0,
+ "modelo": "gpt-6.1-sol",
+ "respuesta": "OK",
+ "entrada": 15431,
+ "entrada_detalle": {
+  "input_tokens": 15431,
+  "cached_input_tokens": 12288,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 5,
+  "reasoning_output_tokens": 0
+ },
+ "comandos": 0,
+ "rollout": "<scratch>/codex-home/sessions/2026/11/08/rollout-2026-11-08T00-49-44-01a1b86b-0571-7be0-a5a8-2e949a7e8175.jsonl",
+ "agente": "codex",
+ "lineas": 0,
+ "tipo": "T"
+}

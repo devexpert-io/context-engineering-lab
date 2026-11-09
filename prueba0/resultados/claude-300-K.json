@@ -1,0 +1,40 @@
+{
+ "segundos": 7.7,
+ "rc": 0,
+ "modelo": "claude-opus-5-5",
+ "herramientas": 0,
+ "entrada": 12954,
+ "entrada_detalle": {
+  "input_tokens": 2,
+  "cache_creation_input_tokens": 12303,
+  "cache_read_input_tokens": 649,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 12303
+  },
+  "output_tokens": 8,
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "respuesta": "KW_CSAY, KW_BGKV, KW_9GR7, KW_WBV0, KW_0P60, KW_UTLSZ",
+ "coste_usd": 0.09956179999999999,
+ "agente": "claude",
+ "lineas": 300,
+ "tipo": "K",
+ "marcas_esperadas": 6,
+ "marcas_vistas": [
+  "KW_CSAY",
+  "KW_BGKV",
+  "KW_9GR7",
+  "KW_WBV0",
+  "KW_0P60",
+  "KW_UTLSZ"
+ ],
+ "marcas_inventadas": [],
+ "ultima_marca_vista": {
+  "marca": "KW_UTLSZ",
+  "linea": 300,
+  "byte": 23334
+ }
+}

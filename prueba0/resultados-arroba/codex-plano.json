@@ -1,0 +1,20 @@
+{
+ "segundos": 4.1,
+ "rc": 0,
+ "modelo": "gpt-6.1-sol",
+ "respuesta": "OK",
+ "entrada": 18504,
+ "entrada_detalle": {
+  "input_tokens": 18504,
+  "cached_input_tokens": 12288,
+  "cache_write_input_tokens": 0,
+  "output_tokens": 5,
+  "reasoning_output_tokens": 0
+ },
+ "comandos": 0,
+ "rollout": "<scratch>/codex-home/sessions/2026/11/08/rollout-2026-11-08T01-21-09-01a1b887-c7e9-7913-816e-2fb3e686cb63.jsonl",
+ "agents_md_recibido_bytes": 2401,
+ "agents_md_recibido_marcas": [],
+ "agente": "codex",
+ "caso": "plano"
+}

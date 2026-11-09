@@ -1,0 +1,51 @@
+{
+ "id": "claude-mapa-t2-semana-2",
+ "agente": "claude",
+ "variante": "mapa",
+ "tarea": "t2-semana",
+ "repeticion": 2,
+ "segundos": 21.9,
+ "rc": 0,
+ "error": "",
+ "peticiones": 5,
+ "entrada": 230000,
+ "entrada_cache_leida": 215440,
+ "entrada_cache_escrita": 14550,
+ "salida": 845,
+ "herramientas": {
+  "Bash": 4
+ },
+ "documentos_leidos": {},
+ "contexto_por_paso": [
+  41739,
+  45577,
+  46774,
+  47819,
+  48091
+ ],
+ "modelo": "claude-opus-5-5",
+ "coste_usd": 0.176428,
+ "duracion_ms_agente": 21239,
+ "duracion_s_agente": 21.2,
+ "turnos": 5,
+ "respuesta_final": "Arreglado. El fallo estaba en el bucle de `diasDeLaSemana`, en `src/dominio/semana.ts:13`:\n\n```ts\nfor (let desplazamiento = 0; desplazamiento <= DIAS_POR_SEMANA; desplazamiento++)\n```\n\nAl usar `<=`, el bucle recorre los desplazamientos del 0 al 7, que son 8 días: de lunes al lunes siguiente. Por eso la semana del 18/11 terminaba en `2026-11-23`. Lo he cambiado a `<` y ahora salen los 7 días, de lunes a domingo.\n\nEl cálculo del lunes (`lunesDeLaSemana`) y el de `diaDeLaSemana` estaban bien, y también funcionan los casos del test con domingo, cambio de mes y cambio de año. El servicio toma `hasta` como el último elemento de la lista, así que no hacía falta cambiar nada más.\n\nNo he tocado el test. `npm run check` termina en verde: pasan los 62 tests y los tipos.",
+ "ficheros_cambiados": [
+  "src/dominio/semana.ts"
+ ],
+ "gate_ok": true,
+ "gate_salida": "(1.298792ms)\n  ✔ una franja de una pista cerrada responde 409 FRANJA_NO_DISPONIBLE (0.889583ms)\n  ✔ una franja que ya ha empezado responde 409 FRANJA_PASADA (1.413125ms)\n  ✔ una franja se puede reservar hasta el minuto anterior a su inicio (1.591833ms)\n  ✔ un inicio que no es el de una franja responde 400 DATOS_INVALIDOS (2.827542ms)\n  ✔ valida el formato de los campos y los devuelve en detalles (2.19825ms)\n  ✔ una pista que no existe responde 404 PISTA_NO_ENCONTRADA (1.408292ms)\n  ✔ aplica las reglas en el orden documentado (1.837958ms)\n  ✔ no crea ninguna reserva cuando la petición falla (2.08475ms)\n✔ POST /api/reservas (47.035084ms)\n▶ GET /api/reservas/mias\n  ✔ devuelve las reservas del socio en cualquier estado, ordenadas por inicio (0.786667ms)\n  ✔ solo incluye reservas del socio identificado (1.226ms)\n✔ GET /api/reservas/mias (2.083583ms)\n▶ dominio/tiempo\n  ✔ suma minutos y horas cruzando días, meses y años (0.405125ms)\n  ✔ suma días teniendo en cuenta los años bisiestos (0.064292ms)\n  ✔ calcula los minutos entre dos momentos (0.058916ms)\n  ✔ valida fechas y fechas con hora sin zona (0.165334ms)\n  ✔ numera los días de la semana de lunes (1) a domingo (7) (0.041208ms)\n  ✔ genera las franjas del día de 08:00 a 23:00 (0.5955ms)\n  ✔ reconoce el inicio de una franja (0.04575ms)\n  ✔ una franja ha empezado desde el minuto de su inicio (0.055417ms)\n✔ dominio/tiempo (1.902625ms)\nℹ tests 62\nℹ suites 9\nℹ pass 62\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 185.768083\n",
+ "ocultos_ok": [
+  "T2.01 diasDeLaSemana devuelve 7 días de lunes a domingo",
+  "T2.02 la disponibilidad de la API devuelve los 7 días de la semana",
+  "T2.03 cada día sigue teniendo sus 10 franjas",
+  "T2.04 la disponibilidad sigue marcando reservas y pistas cerradas"
+ ],
+ "ocultos_fallan": [],
+ "ocultos_total": 4,
+ "ocultos_salida": "",
+ "glosario_infracciones": [],
+ "reloj_infracciones": [],
+ "tests_anadidos": 0,
+ "tests_existentes_tocados": [],
+ "fecha": "2026-11-08 09:24"
+}

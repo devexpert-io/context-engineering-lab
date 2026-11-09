@@ -1,0 +1,1000 @@
+# Instrucciones para agentes
+
+Proyecto de reservas de pistas de pádel.
+- Reservas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Los errores de reservas usan el formato común con `codigo` y `mensaje`.
+- Antes de tocar reservas, ejecuta `npm run test -- reservas` y comprueba que pasa.
+- Los textos visibles de reservas usan el glosario: franja, socio y gestor.
+- En reservas no se llama a `new Date()`: se usa el reloj inyectado.
+- Cada endpoint nuevo de reservas necesita un test del camino feliz y otro por cada error.
+- Cada endpoint nuevo de reservas necesita un test del camino feliz y otro por cada error.
+- Las funciones de reservas se nombran en español y en camelCase.
+- Los textos visibles de reservas usan el glosario: franja, socio y gestor.
+- Los errores de reservas usan el formato común con `codigo` y `mensaje`.
+- Las migraciones de datos de reservas se prueban primero con la semilla completa.
+- Los textos visibles de reservas usan el glosario: franja, socio y gestor.
+- Las notificaciones que salen de reservas usan una plantilla registrada.
+- No añadas dependencias nuevas en reservas sin apuntarlo en docs/decisiones.md.
+- Los importes de reservas se guardan en céntimos, como enteros.
+- Las consultas de reservas devuelven como máximo 100 elementos por página.
+- En reservas, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Antes de tocar reservas, ejecuta `npm run test -- reservas` y comprueba que pasa.
+- No añadas dependencias nuevas en reservas sin apuntarlo en docs/decisiones.md.
+- Las validaciones de reservas se hacen en el servidor, aunque la interfaz también las haga.
+- Cada endpoint nuevo de reservas necesita un test del camino feliz y otro por cada error.
+- En reservas, toda acción de un gestor queda registrada en la auditoría.
+## Módulo de pistas
+- Antes de dar por resuelto un fallo de pistas, revisa sus logs con `npm run logs -- pistas`.
+- Antes de tocar pistas, ejecuta `npm run test -- pistas` y comprueba que pasa.
+- Las notificaciones que salen de pistas usan una plantilla registrada.
+- Las validaciones de pistas se hacen en el servidor, aunque la interfaz también las haga.
+- Si pistas tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Pistas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Si pistas tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las notificaciones que salen de pistas usan una plantilla registrada.
+- Las consultas de pistas devuelven como máximo 100 elementos por página.
+- Cada endpoint nuevo de pistas necesita un test del camino feliz y otro por cada error.
+- Si un cambio en pistas rompe un test existente, se arregla el código, no el test.
+- Los importes de pistas se guardan en céntimos, como enteros.
+- En pistas no se llama a `new Date()`: se usa el reloj inyectado.
+- Antes de tocar pistas, ejecuta `npm run test -- pistas` y comprueba que pasa.
+- Si cambias la forma de una respuesta de pistas, actualiza los ejemplos de docs/api.md.
+- Si pistas tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las consultas de pistas devuelven como máximo 100 elementos por página.
+- Los identificadores de pistas son cadenas legibles con prefijo, como `pis-0001`.
+- En pistas no se llama a `new Date()`: se usa el reloj inyectado.
+- Las funciones de pistas se nombran en español y en camelCase.
+- Las validaciones de pistas se hacen en el servidor, aunque la interfaz también las haga.
+- Los identificadores de pistas son cadenas legibles con prefijo, como `pis-0001`.
+- Los errores de pistas usan el formato común con `codigo` y `mensaje`.
+Marca de control: KW_CSAY
+## Módulo de socios
+- No añadas dependencias nuevas en socios sin apuntarlo en docs/decisiones.md.
+- Cuando socios necesite datos de prueba, se añaden a la semilla y no al test.
+- Los errores de socios usan el formato común con `codigo` y `mensaje`.
+- No mezcles en un mismo commit cambios de socios y de otro módulo.
+- No mezcles en un mismo commit cambios de socios y de otro módulo.
+- Antes de dar por resuelto un fallo de socios, revisa sus logs con `npm run logs -- socios`.
+- En socios no se llama a `new Date()`: se usa el reloj inyectado.
+- En socios, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Los textos visibles de socios usan el glosario: franja, socio y gestor.
+- Si un cambio en socios rompe un test existente, se arregla el código, no el test.
+- Las notificaciones que salen de socios usan una plantilla registrada.
+- Los errores de socios usan el formato común con `codigo` y `mensaje`.
+- Cuando socios necesite datos de prueba, se añaden a la semilla y no al test.
+- No añadas dependencias nuevas en socios sin apuntarlo en docs/decisiones.md.
+- Las notificaciones que salen de socios usan una plantilla registrada.
+- Los mensajes de error de socios se escriben para el socio, sin jerga técnica.
+- Socios no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Antes de dar por resuelto un fallo de socios, revisa sus logs con `npm run logs -- socios`.
+- No mezcles en un mismo commit cambios de socios y de otro módulo.
+- Los importes de socios se guardan en céntimos, como enteros.
+- Las validaciones de socios se hacen en el servidor, aunque la interfaz también las haga.
+- Si socios tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- No añadas dependencias nuevas en socios sin apuntarlo en docs/decisiones.md.
+- En socios, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+## Módulo de pagos
+- Las migraciones de datos de pagos se prueban primero con la semilla completa.
+- Cada endpoint nuevo de pagos necesita un test del camino feliz y otro por cada error.
+- Los mensajes de error de pagos se escriben para el socio, sin jerga técnica.
+- No añadas dependencias nuevas en pagos sin apuntarlo en docs/decisiones.md.
+- Cada endpoint nuevo de pagos necesita un test del camino feliz y otro por cada error.
+- Los errores de pagos usan el formato común con `codigo` y `mensaje`.
+- Cuando pagos necesite datos de prueba, se añaden a la semilla y no al test.
+- En pagos no se llama a `new Date()`: se usa el reloj inyectado.
+- Si un cambio en pagos rompe un test existente, se arregla el código, no el test.
+- Pagos no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- No mezcles en un mismo commit cambios de pagos y de otro módulo.
+- Si cambias la forma de una respuesta de pagos, actualiza los ejemplos de docs/api.md.
+- No mezcles en un mismo commit cambios de pagos y de otro módulo.
+- No mezcles en un mismo commit cambios de pagos y de otro módulo.
+- Las validaciones de pagos se hacen en el servidor, aunque la interfaz también las haga.
+- Las migraciones de datos de pagos se prueban primero con la semilla completa.
+- En pagos no se llama a `new Date()`: se usa el reloj inyectado.
+- Si pagos tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las migraciones de datos de pagos se prueban primero con la semilla completa.
+- Pagos no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- No añadas dependencias nuevas en pagos sin apuntarlo en docs/decisiones.md.
+- Antes de dar por resuelto un fallo de pagos, revisa sus logs con `npm run logs -- pagos`.
+- Pagos no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+Marca de control: KW_BGKV
+## Módulo de torneos
+- Si cambias la forma de una respuesta de torneos, actualiza los ejemplos de docs/api.md.
+- Las notificaciones que salen de torneos usan una plantilla registrada.
+- Los textos visibles de torneos usan el glosario: franja, socio y gestor.
+- Cada endpoint nuevo de torneos necesita un test del camino feliz y otro por cada error.
+- Si cambias la forma de una respuesta de torneos, actualiza los ejemplos de docs/api.md.
+- Si un cambio en torneos rompe un test existente, se arregla el código, no el test.
+- Cuando torneos necesite datos de prueba, se añaden a la semilla y no al test.
+- En torneos no se llama a `new Date()`: se usa el reloj inyectado.
+- Torneos no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Si torneos tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las notificaciones que salen de torneos usan una plantilla registrada.
+- Cada endpoint nuevo de torneos necesita un test del camino feliz y otro por cada error.
+- Las migraciones de datos de torneos se prueban primero con la semilla completa.
+- Los identificadores de torneos son cadenas legibles con prefijo, como `tor-0001`.
+- En torneos, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Cada endpoint nuevo de torneos necesita un test del camino feliz y otro por cada error.
+- En torneos, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Los identificadores de torneos son cadenas legibles con prefijo, como `tor-0001`.
+- Cuando torneos necesite datos de prueba, se añaden a la semilla y no al test.
+- En torneos no se llama a `new Date()`: se usa el reloj inyectado.
+- No añadas dependencias nuevas en torneos sin apuntarlo en docs/decisiones.md.
+- Las validaciones de torneos se hacen en el servidor, aunque la interfaz también las haga.
+- Los importes de torneos se guardan en céntimos, como enteros.
+- Si torneos tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+## Módulo de clases
+- Los identificadores de clases son cadenas legibles con prefijo, como `cla-0001`.
+- Las validaciones de clases se hacen en el servidor, aunque la interfaz también las haga.
+- Clases no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Cualquier regla de negocio nueva de clases se documenta en docs/dominio.md.
+- Cuando clases necesite datos de prueba, se añaden a la semilla y no al test.
+- Clases no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Si un cambio en clases rompe un test existente, se arregla el código, no el test.
+- Las funciones de clases se nombran en español y en camelCase.
+- En clases no se llama a `new Date()`: se usa el reloj inyectado.
+- Las funciones de clases se nombran en español y en camelCase.
+- Cada endpoint nuevo de clases necesita un test del camino feliz y otro por cada error.
+- Los textos visibles de clases usan el glosario: franja, socio y gestor.
+- Las notificaciones que salen de clases usan una plantilla registrada.
+- Las notificaciones que salen de clases usan una plantilla registrada.
+- En clases no se llama a `new Date()`: se usa el reloj inyectado.
+- Los textos visibles de clases usan el glosario: franja, socio y gestor.
+- Los importes de clases se guardan en céntimos, como enteros.
+- Las consultas de clases devuelven como máximo 100 elementos por página.
+- Los importes de clases se guardan en céntimos, como enteros.
+- Cuando clases necesite datos de prueba, se añaden a la semilla y no al test.
+- No mezcles en un mismo commit cambios de clases y de otro módulo.
+- Cada endpoint nuevo de clases necesita un test del camino feliz y otro por cada error.
+- Las funciones de clases se nombran en español y en camelCase.
+Marca de control: KW_9GR7
+## Módulo de notificaciones
+- En notificaciones, toda acción de un gestor queda registrada en la auditoría.
+- Cualquier regla de negocio nueva de notificaciones se documenta en docs/dominio.md.
+- No añadas dependencias nuevas en notificaciones sin apuntarlo en docs/decisiones.md.
+- En notificaciones, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Los errores de notificaciones usan el formato común con `codigo` y `mensaje`.
+- Las funciones de notificaciones se nombran en español y en camelCase.
+- Notificaciones no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Si cambias la forma de una respuesta de notificaciones, actualiza los ejemplos de docs/api.md.
+- Las migraciones de datos de notificaciones se prueban primero con la semilla completa.
+- Las consultas de notificaciones devuelven como máximo 100 elementos por página.
+- Antes de dar por resuelto un fallo de notificaciones, revisa sus logs con `npm run logs -- notificaciones`.
+- No añadas dependencias nuevas en notificaciones sin apuntarlo en docs/decisiones.md.
+- Cuando notificaciones necesite datos de prueba, se añaden a la semilla y no al test.
+- Cuando notificaciones necesite datos de prueba, se añaden a la semilla y no al test.
+- Antes de dar por resuelto un fallo de notificaciones, revisa sus logs con `npm run logs -- notificaciones`.
+- Si un cambio en notificaciones rompe un test existente, se arregla el código, no el test.
+- En notificaciones, toda acción de un gestor queda registrada en la auditoría.
+- En notificaciones no se llama a `new Date()`: se usa el reloj inyectado.
+- Las notificaciones que salen de notificaciones usan una plantilla registrada.
+- Antes de tocar notificaciones, ejecuta `npm run test -- notificaciones` y comprueba que pasa.
+- Las migraciones de datos de notificaciones se prueban primero con la semilla completa.
+- Los textos visibles de notificaciones usan el glosario: franja, socio y gestor.
+- Los errores de notificaciones usan el formato común con `codigo` y `mensaje`.
+- Las migraciones de datos de notificaciones se prueban primero con la semilla completa.
+## Módulo de auditoría
+- Las notificaciones que salen de auditoría usan una plantilla registrada.
+- En auditoría no se llama a `new Date()`: se usa el reloj inyectado.
+- Auditoría no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Los identificadores de auditoría son cadenas legibles con prefijo, como `aud-0001`.
+- Los errores de auditoría usan el formato común con `codigo` y `mensaje`.
+- Los mensajes de error de auditoría se escriben para el socio, sin jerga técnica.
+- Las consultas de auditoría devuelven como máximo 100 elementos por página.
+- Si cambias la forma de una respuesta de auditoría, actualiza los ejemplos de docs/api.md.
+- Si un cambio en auditoría rompe un test existente, se arregla el código, no el test.
+- Antes de tocar auditoría, ejecuta `npm run test -- auditoría` y comprueba que pasa.
+- Los textos visibles de auditoría usan el glosario: franja, socio y gestor.
+- Los textos visibles de auditoría usan el glosario: franja, socio y gestor.
+- En auditoría no se llama a `new Date()`: se usa el reloj inyectado.
+- En auditoría, toda acción de un gestor queda registrada en la auditoría.
+- Si cambias la forma de una respuesta de auditoría, actualiza los ejemplos de docs/api.md.
+- En auditoría, toda acción de un gestor queda registrada en la auditoría.
+- Los errores de auditoría usan el formato común con `codigo` y `mensaje`.
+- Auditoría no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Los mensajes de error de auditoría se escriben para el socio, sin jerga técnica.
+- Auditoría no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- En auditoría, toda acción de un gestor queda registrada en la auditoría.
+- Antes de dar por resuelto un fallo de auditoría, revisa sus logs con `npm run logs -- auditoría`.
+- Las validaciones de auditoría se hacen en el servidor, aunque la interfaz también las haga.
+Marca de control: KW_WBV0
+## Módulo de informes
+- Las funciones de informes se nombran en español y en camelCase.
+- No mezcles en un mismo commit cambios de informes y de otro módulo.
+- Si cambias la forma de una respuesta de informes, actualiza los ejemplos de docs/api.md.
+- Las notificaciones que salen de informes usan una plantilla registrada.
+- En informes, toda acción de un gestor queda registrada en la auditoría.
+- Antes de tocar informes, ejecuta `npm run test -- informes` y comprueba que pasa.
+- Antes de dar por resuelto un fallo de informes, revisa sus logs con `npm run logs -- informes`.
+- Los identificadores de informes son cadenas legibles con prefijo, como `inf-0001`.
+- Cualquier regla de negocio nueva de informes se documenta en docs/dominio.md.
+- Antes de tocar informes, ejecuta `npm run test -- informes` y comprueba que pasa.
+- Los errores de informes usan el formato común con `codigo` y `mensaje`.
+- No mezcles en un mismo commit cambios de informes y de otro módulo.
+- Los mensajes de error de informes se escriben para el socio, sin jerga técnica.
+- Cada endpoint nuevo de informes necesita un test del camino feliz y otro por cada error.
+- En informes, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Cada endpoint nuevo de informes necesita un test del camino feliz y otro por cada error.
+- Los importes de informes se guardan en céntimos, como enteros.
+- No añadas dependencias nuevas en informes sin apuntarlo en docs/decisiones.md.
+- No añadas dependencias nuevas en informes sin apuntarlo en docs/decisiones.md.
+- Los textos visibles de informes usan el glosario: franja, socio y gestor.
+- Cualquier regla de negocio nueva de informes se documenta en docs/dominio.md.
+- No añadas dependencias nuevas en informes sin apuntarlo en docs/decisiones.md.
+- Las notificaciones que salen de informes usan una plantilla registrada.
+- Las funciones de informes se nombran en español y en camelCase.
+## Módulo de horarios
+- Las funciones de horarios se nombran en español y en camelCase.
+- Las migraciones de datos de horarios se prueban primero con la semilla completa.
+- Cualquier regla de negocio nueva de horarios se documenta en docs/dominio.md.
+- Las notificaciones que salen de horarios usan una plantilla registrada.
+- Si cambias la forma de una respuesta de horarios, actualiza los ejemplos de docs/api.md.
+- En horarios no se llama a `new Date()`: se usa el reloj inyectado.
+- En horarios, toda acción de un gestor queda registrada en la auditoría.
+- Antes de dar por resuelto un fallo de horarios, revisa sus logs con `npm run logs -- horarios`.
+- Las consultas de horarios devuelven como máximo 100 elementos por página.
+- Las validaciones de horarios se hacen en el servidor, aunque la interfaz también las haga.
+- Las notificaciones que salen de horarios usan una plantilla registrada.
+- Los textos visibles de horarios usan el glosario: franja, socio y gestor.
+- Si horarios tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las validaciones de horarios se hacen en el servidor, aunque la interfaz también las haga.
+- Si horarios tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Los mensajes de error de horarios se escriben para el socio, sin jerga técnica.
+- Cuando horarios necesite datos de prueba, se añaden a la semilla y no al test.
+- Las migraciones de datos de horarios se prueban primero con la semilla completa.
+- Horarios no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- No mezcles en un mismo commit cambios de horarios y de otro módulo.
+- Si un cambio en horarios rompe un test existente, se arregla el código, no el test.
+- En horarios, toda acción de un gestor queda registrada en la auditoría.
+- Si un cambio en horarios rompe un test existente, se arregla el código, no el test.
+Marca de control: KW_0P60
+## Módulo de tarifas
+- Los errores de tarifas usan el formato común con `codigo` y `mensaje`.
+- Cada endpoint nuevo de tarifas necesita un test del camino feliz y otro por cada error.
+- Cada endpoint nuevo de tarifas necesita un test del camino feliz y otro por cada error.
+- No añadas dependencias nuevas en tarifas sin apuntarlo en docs/decisiones.md.
+- Los identificadores de tarifas son cadenas legibles con prefijo, como `tar-0001`.
+- Antes de tocar tarifas, ejecuta `npm run test -- tarifas` y comprueba que pasa.
+- Los importes de tarifas se guardan en céntimos, como enteros.
+- Las notificaciones que salen de tarifas usan una plantilla registrada.
+- Cada endpoint nuevo de tarifas necesita un test del camino feliz y otro por cada error.
+- Los importes de tarifas se guardan en céntimos, como enteros.
+- Cada endpoint nuevo de tarifas necesita un test del camino feliz y otro por cada error.
+- Antes de tocar tarifas, ejecuta `npm run test -- tarifas` y comprueba que pasa.
+- No añadas dependencias nuevas en tarifas sin apuntarlo en docs/decisiones.md.
+- Si tarifas tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Tarifas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- En tarifas, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Cada endpoint nuevo de tarifas necesita un test del camino feliz y otro por cada error.
+- No añadas dependencias nuevas en tarifas sin apuntarlo en docs/decisiones.md.
+- En tarifas, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Los identificadores de tarifas son cadenas legibles con prefijo, como `tar-0001`.
+- No añadas dependencias nuevas en tarifas sin apuntarlo en docs/decisiones.md.
+- En tarifas, toda acción de un gestor queda registrada en la auditoría.
+- Cada endpoint nuevo de tarifas necesita un test del camino feliz y otro por cada error.
+- En tarifas no se llama a `new Date()`: se usa el reloj inyectado.
+## Módulo de inventario
+- Las migraciones de datos de inventario se prueban primero con la semilla completa.
+- Cualquier regla de negocio nueva de inventario se documenta en docs/dominio.md.
+- Las validaciones de inventario se hacen en el servidor, aunque la interfaz también las haga.
+- Las notificaciones que salen de inventario usan una plantilla registrada.
+- Las funciones de inventario se nombran en español y en camelCase.
+- Los textos visibles de inventario usan el glosario: franja, socio y gestor.
+- Los importes de inventario se guardan en céntimos, como enteros.
+- Los importes de inventario se guardan en céntimos, como enteros.
+- Cualquier regla de negocio nueva de inventario se documenta en docs/dominio.md.
+- Cada endpoint nuevo de inventario necesita un test del camino feliz y otro por cada error.
+- Cualquier regla de negocio nueva de inventario se documenta en docs/dominio.md.
+- Las consultas de inventario devuelven como máximo 100 elementos por página.
+- Las validaciones de inventario se hacen en el servidor, aunque la interfaz también las haga.
+- Los errores de inventario usan el formato común con `codigo` y `mensaje`.
+- Los errores de inventario usan el formato común con `codigo` y `mensaje`.
+- Las migraciones de datos de inventario se prueban primero con la semilla completa.
+- Las consultas de inventario devuelven como máximo 100 elementos por página.
+- No mezcles en un mismo commit cambios de inventario y de otro módulo.
+- Las consultas de inventario devuelven como máximo 100 elementos por página.
+- Las consultas de inventario devuelven como máximo 100 elementos por página.
+- Si un cambio en inventario rompe un test existente, se arregla el código, no el test.
+- Los textos visibles de inventario usan el glosario: franja, socio y gestor.
+- En inventario, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+Marca de control: KW_UTLS
+## Módulo de ligas
+- Las migraciones de datos de ligas se prueban primero con la semilla completa.
+- Ligas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Ligas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Los errores de ligas usan el formato común con `codigo` y `mensaje`.
+- En ligas, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Cuando ligas necesite datos de prueba, se añaden a la semilla y no al test.
+- Los textos visibles de ligas usan el glosario: franja, socio y gestor.
+- Los identificadores de ligas son cadenas legibles con prefijo, como `lig-0001`.
+- Los errores de ligas usan el formato común con `codigo` y `mensaje`.
+- Cada endpoint nuevo de ligas necesita un test del camino feliz y otro por cada error.
+- Las validaciones de ligas se hacen en el servidor, aunque la interfaz también las haga.
+- Las validaciones de ligas se hacen en el servidor, aunque la interfaz también las haga.
+- Las notificaciones que salen de ligas usan una plantilla registrada.
+- Si un cambio en ligas rompe un test existente, se arregla el código, no el test.
+- Las funciones de ligas se nombran en español y en camelCase.
+- Las consultas de ligas devuelven como máximo 100 elementos por página.
+- Si cambias la forma de una respuesta de ligas, actualiza los ejemplos de docs/api.md.
+- En ligas no se llama a `new Date()`: se usa el reloj inyectado.
+- Si un cambio en ligas rompe un test existente, se arregla el código, no el test.
+- Cada endpoint nuevo de ligas necesita un test del camino feliz y otro por cada error.
+- No añadas dependencias nuevas en ligas sin apuntarlo en docs/decisiones.md.
+- Si un cambio en ligas rompe un test existente, se arregla el código, no el test.
+- Las notificaciones que salen de ligas usan una plantilla registrada.
+- Los errores de ligas usan el formato común con `codigo` y `mensaje`.
+## Módulo de escuela
+- En escuela, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Escuela no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Las notificaciones que salen de escuela usan una plantilla registrada.
+- Antes de tocar escuela, ejecuta `npm run test -- escuela` y comprueba que pasa.
+- No añadas dependencias nuevas en escuela sin apuntarlo en docs/decisiones.md.
+- Cada endpoint nuevo de escuela necesita un test del camino feliz y otro por cada error.
+- Si cambias la forma de una respuesta de escuela, actualiza los ejemplos de docs/api.md.
+- Las consultas de escuela devuelven como máximo 100 elementos por página.
+- Cualquier regla de negocio nueva de escuela se documenta en docs/dominio.md.
+- Cualquier regla de negocio nueva de escuela se documenta en docs/dominio.md.
+- Las validaciones de escuela se hacen en el servidor, aunque la interfaz también las haga.
+- Cuando escuela necesite datos de prueba, se añaden a la semilla y no al test.
+- En escuela, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Si cambias la forma de una respuesta de escuela, actualiza los ejemplos de docs/api.md.
+- Cuando escuela necesite datos de prueba, se añaden a la semilla y no al test.
+- Antes de tocar escuela, ejecuta `npm run test -- escuela` y comprueba que pasa.
+- Cuando escuela necesite datos de prueba, se añaden a la semilla y no al test.
+- En escuela no se llama a `new Date()`: se usa el reloj inyectado.
+- Si un cambio en escuela rompe un test existente, se arregla el código, no el test.
+- Los mensajes de error de escuela se escriben para el socio, sin jerga técnica.
+- Las consultas de escuela devuelven como máximo 100 elementos por página.
+- Si escuela tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Los textos visibles de escuela usan el glosario: franja, socio y gestor.
+Marca de control: KW_6FAV
+## Módulo de mantenimiento
+- Las notificaciones que salen de mantenimiento usan una plantilla registrada.
+- Las migraciones de datos de mantenimiento se prueban primero con la semilla completa.
+- Si mantenimiento tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Cualquier regla de negocio nueva de mantenimiento se documenta en docs/dominio.md.
+- Las funciones de mantenimiento se nombran en español y en camelCase.
+- Las validaciones de mantenimiento se hacen en el servidor, aunque la interfaz también las haga.
+- Los mensajes de error de mantenimiento se escriben para el socio, sin jerga técnica.
+- Las validaciones de mantenimiento se hacen en el servidor, aunque la interfaz también las haga.
+- En mantenimiento, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Los importes de mantenimiento se guardan en céntimos, como enteros.
+- Los textos visibles de mantenimiento usan el glosario: franja, socio y gestor.
+- Las notificaciones que salen de mantenimiento usan una plantilla registrada.
+- En mantenimiento, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Los textos visibles de mantenimiento usan el glosario: franja, socio y gestor.
+- Los identificadores de mantenimiento son cadenas legibles con prefijo, como `man-0001`.
+- En mantenimiento, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- En mantenimiento, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Los importes de mantenimiento se guardan en céntimos, como enteros.
+- Cualquier regla de negocio nueva de mantenimiento se documenta en docs/dominio.md.
+- En mantenimiento, toda acción de un gestor queda registrada en la auditoría.
+- En mantenimiento, toda acción de un gestor queda registrada en la auditoría.
+- Si cambias la forma de una respuesta de mantenimiento, actualiza los ejemplos de docs/api.md.
+- En mantenimiento, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- En mantenimiento, toda acción de un gestor queda registrada en la auditoría.
+## Módulo de facturación
+- No añadas dependencias nuevas en facturación sin apuntarlo en docs/decisiones.md.
+- Si cambias la forma de una respuesta de facturación, actualiza los ejemplos de docs/api.md.
+- No añadas dependencias nuevas en facturación sin apuntarlo en docs/decisiones.md.
+- Antes de dar por resuelto un fallo de facturación, revisa sus logs con `npm run logs -- facturación`.
+- No añadas dependencias nuevas en facturación sin apuntarlo en docs/decisiones.md.
+- Las migraciones de datos de facturación se prueban primero con la semilla completa.
+- Cada endpoint nuevo de facturación necesita un test del camino feliz y otro por cada error.
+- Cuando facturación necesite datos de prueba, se añaden a la semilla y no al test.
+- Los errores de facturación usan el formato común con `codigo` y `mensaje`.
+- Los importes de facturación se guardan en céntimos, como enteros.
+- Cada endpoint nuevo de facturación necesita un test del camino feliz y otro por cada error.
+- Los importes de facturación se guardan en céntimos, como enteros.
+- Antes de dar por resuelto un fallo de facturación, revisa sus logs con `npm run logs -- facturación`.
+- En facturación, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Antes de dar por resuelto un fallo de facturación, revisa sus logs con `npm run logs -- facturación`.
+- No añadas dependencias nuevas en facturación sin apuntarlo en docs/decisiones.md.
+- Las consultas de facturación devuelven como máximo 100 elementos por página.
+- Las migraciones de datos de facturación se prueban primero con la semilla completa.
+- Los importes de facturación se guardan en céntimos, como enteros.
+- Los importes de facturación se guardan en céntimos, como enteros.
+- En facturación, toda acción de un gestor queda registrada en la auditoría.
+- Los identificadores de facturación son cadenas legibles con prefijo, como `fac-0001`.
+- En facturación no se llama a `new Date()`: se usa el reloj inyectado.
+Marca de control: KW_TVIH
+## Módulo de reservas
+- Las validaciones de reservas se hacen en el servidor, aunque la interfaz también las haga.
+- Las migraciones de datos de reservas se prueban primero con la semilla completa.
+- Si reservas tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Los identificadores de reservas son cadenas legibles con prefijo, como `res-0001`.
+- Cada endpoint nuevo de reservas necesita un test del camino feliz y otro por cada error.
+- En reservas no se llama a `new Date()`: se usa el reloj inyectado.
+- Cuando reservas necesite datos de prueba, se añaden a la semilla y no al test.
+- Las funciones de reservas se nombran en español y en camelCase.
+- Las migraciones de datos de reservas se prueban primero con la semilla completa.
+- Reservas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Los mensajes de error de reservas se escriben para el socio, sin jerga técnica.
+- Si un cambio en reservas rompe un test existente, se arregla el código, no el test.
+- Los identificadores de reservas son cadenas legibles con prefijo, como `res-0001`.
+- No añadas dependencias nuevas en reservas sin apuntarlo en docs/decisiones.md.
+- Antes de tocar reservas, ejecuta `npm run test -- reservas` y comprueba que pasa.
+- Si un cambio en reservas rompe un test existente, se arregla el código, no el test.
+- Antes de dar por resuelto un fallo de reservas, revisa sus logs con `npm run logs -- reservas`.
+- Los importes de reservas se guardan en céntimos, como enteros.
+- Los errores de reservas usan el formato común con `codigo` y `mensaje`.
+- No añadas dependencias nuevas en reservas sin apuntarlo en docs/decisiones.md.
+- Las notificaciones que salen de reservas usan una plantilla registrada.
+- Las validaciones de reservas se hacen en el servidor, aunque la interfaz también las haga.
+- En reservas, toda acción de un gestor queda registrada en la auditoría.
+- En reservas no se llama a `new Date()`: se usa el reloj inyectado.
+## Módulo de pistas
+- Las funciones de pistas se nombran en español y en camelCase.
+- No mezcles en un mismo commit cambios de pistas y de otro módulo.
+- No añadas dependencias nuevas en pistas sin apuntarlo en docs/decisiones.md.
+- Cada endpoint nuevo de pistas necesita un test del camino feliz y otro por cada error.
+- No mezcles en un mismo commit cambios de pistas y de otro módulo.
+- Los mensajes de error de pistas se escriben para el socio, sin jerga técnica.
+- Si cambias la forma de una respuesta de pistas, actualiza los ejemplos de docs/api.md.
+- Si un cambio en pistas rompe un test existente, se arregla el código, no el test.
+- Las notificaciones que salen de pistas usan una plantilla registrada.
+- Si pistas tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Los mensajes de error de pistas se escriben para el socio, sin jerga técnica.
+- Antes de dar por resuelto un fallo de pistas, revisa sus logs con `npm run logs -- pistas`.
+- Pistas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- En pistas, toda acción de un gestor queda registrada en la auditoría.
+- Antes de tocar pistas, ejecuta `npm run test -- pistas` y comprueba que pasa.
+- Las migraciones de datos de pistas se prueban primero con la semilla completa.
+- Las notificaciones que salen de pistas usan una plantilla registrada.
+- Los mensajes de error de pistas se escriben para el socio, sin jerga técnica.
+- Las migraciones de datos de pistas se prueban primero con la semilla completa.
+- Los errores de pistas usan el formato común con `codigo` y `mensaje`.
+- Las funciones de pistas se nombran en español y en camelCase.
+- En pistas no se llama a `new Date()`: se usa el reloj inyectado.
+- Los errores de pistas usan el formato común con `codigo` y `mensaje`.
+Marca de control: KW_71QF
+## Módulo de socios
+- Los errores de socios usan el formato común con `codigo` y `mensaje`.
+- Los textos visibles de socios usan el glosario: franja, socio y gestor.
+- Las notificaciones que salen de socios usan una plantilla registrada.
+- Las funciones de socios se nombran en español y en camelCase.
+- En socios no se llama a `new Date()`: se usa el reloj inyectado.
+- Los mensajes de error de socios se escriben para el socio, sin jerga técnica.
+- Antes de dar por resuelto un fallo de socios, revisa sus logs con `npm run logs -- socios`.
+- Las validaciones de socios se hacen en el servidor, aunque la interfaz también las haga.
+- Si socios tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Los identificadores de socios son cadenas legibles con prefijo, como `soc-0001`.
+- Las validaciones de socios se hacen en el servidor, aunque la interfaz también las haga.
+- Las migraciones de datos de socios se prueban primero con la semilla completa.
+- Socios no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- En socios no se llama a `new Date()`: se usa el reloj inyectado.
+- En socios, toda acción de un gestor queda registrada en la auditoría.
+- Cualquier regla de negocio nueva de socios se documenta en docs/dominio.md.
+- En socios no se llama a `new Date()`: se usa el reloj inyectado.
+- En socios, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- No añadas dependencias nuevas en socios sin apuntarlo en docs/decisiones.md.
+- Socios no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Las consultas de socios devuelven como máximo 100 elementos por página.
+- En socios no se llama a `new Date()`: se usa el reloj inyectado.
+- En socios, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Antes de tocar socios, ejecuta `npm run test -- socios` y comprueba que pasa.
+## Módulo de pagos
+- Los identificadores de pagos son cadenas legibles con prefijo, como `pag-0001`.
+- Las funciones de pagos se nombran en español y en camelCase.
+- Pagos no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- En pagos no se llama a `new Date()`: se usa el reloj inyectado.
+- Si cambias la forma de una respuesta de pagos, actualiza los ejemplos de docs/api.md.
+- Los textos visibles de pagos usan el glosario: franja, socio y gestor.
+- Si un cambio en pagos rompe un test existente, se arregla el código, no el test.
+- Las notificaciones que salen de pagos usan una plantilla registrada.
+- Si pagos tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las consultas de pagos devuelven como máximo 100 elementos por página.
+- Las notificaciones que salen de pagos usan una plantilla registrada.
+- Antes de tocar pagos, ejecuta `npm run test -- pagos` y comprueba que pasa.
+- Los errores de pagos usan el formato común con `codigo` y `mensaje`.
+- No añadas dependencias nuevas en pagos sin apuntarlo en docs/decisiones.md.
+- Si pagos tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las funciones de pagos se nombran en español y en camelCase.
+- Las notificaciones que salen de pagos usan una plantilla registrada.
+- En pagos, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- No mezcles en un mismo commit cambios de pagos y de otro módulo.
+- Los importes de pagos se guardan en céntimos, como enteros.
+- Las notificaciones que salen de pagos usan una plantilla registrada.
+- Las funciones de pagos se nombran en español y en camelCase.
+- Las consultas de pagos devuelven como máximo 100 elementos por página.
+Marca de control: KW_MA3P
+## Módulo de torneos
+- Las funciones de torneos se nombran en español y en camelCase.
+- En torneos, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Los mensajes de error de torneos se escriben para el socio, sin jerga técnica.
+- No mezcles en un mismo commit cambios de torneos y de otro módulo.
+- En torneos, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- No mezcles en un mismo commit cambios de torneos y de otro módulo.
+- Las validaciones de torneos se hacen en el servidor, aunque la interfaz también las haga.
+- Las migraciones de datos de torneos se prueban primero con la semilla completa.
+- Cada endpoint nuevo de torneos necesita un test del camino feliz y otro por cada error.
+- Las migraciones de datos de torneos se prueban primero con la semilla completa.
+- Los errores de torneos usan el formato común con `codigo` y `mensaje`.
+- No mezcles en un mismo commit cambios de torneos y de otro módulo.
+- Las notificaciones que salen de torneos usan una plantilla registrada.
+- Las consultas de torneos devuelven como máximo 100 elementos por página.
+- Antes de dar por resuelto un fallo de torneos, revisa sus logs con `npm run logs -- torneos`.
+- Los textos visibles de torneos usan el glosario: franja, socio y gestor.
+- Las funciones de torneos se nombran en español y en camelCase.
+- Cada endpoint nuevo de torneos necesita un test del camino feliz y otro por cada error.
+- Si cambias la forma de una respuesta de torneos, actualiza los ejemplos de docs/api.md.
+- Si cambias la forma de una respuesta de torneos, actualiza los ejemplos de docs/api.md.
+- Las consultas de torneos devuelven como máximo 100 elementos por página.
+- Antes de tocar torneos, ejecuta `npm run test -- torneos` y comprueba que pasa.
+- Si cambias la forma de una respuesta de torneos, actualiza los ejemplos de docs/api.md.
+- Los textos visibles de torneos usan el glosario: franja, socio y gestor.
+## Módulo de clases
+- Los identificadores de clases son cadenas legibles con prefijo, como `cla-0001`.
+- Las consultas de clases devuelven como máximo 100 elementos por página.
+- Las migraciones de datos de clases se prueban primero con la semilla completa.
+- Los textos visibles de clases usan el glosario: franja, socio y gestor.
+- Cada endpoint nuevo de clases necesita un test del camino feliz y otro por cada error.
+- En clases no se llama a `new Date()`: se usa el reloj inyectado.
+- Si cambias la forma de una respuesta de clases, actualiza los ejemplos de docs/api.md.
+- Si clases tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Los errores de clases usan el formato común con `codigo` y `mensaje`.
+- Cuando clases necesite datos de prueba, se añaden a la semilla y no al test.
+- En clases, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Cualquier regla de negocio nueva de clases se documenta en docs/dominio.md.
+- Cada endpoint nuevo de clases necesita un test del camino feliz y otro por cada error.
+- Las validaciones de clases se hacen en el servidor, aunque la interfaz también las haga.
+- Si un cambio en clases rompe un test existente, se arregla el código, no el test.
+- No mezcles en un mismo commit cambios de clases y de otro módulo.
+- Los mensajes de error de clases se escriben para el socio, sin jerga técnica.
+- Cada endpoint nuevo de clases necesita un test del camino feliz y otro por cada error.
+- Cada endpoint nuevo de clases necesita un test del camino feliz y otro por cada error.
+- Antes de tocar clases, ejecuta `npm run test -- clases` y comprueba que pasa.
+- Las migraciones de datos de clases se prueban primero con la semilla completa.
+- Las validaciones de clases se hacen en el servidor, aunque la interfaz también las haga.
+- Cuando clases necesite datos de prueba, se añaden a la semilla y no al test.
+Marca de control: KW_QZOD
+## Módulo de notificaciones
+- Los identificadores de notificaciones son cadenas legibles con prefijo, como `not-0001`.
+- En notificaciones no se llama a `new Date()`: se usa el reloj inyectado.
+- No añadas dependencias nuevas en notificaciones sin apuntarlo en docs/decisiones.md.
+- En notificaciones no se llama a `new Date()`: se usa el reloj inyectado.
+- No mezcles en un mismo commit cambios de notificaciones y de otro módulo.
+- Notificaciones no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- En notificaciones, toda acción de un gestor queda registrada en la auditoría.
+- Cuando notificaciones necesite datos de prueba, se añaden a la semilla y no al test.
+- Las migraciones de datos de notificaciones se prueban primero con la semilla completa.
+- Las notificaciones que salen de notificaciones usan una plantilla registrada.
+- Los identificadores de notificaciones son cadenas legibles con prefijo, como `not-0001`.
+- Antes de tocar notificaciones, ejecuta `npm run test -- notificaciones` y comprueba que pasa.
+- Los errores de notificaciones usan el formato común con `codigo` y `mensaje`.
+- En notificaciones no se llama a `new Date()`: se usa el reloj inyectado.
+- Si cambias la forma de una respuesta de notificaciones, actualiza los ejemplos de docs/api.md.
+- Los importes de notificaciones se guardan en céntimos, como enteros.
+- En notificaciones no se llama a `new Date()`: se usa el reloj inyectado.
+- En notificaciones, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Los errores de notificaciones usan el formato común con `codigo` y `mensaje`.
+- Antes de dar por resuelto un fallo de notificaciones, revisa sus logs con `npm run logs -- notificaciones`.
+- Las consultas de notificaciones devuelven como máximo 100 elementos por página.
+- No mezcles en un mismo commit cambios de notificaciones y de otro módulo.
+- Los textos visibles de notificaciones usan el glosario: franja, socio y gestor.
+- Los identificadores de notificaciones son cadenas legibles con prefijo, como `not-0001`.
+## Módulo de auditoría
+- Las consultas de auditoría devuelven como máximo 100 elementos por página.
+- Antes de dar por resuelto un fallo de auditoría, revisa sus logs con `npm run logs -- auditoría`.
+- En auditoría, toda acción de un gestor queda registrada en la auditoría.
+- Los errores de auditoría usan el formato común con `codigo` y `mensaje`.
+- Cuando auditoría necesite datos de prueba, se añaden a la semilla y no al test.
+- Los importes de auditoría se guardan en céntimos, como enteros.
+- Las validaciones de auditoría se hacen en el servidor, aunque la interfaz también las haga.
+- En auditoría no se llama a `new Date()`: se usa el reloj inyectado.
+- En auditoría, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Si auditoría tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las consultas de auditoría devuelven como máximo 100 elementos por página.
+- Antes de tocar auditoría, ejecuta `npm run test -- auditoría` y comprueba que pasa.
+- En auditoría, toda acción de un gestor queda registrada en la auditoría.
+- Las notificaciones que salen de auditoría usan una plantilla registrada.
+- Las migraciones de datos de auditoría se prueban primero con la semilla completa.
+- Los textos visibles de auditoría usan el glosario: franja, socio y gestor.
+- Los textos visibles de auditoría usan el glosario: franja, socio y gestor.
+- Los textos visibles de auditoría usan el glosario: franja, socio y gestor.
+- Las migraciones de datos de auditoría se prueban primero con la semilla completa.
+- Las validaciones de auditoría se hacen en el servidor, aunque la interfaz también las haga.
+- No mezcles en un mismo commit cambios de auditoría y de otro módulo.
+- Las consultas de auditoría devuelven como máximo 100 elementos por página.
+- No añadas dependencias nuevas en auditoría sin apuntarlo en docs/decisiones.md.
+Marca de control: KW_ME7O
+## Módulo de informes
+- Las migraciones de datos de informes se prueban primero con la semilla completa.
+- Los identificadores de informes son cadenas legibles con prefijo, como `inf-0001`.
+- Antes de dar por resuelto un fallo de informes, revisa sus logs con `npm run logs -- informes`.
+- Los identificadores de informes son cadenas legibles con prefijo, como `inf-0001`.
+- Las migraciones de datos de informes se prueban primero con la semilla completa.
+- Los errores de informes usan el formato común con `codigo` y `mensaje`.
+- Los textos visibles de informes usan el glosario: franja, socio y gestor.
+- Los mensajes de error de informes se escriben para el socio, sin jerga técnica.
+- En informes, toda acción de un gestor queda registrada en la auditoría.
+- Los mensajes de error de informes se escriben para el socio, sin jerga técnica.
+- Las migraciones de datos de informes se prueban primero con la semilla completa.
+- Las consultas de informes devuelven como máximo 100 elementos por página.
+- Los identificadores de informes son cadenas legibles con prefijo, como `inf-0001`.
+- Cuando informes necesite datos de prueba, se añaden a la semilla y no al test.
+- Si informes tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Los mensajes de error de informes se escriben para el socio, sin jerga técnica.
+- Las notificaciones que salen de informes usan una plantilla registrada.
+- Las funciones de informes se nombran en español y en camelCase.
+- Las validaciones de informes se hacen en el servidor, aunque la interfaz también las haga.
+- Las consultas de informes devuelven como máximo 100 elementos por página.
+- Las migraciones de datos de informes se prueban primero con la semilla completa.
+- Cuando informes necesite datos de prueba, se añaden a la semilla y no al test.
+- Las migraciones de datos de informes se prueban primero con la semilla completa.
+- Los textos visibles de informes usan el glosario: franja, socio y gestor.
+## Módulo de horarios
+- Si cambias la forma de una respuesta de horarios, actualiza los ejemplos de docs/api.md.
+- Antes de dar por resuelto un fallo de horarios, revisa sus logs con `npm run logs -- horarios`.
+- Los importes de horarios se guardan en céntimos, como enteros.
+- Los mensajes de error de horarios se escriben para el socio, sin jerga técnica.
+- Cuando horarios necesite datos de prueba, se añaden a la semilla y no al test.
+- Las notificaciones que salen de horarios usan una plantilla registrada.
+- Antes de tocar horarios, ejecuta `npm run test -- horarios` y comprueba que pasa.
+- Los mensajes de error de horarios se escriben para el socio, sin jerga técnica.
+- Los mensajes de error de horarios se escriben para el socio, sin jerga técnica.
+- Las validaciones de horarios se hacen en el servidor, aunque la interfaz también las haga.
+- Las consultas de horarios devuelven como máximo 100 elementos por página.
+- Los importes de horarios se guardan en céntimos, como enteros.
+- Antes de dar por resuelto un fallo de horarios, revisa sus logs con `npm run logs -- horarios`.
+- Horarios no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Los identificadores de horarios son cadenas legibles con prefijo, como `hor-0001`.
+- Si un cambio en horarios rompe un test existente, se arregla el código, no el test.
+- Si un cambio en horarios rompe un test existente, se arregla el código, no el test.
+- Si un cambio en horarios rompe un test existente, se arregla el código, no el test.
+- Las migraciones de datos de horarios se prueban primero con la semilla completa.
+- Las validaciones de horarios se hacen en el servidor, aunque la interfaz también las haga.
+- En horarios, toda acción de un gestor queda registrada en la auditoría.
+- Cualquier regla de negocio nueva de horarios se documenta en docs/dominio.md.
+- Los textos visibles de horarios usan el glosario: franja, socio y gestor.
+Marca de control: KW_NAO0
+## Módulo de tarifas
+- Si cambias la forma de una respuesta de tarifas, actualiza los ejemplos de docs/api.md.
+- Las migraciones de datos de tarifas se prueban primero con la semilla completa.
+- No añadas dependencias nuevas en tarifas sin apuntarlo en docs/decisiones.md.
+- Los mensajes de error de tarifas se escriben para el socio, sin jerga técnica.
+- En tarifas, toda acción de un gestor queda registrada en la auditoría.
+- Las migraciones de datos de tarifas se prueban primero con la semilla completa.
+- Tarifas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Antes de dar por resuelto un fallo de tarifas, revisa sus logs con `npm run logs -- tarifas`.
+- Los identificadores de tarifas son cadenas legibles con prefijo, como `tar-0001`.
+- No añadas dependencias nuevas en tarifas sin apuntarlo en docs/decisiones.md.
+- Cada endpoint nuevo de tarifas necesita un test del camino feliz y otro por cada error.
+- Las migraciones de datos de tarifas se prueban primero con la semilla completa.
+- Los mensajes de error de tarifas se escriben para el socio, sin jerga técnica.
+- Cada endpoint nuevo de tarifas necesita un test del camino feliz y otro por cada error.
+- Las validaciones de tarifas se hacen en el servidor, aunque la interfaz también las haga.
+- Las funciones de tarifas se nombran en español y en camelCase.
+- Antes de tocar tarifas, ejecuta `npm run test -- tarifas` y comprueba que pasa.
+- En tarifas, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Cada endpoint nuevo de tarifas necesita un test del camino feliz y otro por cada error.
+- Cualquier regla de negocio nueva de tarifas se documenta en docs/dominio.md.
+- Antes de dar por resuelto un fallo de tarifas, revisa sus logs con `npm run logs -- tarifas`.
+- No añadas dependencias nuevas en tarifas sin apuntarlo en docs/decisiones.md.
+- Si un cambio en tarifas rompe un test existente, se arregla el código, no el test.
+- Las consultas de tarifas devuelven como máximo 100 elementos por página.
+## Módulo de inventario
+- Inventario no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Los importes de inventario se guardan en céntimos, como enteros.
+- Las validaciones de inventario se hacen en el servidor, aunque la interfaz también las haga.
+- Si inventario tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Si inventario tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Cuando inventario necesite datos de prueba, se añaden a la semilla y no al test.
+- Cualquier regla de negocio nueva de inventario se documenta en docs/dominio.md.
+- Cuando inventario necesite datos de prueba, se añaden a la semilla y no al test.
+- Cada endpoint nuevo de inventario necesita un test del camino feliz y otro por cada error.
+- Las funciones de inventario se nombran en español y en camelCase.
+- Inventario no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Si inventario tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Antes de tocar inventario, ejecuta `npm run test -- inventario` y comprueba que pasa.
+- Los errores de inventario usan el formato común con `codigo` y `mensaje`.
+- Las consultas de inventario devuelven como máximo 100 elementos por página.
+- Cada endpoint nuevo de inventario necesita un test del camino feliz y otro por cada error.
+- Si cambias la forma de una respuesta de inventario, actualiza los ejemplos de docs/api.md.
+- Si inventario tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- En inventario, toda acción de un gestor queda registrada en la auditoría.
+- Si un cambio en inventario rompe un test existente, se arregla el código, no el test.
+- En inventario, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Las notificaciones que salen de inventario usan una plantilla registrada.
+- Cada endpoint nuevo de inventario necesita un test del camino feliz y otro por cada error.
+Marca de control: KW_NWVU
+## Módulo de ligas
+- Los errores de ligas usan el formato común con `codigo` y `mensaje`.
+- Si un cambio en ligas rompe un test existente, se arregla el código, no el test.
+- Las funciones de ligas se nombran en español y en camelCase.
+- Si un cambio en ligas rompe un test existente, se arregla el código, no el test.
+- Las migraciones de datos de ligas se prueban primero con la semilla completa.
+- En ligas, toda acción de un gestor queda registrada en la auditoría.
+- Las notificaciones que salen de ligas usan una plantilla registrada.
+- Antes de dar por resuelto un fallo de ligas, revisa sus logs con `npm run logs -- ligas`.
+- Los identificadores de ligas son cadenas legibles con prefijo, como `lig-0001`.
+- Si un cambio en ligas rompe un test existente, se arregla el código, no el test.
+- Antes de dar por resuelto un fallo de ligas, revisa sus logs con `npm run logs -- ligas`.
+- Los textos visibles de ligas usan el glosario: franja, socio y gestor.
+- En ligas, toda acción de un gestor queda registrada en la auditoría.
+- Las consultas de ligas devuelven como máximo 100 elementos por página.
+- Las notificaciones que salen de ligas usan una plantilla registrada.
+- Si un cambio en ligas rompe un test existente, se arregla el código, no el test.
+- Si cambias la forma de una respuesta de ligas, actualiza los ejemplos de docs/api.md.
+- Los textos visibles de ligas usan el glosario: franja, socio y gestor.
+- Cualquier regla de negocio nueva de ligas se documenta en docs/dominio.md.
+- Si un cambio en ligas rompe un test existente, se arregla el código, no el test.
+- En ligas no se llama a `new Date()`: se usa el reloj inyectado.
+- Cada endpoint nuevo de ligas necesita un test del camino feliz y otro por cada error.
+- Ligas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- En ligas no se llama a `new Date()`: se usa el reloj inyectado.
+## Módulo de escuela
+- En escuela, toda acción de un gestor queda registrada en la auditoría.
+- Cualquier regla de negocio nueva de escuela se documenta en docs/dominio.md.
+- Escuela no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Cada endpoint nuevo de escuela necesita un test del camino feliz y otro por cada error.
+- En escuela no se llama a `new Date()`: se usa el reloj inyectado.
+- Si un cambio en escuela rompe un test existente, se arregla el código, no el test.
+- No añadas dependencias nuevas en escuela sin apuntarlo en docs/decisiones.md.
+- Si escuela tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Los mensajes de error de escuela se escriben para el socio, sin jerga técnica.
+- Cada endpoint nuevo de escuela necesita un test del camino feliz y otro por cada error.
+- En escuela no se llama a `new Date()`: se usa el reloj inyectado.
+- Los identificadores de escuela son cadenas legibles con prefijo, como `esc-0001`.
+- Los identificadores de escuela son cadenas legibles con prefijo, como `esc-0001`.
+- Las notificaciones que salen de escuela usan una plantilla registrada.
+- No añadas dependencias nuevas en escuela sin apuntarlo en docs/decisiones.md.
+- Las funciones de escuela se nombran en español y en camelCase.
+- Las funciones de escuela se nombran en español y en camelCase.
+- Cada endpoint nuevo de escuela necesita un test del camino feliz y otro por cada error.
+- Cuando escuela necesite datos de prueba, se añaden a la semilla y no al test.
+- Si escuela tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las funciones de escuela se nombran en español y en camelCase.
+- Si escuela tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las validaciones de escuela se hacen en el servidor, aunque la interfaz también las haga.
+Marca de control: KW_YESX
+## Módulo de mantenimiento
+- No añadas dependencias nuevas en mantenimiento sin apuntarlo en docs/decisiones.md.
+- Las consultas de mantenimiento devuelven como máximo 100 elementos por página.
+- Las consultas de mantenimiento devuelven como máximo 100 elementos por página.
+- Los identificadores de mantenimiento son cadenas legibles con prefijo, como `man-0001`.
+- Las notificaciones que salen de mantenimiento usan una plantilla registrada.
+- Si un cambio en mantenimiento rompe un test existente, se arregla el código, no el test.
+- Las consultas de mantenimiento devuelven como máximo 100 elementos por página.
+- En mantenimiento, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Las validaciones de mantenimiento se hacen en el servidor, aunque la interfaz también las haga.
+- Las consultas de mantenimiento devuelven como máximo 100 elementos por página.
+- Cuando mantenimiento necesite datos de prueba, se añaden a la semilla y no al test.
+- Los importes de mantenimiento se guardan en céntimos, como enteros.
+- Si mantenimiento tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Antes de tocar mantenimiento, ejecuta `npm run test -- mantenimiento` y comprueba que pasa.
+- Los importes de mantenimiento se guardan en céntimos, como enteros.
+- Cuando mantenimiento necesite datos de prueba, se añaden a la semilla y no al test.
+- Cualquier regla de negocio nueva de mantenimiento se documenta en docs/dominio.md.
+- Antes de tocar mantenimiento, ejecuta `npm run test -- mantenimiento` y comprueba que pasa.
+- No mezcles en un mismo commit cambios de mantenimiento y de otro módulo.
+- Los mensajes de error de mantenimiento se escriben para el socio, sin jerga técnica.
+- Cuando mantenimiento necesite datos de prueba, se añaden a la semilla y no al test.
+- Las consultas de mantenimiento devuelven como máximo 100 elementos por página.
+- Las notificaciones que salen de mantenimiento usan una plantilla registrada.
+- Los textos visibles de mantenimiento usan el glosario: franja, socio y gestor.
+## Módulo de facturación
+- Los textos visibles de facturación usan el glosario: franja, socio y gestor.
+- Las notificaciones que salen de facturación usan una plantilla registrada.
+- Antes de dar por resuelto un fallo de facturación, revisa sus logs con `npm run logs -- facturación`.
+- Cada endpoint nuevo de facturación necesita un test del camino feliz y otro por cada error.
+- Cualquier regla de negocio nueva de facturación se documenta en docs/dominio.md.
+- Cada endpoint nuevo de facturación necesita un test del camino feliz y otro por cada error.
+- En facturación no se llama a `new Date()`: se usa el reloj inyectado.
+- Las consultas de facturación devuelven como máximo 100 elementos por página.
+- Cualquier regla de negocio nueva de facturación se documenta en docs/dominio.md.
+- Antes de tocar facturación, ejecuta `npm run test -- facturación` y comprueba que pasa.
+- Cuando facturación necesite datos de prueba, se añaden a la semilla y no al test.
+- Los identificadores de facturación son cadenas legibles con prefijo, como `fac-0001`.
+- Las migraciones de datos de facturación se prueban primero con la semilla completa.
+- Las migraciones de datos de facturación se prueban primero con la semilla completa.
+- Cuando facturación necesite datos de prueba, se añaden a la semilla y no al test.
+- Los textos visibles de facturación usan el glosario: franja, socio y gestor.
+- Si cambias la forma de una respuesta de facturación, actualiza los ejemplos de docs/api.md.
+- Si un cambio en facturación rompe un test existente, se arregla el código, no el test.
+- Las funciones de facturación se nombran en español y en camelCase.
+- Antes de dar por resuelto un fallo de facturación, revisa sus logs con `npm run logs -- facturación`.
+- Las notificaciones que salen de facturación usan una plantilla registrada.
+- Antes de tocar facturación, ejecuta `npm run test -- facturación` y comprueba que pasa.
+- Cuando facturación necesite datos de prueba, se añaden a la semilla y no al test.
+Marca de control: KW_AMNQ
+## Módulo de reservas
+- Los importes de reservas se guardan en céntimos, como enteros.
+- Los importes de reservas se guardan en céntimos, como enteros.
+- Las migraciones de datos de reservas se prueban primero con la semilla completa.
+- Antes de tocar reservas, ejecuta `npm run test -- reservas` y comprueba que pasa.
+- No añadas dependencias nuevas en reservas sin apuntarlo en docs/decisiones.md.
+- Reservas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Las consultas de reservas devuelven como máximo 100 elementos por página.
+- Las funciones de reservas se nombran en español y en camelCase.
+- Si un cambio en reservas rompe un test existente, se arregla el código, no el test.
+- Si cambias la forma de una respuesta de reservas, actualiza los ejemplos de docs/api.md.
+- En reservas, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- En reservas no se llama a `new Date()`: se usa el reloj inyectado.
+- Cuando reservas necesite datos de prueba, se añaden a la semilla y no al test.
+- Los identificadores de reservas son cadenas legibles con prefijo, como `res-0001`.
+- Las validaciones de reservas se hacen en el servidor, aunque la interfaz también las haga.
+- Si un cambio en reservas rompe un test existente, se arregla el código, no el test.
+- Los identificadores de reservas son cadenas legibles con prefijo, como `res-0001`.
+- Los identificadores de reservas son cadenas legibles con prefijo, como `res-0001`.
+- Cuando reservas necesite datos de prueba, se añaden a la semilla y no al test.
+- En reservas no se llama a `new Date()`: se usa el reloj inyectado.
+- Las consultas de reservas devuelven como máximo 100 elementos por página.
+- En reservas no se llama a `new Date()`: se usa el reloj inyectado.
+- No añadas dependencias nuevas en reservas sin apuntarlo en docs/decisiones.md.
+- Cualquier regla de negocio nueva de reservas se documenta en docs/dominio.md.
+## Módulo de pistas
+- Antes de tocar pistas, ejecuta `npm run test -- pistas` y comprueba que pasa.
+- Los textos visibles de pistas usan el glosario: franja, socio y gestor.
+- Las notificaciones que salen de pistas usan una plantilla registrada.
+- En pistas, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- No mezcles en un mismo commit cambios de pistas y de otro módulo.
+- Cada endpoint nuevo de pistas necesita un test del camino feliz y otro por cada error.
+- Pistas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- No añadas dependencias nuevas en pistas sin apuntarlo en docs/decisiones.md.
+- Pistas no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- En pistas, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- Antes de tocar pistas, ejecuta `npm run test -- pistas` y comprueba que pasa.
+- Cada endpoint nuevo de pistas necesita un test del camino feliz y otro por cada error.
+- Las validaciones de pistas se hacen en el servidor, aunque la interfaz también las haga.
+- Antes de tocar pistas, ejecuta `npm run test -- pistas` y comprueba que pasa.
+- Antes de dar por resuelto un fallo de pistas, revisa sus logs con `npm run logs -- pistas`.
+- Las funciones de pistas se nombran en español y en camelCase.
+- Cada endpoint nuevo de pistas necesita un test del camino feliz y otro por cada error.
+- Las funciones de pistas se nombran en español y en camelCase.
+- Cualquier regla de negocio nueva de pistas se documenta en docs/dominio.md.
+- Las migraciones de datos de pistas se prueban primero con la semilla completa.
+- Los errores de pistas usan el formato común con `codigo` y `mensaje`.
+- Los importes de pistas se guardan en céntimos, como enteros.
+- Las validaciones de pistas se hacen en el servidor, aunque la interfaz también las haga.
+Marca de control: KW_89XX
+## Módulo de socios
+- Si un cambio en socios rompe un test existente, se arregla el código, no el test.
+- Si socios tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- En socios no se llama a `new Date()`: se usa el reloj inyectado.
+- No mezcles en un mismo commit cambios de socios y de otro módulo.
+- Si cambias la forma de una respuesta de socios, actualiza los ejemplos de docs/api.md.
+- Antes de dar por resuelto un fallo de socios, revisa sus logs con `npm run logs -- socios`.
+- Antes de dar por resuelto un fallo de socios, revisa sus logs con `npm run logs -- socios`.
+- Los textos visibles de socios usan el glosario: franja, socio y gestor.
+- Si socios tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Los errores de socios usan el formato común con `codigo` y `mensaje`.
+- Si cambias la forma de una respuesta de socios, actualiza los ejemplos de docs/api.md.
+- Los mensajes de error de socios se escriben para el socio, sin jerga técnica.
+- Los errores de socios usan el formato común con `codigo` y `mensaje`.
+- Los importes de socios se guardan en céntimos, como enteros.
+- Antes de tocar socios, ejecuta `npm run test -- socios` y comprueba que pasa.
+- Los mensajes de error de socios se escriben para el socio, sin jerga técnica.
+- Los importes de socios se guardan en céntimos, como enteros.
+- Las migraciones de datos de socios se prueban primero con la semilla completa.
+- Cuando socios necesite datos de prueba, se añaden a la semilla y no al test.
+- Cuando socios necesite datos de prueba, se añaden a la semilla y no al test.
+- Si socios tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las validaciones de socios se hacen en el servidor, aunque la interfaz también las haga.
+- No añadas dependencias nuevas en socios sin apuntarlo en docs/decisiones.md.
+- Los importes de socios se guardan en céntimos, como enteros.
+## Módulo de pagos
+- Si pagos tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Pagos no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Cada endpoint nuevo de pagos necesita un test del camino feliz y otro por cada error.
+- Los errores de pagos usan el formato común con `codigo` y `mensaje`.
+- Si pagos tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Los mensajes de error de pagos se escriben para el socio, sin jerga técnica.
+- Las migraciones de datos de pagos se prueban primero con la semilla completa.
+- Antes de dar por resuelto un fallo de pagos, revisa sus logs con `npm run logs -- pagos`.
+- Los errores de pagos usan el formato común con `codigo` y `mensaje`.
+- Los importes de pagos se guardan en céntimos, como enteros.
+- En pagos, las fechas se guardan en hora local del club y se comparan con los helpers de tiempo.
+- No mezcles en un mismo commit cambios de pagos y de otro módulo.
+- Las notificaciones que salen de pagos usan una plantilla registrada.
+- Las consultas de pagos devuelven como máximo 100 elementos por página.
+- Las migraciones de datos de pagos se prueban primero con la semilla completa.
+- No mezcles en un mismo commit cambios de pagos y de otro módulo.
+- No añadas dependencias nuevas en pagos sin apuntarlo en docs/decisiones.md.
+- En pagos, toda acción de un gestor queda registrada en la auditoría.
+- Pagos no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Los identificadores de pagos son cadenas legibles con prefijo, como `pag-0001`.
+- Antes de tocar pagos, ejecuta `npm run test -- pagos` y comprueba que pasa.
+- Las consultas de pagos devuelven como máximo 100 elementos por página.
+- Cualquier regla de negocio nueva de pagos se documenta en docs/dominio.md.
+Marca de control: KW_CUTU
+## Módulo de torneos
+- Los errores de torneos usan el formato común con `codigo` y `mensaje`.
+- Las consultas de torneos devuelven como máximo 100 elementos por página.
+- No mezcles en un mismo commit cambios de torneos y de otro módulo.
+- Torneos no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Si un cambio en torneos rompe un test existente, se arregla el código, no el test.
+- Si torneos tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Las funciones de torneos se nombran en español y en camelCase.
+- Las consultas de torneos devuelven como máximo 100 elementos por página.
+- Si cambias la forma de una respuesta de torneos, actualiza los ejemplos de docs/api.md.
+- Los textos visibles de torneos usan el glosario: franja, socio y gestor.
+- En torneos, toda acción de un gestor queda registrada en la auditoría.
+- Torneos no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- En torneos no se llama a `new Date()`: se usa el reloj inyectado.
+- Antes de dar por resuelto un fallo de torneos, revisa sus logs con `npm run logs -- torneos`.
+- Las notificaciones que salen de torneos usan una plantilla registrada.
+- Cualquier regla de negocio nueva de torneos se documenta en docs/dominio.md.
+- Si un cambio en torneos rompe un test existente, se arregla el código, no el test.
+- Las consultas de torneos devuelven como máximo 100 elementos por página.
+- Los textos visibles de torneos usan el glosario: franja, socio y gestor.
+- Los importes de torneos se guardan en céntimos, como enteros.
+- En torneos no se llama a `new Date()`: se usa el reloj inyectado.
+- Los identificadores de torneos son cadenas legibles con prefijo, como `tor-0001`.
+- Cada endpoint nuevo de torneos necesita un test del camino feliz y otro por cada error.
+- No añadas dependencias nuevas en torneos sin apuntarlo en docs/decisiones.md.
+## Módulo de clases
+- En clases no se llama a `new Date()`: se usa el reloj inyectado.
+- Si un cambio en clases rompe un test existente, se arregla el código, no el test.
+- Cada endpoint nuevo de clases necesita un test del camino feliz y otro por cada error.
+- Si un cambio en clases rompe un test existente, se arregla el código, no el test.
+- Los importes de clases se guardan en céntimos, como enteros.
+- Antes de dar por resuelto un fallo de clases, revisa sus logs con `npm run logs -- clases`.
+- Las migraciones de datos de clases se prueban primero con la semilla completa.
+- Cuando clases necesite datos de prueba, se añaden a la semilla y no al test.
+- Los identificadores de clases son cadenas legibles con prefijo, como `cla-0001`.
+- Antes de tocar clases, ejecuta `npm run test -- clases` y comprueba que pasa.
+- Cualquier regla de negocio nueva de clases se documenta en docs/dominio.md.
+- Los identificadores de clases son cadenas legibles con prefijo, como `cla-0001`.
+- Si cambias la forma de una respuesta de clases, actualiza los ejemplos de docs/api.md.
+- Cualquier regla de negocio nueva de clases se documenta en docs/dominio.md.
+- Las validaciones de clases se hacen en el servidor, aunque la interfaz también las haga.
+- No mezcles en un mismo commit cambios de clases y de otro módulo.
+- En clases no se llama a `new Date()`: se usa el reloj inyectado.
+- Los identificadores de clases son cadenas legibles con prefijo, como `cla-0001`.
+- En clases no se llama a `new Date()`: se usa el reloj inyectado.
+- Antes de dar por resuelto un fallo de clases, revisa sus logs con `npm run logs -- clases`.
+- Si clases tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- En clases no se llama a `new Date()`: se usa el reloj inyectado.
+- Las notificaciones que salen de clases usan una plantilla registrada.
+Marca de control: KW_64LE
+## Módulo de notificaciones
+- Antes de tocar notificaciones, ejecuta `npm run test -- notificaciones` y comprueba que pasa.
+- En notificaciones, toda acción de un gestor queda registrada en la auditoría.
+- Las validaciones de notificaciones se hacen en el servidor, aunque la interfaz también las haga.
+- No añadas dependencias nuevas en notificaciones sin apuntarlo en docs/decisiones.md.
+- Cada endpoint nuevo de notificaciones necesita un test del camino feliz y otro por cada error.
+- Los textos visibles de notificaciones usan el glosario: franja, socio y gestor.
+- Las consultas de notificaciones devuelven como máximo 100 elementos por página.
+- Cualquier regla de negocio nueva de notificaciones se documenta en docs/dominio.md.
+- Las notificaciones que salen de notificaciones usan una plantilla registrada.
+- Cada endpoint nuevo de notificaciones necesita un test del camino feliz y otro por cada error.
+- Si notificaciones tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Cualquier regla de negocio nueva de notificaciones se documenta en docs/dominio.md.
+- Notificaciones no importa nada de la capa http: la dependencia va siempre hacia el dominio.
+- Si notificaciones tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Cualquier regla de negocio nueva de notificaciones se documenta en docs/dominio.md.
+- Si un cambio en notificaciones rompe un test existente, se arregla el código, no el test.
+- Antes de tocar notificaciones, ejecuta `npm run test -- notificaciones` y comprueba que pasa.
+- No añadas dependencias nuevas en notificaciones sin apuntarlo en docs/decisiones.md.
+- Los mensajes de error de notificaciones se escriben para el socio, sin jerga técnica.
+- Cada endpoint nuevo de notificaciones necesita un test del camino feliz y otro por cada error.
+- Cuando notificaciones necesite datos de prueba, se añaden a la semilla y no al test.
+- Si notificaciones tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Cada endpoint nuevo de notificaciones necesita un test del camino feliz y otro por cada error.
+- Los mensajes de error de notificaciones se escriben para el socio, sin jerga técnica.
+## Módulo de auditoría
+- Las migraciones de datos de auditoría se prueban primero con la semilla completa.
+- Los importes de auditoría se guardan en céntimos, como enteros.
+- No mezcles en un mismo commit cambios de auditoría y de otro módulo.
+- Cualquier regla de negocio nueva de auditoría se documenta en docs/dominio.md.
+- Las notificaciones que salen de auditoría usan una plantilla registrada.
+- En auditoría, toda acción de un gestor queda registrada en la auditoría.
+- No mezcles en un mismo commit cambios de auditoría y de otro módulo.
+- Las consultas de auditoría devuelven como máximo 100 elementos por página.
+- Los textos visibles de auditoría usan el glosario: franja, socio y gestor.
+- Las notificaciones que salen de auditoría usan una plantilla registrada.
+- Los identificadores de auditoría son cadenas legibles con prefijo, como `aud-0001`.
+- No mezcles en un mismo commit cambios de auditoría y de otro módulo.
+- Si auditoría tarda más de 200 ms en responder en local, abre una tarea de rendimiento.
+- Si un cambio en auditoría rompe un test existente, se arregla el código, no el test.
+- En auditoría no se llama a `new Date()`: se usa el reloj inyectado.
+- Los mensajes de error de auditoría se escriben para el socio, sin jerga técnica.
+- En auditoría no se llama a `new Date()`: se usa el reloj inyectado.
+- Cada endpoint nuevo de auditoría necesita un test del camino feliz y otro por cada error.
+- Los errores de auditoría usan el formato común con `codigo` y `mensaje`.
+- Los textos visibles de auditoría usan el glosario: franja, socio y gestor.
+- Las validaciones de auditoría se hacen en el servidor, aunque la interfaz también las haga.
+- Los identificadores de auditoría son cadenas legibles con prefijo, como `aud-0001`.
+- Los errores de auditoría usan el formato común con `codigo` y `mensaje`.
+Marca de control: KW_LDUYZ
