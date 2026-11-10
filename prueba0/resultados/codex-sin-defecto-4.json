@@ -1,0 +1,12 @@
+{
+ "agente": "codex",
+ "config": "sin",
+ "modo": "defecto",
+ "repeticion": 4,
+ "rc": 0,
+ "segundos": 3.4,
+ "servidores": [],
+ "respuesta": "OK",
+ "entrada": 15602,
+ "mcp": {}
+}

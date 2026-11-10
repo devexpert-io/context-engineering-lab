@@ -1,0 +1,11 @@
+{
+ "agente": "opencode",
+ "config": "sin",
+ "modo": "defecto",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 2.5,
+ "servidores": [],
+ "respuesta": "\n\nOK",
+ "entrada": 7859
+}

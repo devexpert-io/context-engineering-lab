@@ -1,0 +1,94 @@
+{
+ "id": "claude-mcp-t2-reservar-1",
+ "agente": "claude",
+ "variante": "mcp",
+ "tarea": "t2-reservar",
+ "repeticion": 1,
+ "segundos": 16.8,
+ "rc": 0,
+ "error": "",
+ "peticiones": 4,
+ "entrada": 149055,
+ "entrada_cache_leida": 134212,
+ "entrada_cache_escrita": 14833,
+ "salida": 716,
+ "herramientas": {
+  "ToolSearch": 1,
+  "mcp__club__buscar_socios": 1,
+  "mcp__club__listar_pistas": 1,
+  "mcp__club__consultar_disponibilidad": 1,
+  "mcp__club__crear_reserva": 1
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  34737,
+  36345,
+  38835,
+  39138
+ ],
+ "ordenes": [
+  "{\"query\": \"select:mcp__club__buscar_socios,mcp__club__listar_pistas,mcp__club__consultar_disponibilidad,mcp__club__crear_reserva,mcp__club__listar_reservas,mcp__club__obtener_reserva\", \"max_results\": 10}",
+  "{\"texto\": \"Irene Sanz\"}",
+  "{}",
+  "{\"fecha\": \"2026-11-21\"}",
+  "{\"socio\": \"socio-004\", \"pista\": \"pista-2\", \"inicio\": \"2026-11-21T16:30\"}"
+ ],
+ "modelo": "claude-opus-5-5",
+ "skills_disponibles": [
+  "deep-research",
+  "design",
+  "slides",
+  "design-sync",
+  "dataviz",
+  "artifact-diagramming",
+  "artifact-capabilities",
+  "update-config",
+  "verify",
+  "debug",
+  "code-review",
+  "simplify",
+  "batch",
+  "fewer-permission-prompts",
+  "doctor",
+  "loop",
+  "schedule",
+  "claude-api",
+  "workflow-authoring",
+  "run",
+  "run-skill-generator",
+  "plugin-authoring"
+ ],
+ "mcp": [
+  {
+   "name": "club",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "coste_usd": 0.1598664,
+ "duracion_s_agente": 16.1,
+ "turnos": 6,
+ "respuesta_final": "He reservado para Irene Sanz (socio-004) la Pista 2, que es cubierta, el sábado 21 de noviembre de 2026 de 16:30 a 18:00. La reserva está confirmada y cuesta 28,00 €.\n\n- **A las 15:00 no se podía:** las dos pistas cubiertas (1 y 2) ya estaban reservadas.\n- **A las 16:30 solo quedaba la Pista 2:** la Pista 1 seguía ocupada.\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "llamadas_api": 4,
+ "errores_api": [],
+ "operaciones_api": [
+  "buscarSocios",
+  "listarPistas",
+  "disponibilidad",
+  "crearReserva"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 01:42"
+}

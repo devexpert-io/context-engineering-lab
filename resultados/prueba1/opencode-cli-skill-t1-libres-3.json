@@ -1,0 +1,47 @@
+{
+ "id": "opencode-cli-skill-t1-libres-3",
+ "agente": "opencode",
+ "variante": "cli-skill",
+ "tarea": "t1-libres",
+ "repeticion": 3,
+ "segundos": 6.9,
+ "rc": 0,
+ "error": "",
+ "peticiones": 3,
+ "entrada": 28137,
+ "entrada_cache_leida": 16896,
+ "salida": 115,
+ "razonamiento": 153,
+ "herramientas": {
+  "skill": 1,
+  "bash": 1
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  8060,
+  9021,
+  11056
+ ],
+ "ordenes": [
+  "{\"name\": \"club-padel\"}",
+  "{\"command\": \"padel disponibilidad --fecha 2026-11-19\"}"
+ ],
+ "respuesta_final": "El jueves 19 de noviembre a las 19:30 están libres la Pista 2 y la Pista 3 (Pista 1 está reservada y Pista 4 está cerrada).\n\nLIBRES: Pista 2, Pista 3",
+ "duracion_s_agente": 2.5,
+ "llamadas_api": 1,
+ "errores_api": [],
+ "operaciones_api": [
+  "disponibilidad"
+ ],
+ "skill_cargada": true,
+ "reservas_nuevas": [],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "dicho": [
+  "2",
+  "3"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 02:02"
+}

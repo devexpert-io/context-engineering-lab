@@ -1,0 +1,46 @@
+{
+ "id": "opencode-cli-t1-libres-3",
+ "agente": "opencode",
+ "variante": "cli",
+ "tarea": "t1-libres",
+ "repeticion": 3,
+ "segundos": 6.6,
+ "rc": 0,
+ "error": "",
+ "peticiones": 3,
+ "entrada": 27691,
+ "entrada_cache_leida": 16832,
+ "salida": 193,
+ "razonamiento": 97,
+ "herramientas": {
+  "bash": 2
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  8096,
+  8771,
+  10824
+ ],
+ "ordenes": [
+  "{\"command\": \"padel --help\"}",
+  "{\"command\": \"padel disponibilidad --fecha 2026-11-19\"}"
+ ],
+ "respuesta_final": "\n\n\n\n\n\nEl jueves 19 de noviembre de 2026, en la franja 19:30-21:00:\n\n- Pista 1: reservada\n- Pista 2: libre\n- Pista 3: libre\n- Pista 4: cerrada\n\nLIBRES: Pista 2, Pista 3",
+ "duracion_s_agente": 2.8,
+ "llamadas_api": 1,
+ "errores_api": [],
+ "operaciones_api": [
+  "disponibilidad"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "dicho": [
+  "2",
+  "3"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 02:02"
+}

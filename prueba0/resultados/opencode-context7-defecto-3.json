@@ -1,0 +1,13 @@
+{
+ "agente": "opencode",
+ "config": "context7",
+ "modo": "defecto",
+ "repeticion": 3,
+ "rc": 0,
+ "segundos": 7.6,
+ "servidores": [
+  "context7"
+ ],
+ "respuesta": "\n\nOK",
+ "entrada": 9503
+}

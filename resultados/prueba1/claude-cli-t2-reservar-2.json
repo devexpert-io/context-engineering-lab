@@ -1,0 +1,85 @@
+{
+ "id": "claude-cli-t2-reservar-2",
+ "agente": "claude",
+ "variante": "cli",
+ "tarea": "t2-reservar",
+ "repeticion": 2,
+ "segundos": 25.6,
+ "rc": 0,
+ "error": "",
+ "peticiones": 5,
+ "entrada": 184947,
+ "entrada_cache_leida": 170855,
+ "entrada_cache_escrita": 14082,
+ "salida": 666,
+ "herramientas": {
+  "Bash": 4
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  34726,
+  35655,
+  37971,
+  38208,
+  38387
+ ],
+ "ordenes": [
+  "{\"command\": \"padel --help\"}",
+  "{\"command\": \"padel pistas listar; padel socios buscar \\\"Irene Sanz\\\"; padel disponibilidad --fecha 2026-11-21\"}",
+  "{\"command\": \"padel reservas listar --socio socio-004 --desde 2026-11-18 --hasta 2027-12-31\"}",
+  "{\"command\": \"padel reservas crear --socio socio-004 --pista pista-2 --inicio 2026-11-21T16:30\"}"
+ ],
+ "modelo": "claude-opus-5-5",
+ "skills_disponibles": [
+  "deep-research",
+  "design",
+  "slides",
+  "design-sync",
+  "dataviz",
+  "artifact-diagramming",
+  "artifact-capabilities",
+  "update-config",
+  "verify",
+  "debug",
+  "code-review",
+  "simplify",
+  "batch",
+  "fewer-permission-prompts",
+  "doctor",
+  "loop",
+  "schedule",
+  "claude-api",
+  "workflow-authoring",
+  "run",
+  "run-skill-generator",
+  "plugin-authoring"
+ ],
+ "mcp": [],
+ "coste_usd": 0.16018699999999997,
+ "duracion_s_agente": 25.0,
+ "turnos": 5,
+ "respuesta_final": "Reserva hecha para Irene Sanz (socio-004): sábado 21 de noviembre de 2026, de 16:30 a 18:00, en la Pista 2, que es cubierta y de cristal. El sistema la ha confirmado.\n\n- **Por qué a las 16:30:** las dos pistas cubiertas (1 y 2) están ocupadas a las 15:00. A las 16:30 la Pista 1 sigue ocupada y la Pista 2 es la única cubierta libre.\n- **Importe:** 28,00 €, tarifa de hora punta.\n- **Límite de reservas:** Irene tiene la cuota al día y le quedaba sitio. Con esta suma 2 reservas futuras de 3 posibles; la otra es la R-0519, el lunes 23 a las 18:00.\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "llamadas_api": 5,
+ "errores_api": [],
+ "operaciones_api": [
+  "listarPistas",
+  "buscarSocios",
+  "disponibilidad",
+  "listarReservas",
+  "crearReserva"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 01:48"
+}

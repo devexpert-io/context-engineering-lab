@@ -1,0 +1,19 @@
+{
+ "agente": "claude",
+ "config": "club",
+ "modo": "defecto",
+ "repeticion": 2,
+ "rc": 0,
+ "segundos": 4.9,
+ "servidores": [
+  "club"
+ ],
+ "mcp": {
+  "club": "connected"
+ },
+ "tools_listadas": 36,
+ "tools_mcp_listadas": 8,
+ "entrada": 31632,
+ "coste_usd": 0.0657408,
+ "respuesta": "OK"
+}

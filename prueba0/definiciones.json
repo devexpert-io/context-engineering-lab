@@ -1,0 +1,137 @@
+{
+ "club": {
+  "version": {
+   "name": "club-padel",
+   "version": "1.0.0"
+  },
+  "herramientas": 8,
+  "bytes": 4573,
+  "bytes_nombres_y_descripciones": 1462,
+  "instrucciones_bytes": 245,
+  "nombres": [
+   "listar_pistas",
+   "consultar_disponibilidad",
+   "buscar_socios",
+   "listar_reservas",
+   "obtener_reserva",
+   "crear_reserva",
+   "cancelar_reserva",
+   "cambiar_estado_pista"
+  ]
+ },
+ "playwright": {
+  "version": {
+   "name": "Playwright",
+   "version": "1.66.0-alpha-2026-11-09"
+  },
+  "herramientas": 25,
+  "bytes": 21177,
+  "bytes_nombres_y_descripciones": 3140,
+  "instrucciones_bytes": 0,
+  "nombres": [
+   "browser_close",
+   "browser_resize",
+   "browser_console_messages",
+   "browser_handle_dialog",
+   "browser_emulate_media",
+   "browser_evaluate",
+   "browser_file_upload",
+   "browser_drop",
+   "browser_find",
+   "browser_fill_form",
+   "browser_press_key",
+   "browser_type",
+   "browser_navigate",
+   "browser_navigate_back",
+   "browser_network_requests",
+   "browser_network_request",
+   "browser_run_code_unsafe",
+   "browser_take_screenshot",
+   "browser_snapshot",
+   "browser_click",
+   "browser_drag",
+   "browser_hover",
+   "browser_select_option",
+   "browser_tabs",
+   "browser_wait_for"
+  ]
+ },
+ "chrome-devtools": {
+  "version": {
+   "name": "chrome_devtools",
+   "title": "Chrome DevTools MCP server",
+   "version": "1.12.0"
+  },
+  "herramientas": 32,
+  "bytes": 28918,
+  "bytes_nombres_y_descripciones": 5343,
+  "instrucciones_bytes": 0,
+  "nombres": [
+   "click",
+   "close_page",
+   "drag",
+   "emulate",
+   "evaluate_script",
+   "fill",
+   "fill_form",
+   "get_console_message",
+   "get_css_styles",
+   "get_network_request",
+   "handle_dialog",
+   "hover",
+   "lighthouse_audit",
+   "list_console_messages",
+   "list_network_requests",
+   "list_pages",
+   "navigate_page",
+   "new_page",
+   "performance_analyze_insight",
+   "performance_start_trace",
+   "performance_stop_trace",
+   "press_key",
+   "resize_page",
+   "screencast_start",
+   "screencast_stop",
+   "select_page",
+   "take_heapsnapshot",
+   "take_screenshot",
+   "take_snapshot",
+   "type_text",
+   "upload_file",
+   "wait_for"
+  ]
+ },
+ "context7": {
+  "version": {
+   "name": "Context7",
+   "title": "Context7",
+   "icons": [
+    {
+     "src": "https://context7.com/context7-icon-green.svg",
+     "mimeType": "image/svg+xml",
+     "sizes": [
+      "any"
+     ]
+    },
+    {
+     "src": "https://context7.com/context7-icon-green.png",
+     "mimeType": "image/png",
+     "sizes": [
+      "512x512"
+     ]
+    }
+   ],
+   "version": "4.5.0",
+   "websiteUrl": "https://context7.com",
+   "description": "Context7 provides up-to-date documentation and code examples for libraries and frameworks."
+  },
+  "herramientas": 2,
+  "bytes": 5221,
+  "bytes_nombres_y_descripciones": 2678,
+  "instrucciones_bytes": 707,
+  "nombres": [
+   "resolve-library-id",
+   "query-docs"
+  ]
+ }
+}

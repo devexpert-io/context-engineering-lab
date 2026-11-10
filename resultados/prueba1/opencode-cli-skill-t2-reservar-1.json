@@ -1,0 +1,60 @@
+{
+ "id": "opencode-cli-skill-t2-reservar-1",
+ "agente": "opencode",
+ "variante": "cli-skill",
+ "tarea": "t2-reservar",
+ "repeticion": 1,
+ "segundos": 17.3,
+ "rc": 0,
+ "error": "",
+ "peticiones": 5,
+ "entrada": 48400,
+ "entrada_cache_leida": 37952,
+ "salida": 477,
+ "razonamiento": 390,
+ "herramientas": {
+  "skill": 1,
+  "bash": 5
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  8102,
+  9060,
+  9488,
+  10681,
+  11069
+ ],
+ "ordenes": [
+  "{\"name\": \"club-padel\"}",
+  "{\"command\": \"padel pistas listar\"}",
+  "{\"command\": \"padel socios buscar \\\"Irene Sanz\\\"\"}",
+  "{\"command\": \"padel disponibilidad --fecha 2026-11-21 --pista pista-1\"}",
+  "{\"command\": \"padel disponibilidad --fecha 2026-11-21 --pista pista-2\"}",
+  "{\"command\": \"padel reservas crear --socio socio-004 --pista pista-2 --inicio 2026-11-21T16:30\"}"
+ ],
+ "respuesta_final": "\n\nLa franja de las 15:00 está ocupada en las dos pistas cubiertas; la primera libre a partir de las 15:00 es la de las 16:30, disponible en pista-2 (pista-1 sigue reservada). Creo la reserva:\n\n\n\nReserva creada para Irene Sanz:\n\n- **Reserva:** R-0526\n- **Pista:** pista-2 (cubierta, cristal)\n- **Fecha/hora:** sábado 21/11/2026, 16:30–18:00\n- **Importe:** 28.00 €\n\nNota: la franja de las 15:00 estaba reservada en las dos pistas cubiertas, así que la primera libre a partir de esa hora fue la de las 16:30.\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "duracion_s_agente": 9.4,
+ "llamadas_api": 5,
+ "errores_api": [],
+ "operaciones_api": [
+  "buscarSocios",
+  "listarPistas",
+  "disponibilidad",
+  "disponibilidad",
+  "crearReserva"
+ ],
+ "skill_cargada": true,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 01:42"
+}

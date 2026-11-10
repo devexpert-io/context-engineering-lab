@@ -1,0 +1,19 @@
+{
+ "agente": "claude",
+ "config": "playwright",
+ "modo": "defecto",
+ "repeticion": 2,
+ "rc": 0,
+ "segundos": 5.5,
+ "servidores": [
+  "playwright"
+ ],
+ "mcp": {
+  "playwright": "connected"
+ },
+ "tools_listadas": 53,
+ "tools_mcp_listadas": 25,
+ "entrada": 31748,
+ "coste_usd": 0.0666688,
+ "respuesta": "OK"
+}

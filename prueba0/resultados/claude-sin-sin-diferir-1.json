@@ -1,0 +1,15 @@
+{
+ "agente": "claude",
+ "config": "sin",
+ "modo": "sin-diferir",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 7.6,
+ "servidores": [],
+ "mcp": {},
+ "tools_listadas": 27,
+ "tools_mcp_listadas": 0,
+ "entrada": 54485,
+ "coste_usd": 0.43595199999999995,
+ "respuesta": "OK"
+}

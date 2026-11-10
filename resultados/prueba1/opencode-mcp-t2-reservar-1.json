@@ -1,0 +1,60 @@
+{
+ "id": "opencode-mcp-t2-reservar-1",
+ "agente": "opencode",
+ "variante": "mcp",
+ "tarea": "t2-reservar",
+ "repeticion": 1,
+ "segundos": 7.2,
+ "rc": 0,
+ "error": "",
+ "peticiones": 4,
+ "entrada": 42324,
+ "entrada_cache_leida": 38912,
+ "salida": 376,
+ "razonamiento": 476,
+ "herramientas": {
+  "club_buscar_socios": 1,
+  "club_listar_pistas": 1,
+  "club_consultar_disponibilidad": 2,
+  "club_crear_reserva": 1
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  9514,
+  9992,
+  11210,
+  11608
+ ],
+ "ordenes": [
+  "{\"texto\": \"Irene Sanz\"}",
+  "{}",
+  "{\"fecha\": \"2026-11-21\", \"pista\": \"pista-1\"}",
+  "{\"fecha\": \"2026-11-21\", \"pista\": \"pista-2\"}",
+  "{\"socio\": \"socio-004\", \"pista\": \"pista-2\", \"inicio\": \"2026-11-21T16:30\", \"notas\": \"Reserva solicitada en recepción\"}"
+ ],
+ "respuesta_final": "La primera franja libre a partir de las 15:00 es las 16:30, solo libre en pista-2.\n\nReserva confirmada para Irene Sanz: sábado 21/11, 16:30-18:00 en Pista 2 (cubierta). La franja de las 15:00 estaba reservada en las dos pistas cubiertas, y la de las 16:30 solo estaba libre en pista-2.\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "duracion_s_agente": 5.2,
+ "llamadas_api": 5,
+ "errores_api": [],
+ "operaciones_api": [
+  "buscarSocios",
+  "listarPistas",
+  "disponibilidad",
+  "disponibilidad",
+  "crearReserva"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 01:41"
+}

@@ -1,0 +1,16 @@
+{
+ "agente": "codex",
+ "config": "context7",
+ "modo": "defecto",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 4.1,
+ "servidores": [
+  "context7"
+ ],
+ "respuesta": "OK",
+ "entrada": 15610,
+ "mcp": {
+  "context7": "no visto"
+ }
+}

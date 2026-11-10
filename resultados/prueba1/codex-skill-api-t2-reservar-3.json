@@ -1,0 +1,57 @@
+{
+ "id": "codex-skill-api-t2-reservar-3",
+ "agente": "codex",
+ "variante": "skill-api",
+ "tarea": "t2-reservar",
+ "repeticion": 3,
+ "segundos": 15.9,
+ "rc": 0,
+ "error": "",
+ "peticiones": 4,
+ "herramientas": {
+  "agent_message": 2,
+  "command_execution": 5
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  18427,
+  19560,
+  21546,
+  21764
+ ],
+ "ordenes": [
+  "/bin/zsh -lc 'cat .agents/skills/club-padel/SKILL.md'",
+  "/bin/zsh -lc \"curl -s 'http://127.0.0.1:63973/api/socios?texto=Irene%20Sanz'\"",
+  "/bin/zsh -lc \"curl -s 'http://127.0.0.1:63973/api/disponibilidad?fecha=2026-11-21'\"",
+  "/bin/zsh -lc 'curl -s http://127.0.0.1:63973/api/pistas'",
+  "/bin/zsh -lc \"curl -s -X POST http://127.0.0.1:63973/api/reservas -H 'content-type: application/json' -d '{\\\"socioId\\\":\\\"socio-004\\\",\\\"pistaId\\\":\\\"pista-2\\\",\\\"inicio\\\":\\\"2026-11-21T16:30\\\"}'\""
+ ],
+ "respuesta_final": "Reserva confirmada para Irene Sanz el sábado 21 de noviembre de 2026, de 16:30 a 18:00, en la pista cubierta 2.\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "entrada": 81297,
+ "entrada_cache_leida": 71680,
+ "salida": 367,
+ "razonamiento": 0,
+ "duracion_s_agente": 14.8,
+ "llamadas_api": 4,
+ "errores_api": [],
+ "operaciones_api": [
+  "buscarSocios",
+  "listarPistas",
+  "disponibilidad",
+  "crearReserva"
+ ],
+ "skill_cargada": true,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 01:49"
+}

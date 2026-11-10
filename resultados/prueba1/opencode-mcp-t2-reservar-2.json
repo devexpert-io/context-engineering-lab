@@ -1,0 +1,64 @@
+{
+ "id": "opencode-mcp-t2-reservar-2",
+ "agente": "opencode",
+ "variante": "mcp",
+ "tarea": "t2-reservar",
+ "repeticion": 2,
+ "segundos": 32.4,
+ "rc": 0,
+ "error": "",
+ "peticiones": 5,
+ "entrada": 58070,
+ "entrada_cache_leida": 33600,
+ "salida": 793,
+ "razonamiento": 1030,
+ "herramientas": {
+  "club_buscar_socios": 1,
+  "club_listar_pistas": 1,
+  "club_consultar_disponibilidad": 2,
+  "club_listar_reservas": 1,
+  "club_crear_reserva": 1
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  9604,
+  10120,
+  11427,
+  13199,
+  13720
+ ],
+ "ordenes": [
+  "{\"texto\": \"Irene Sanz\"}",
+  "{}",
+  "{\"fecha\": \"2026-11-21\", \"pista\": \"pista-1\"}",
+  "{\"fecha\": \"2026-11-21\", \"pista\": \"pista-2\"}",
+  "{\"socio\": \"socio-004\"}",
+  "{\"socio\": \"socio-004\", \"pista\": \"pista-2\", \"inicio\": \"2026-11-21T16:30\"}"
+ ],
+ "respuesta_final": "\n\nIrene Sanz is `socio-004` with cuota active. Let me check her existing reservations (max 3 future) before booking.\n\n\n\nSolo tiene 1 reserva futura (R-0519, 23/11), así que puede reservar. Analizando las franjas de las pistas cubiertas (pista-1 y pista-2) desde las 15:00:\n\n- 15:00: pista-1 reservada, pista-2 reservada\n- 16:30: pista-1 reservada, **pista-2 libre** ← primera franja libre\n\nCreo la reserva:\n\n\n\nReserva confirmada para Irene Sanz: sábado 21/11, pista 2 (cubierta), 16:30–18:00, importe 28,00 € (hora punta de fin de semana).\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "duracion_s_agente": 27.9,
+ "llamadas_api": 6,
+ "errores_api": [],
+ "operaciones_api": [
+  "buscarSocios",
+  "listarPistas",
+  "disponibilidad",
+  "disponibilidad",
+  "listarReservas",
+  "crearReserva"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 01:55"
+}

@@ -1,0 +1,47 @@
+{
+ "id": "codex-cli-t1-libres-1",
+ "agente": "codex",
+ "variante": "cli",
+ "tarea": "t1-libres",
+ "repeticion": 1,
+ "segundos": 9.7,
+ "rc": 0,
+ "error": "",
+ "peticiones": 3,
+ "herramientas": {
+  "agent_message": 2,
+  "command_execution": 2
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  15858,
+  16598,
+  18174
+ ],
+ "ordenes": [
+  "/bin/zsh -lc 'padel --help'",
+  "/bin/zsh -lc 'padel disponibilidad --fecha 2026-11-19'"
+ ],
+ "respuesta_final": "El jueves 19 de noviembre de 2026, de 19:30 a 21:00, están libres las pistas 2 y 3.\n\nLIBRES: Pista 2, Pista 3",
+ "entrada": 50630,
+ "entrada_cache_leida": 36864,
+ "salida": 145,
+ "razonamiento": 0,
+ "duracion_s_agente": 8.7,
+ "llamadas_api": 1,
+ "errores_api": [],
+ "operaciones_api": [
+  "disponibilidad"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "dicho": [
+  "2",
+  "3"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 01:40"
+}

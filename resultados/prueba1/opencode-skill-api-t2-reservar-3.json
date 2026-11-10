@@ -1,0 +1,58 @@
+{
+ "id": "opencode-skill-api-t2-reservar-3",
+ "agente": "opencode",
+ "variante": "skill-api",
+ "tarea": "t2-reservar",
+ "repeticion": 3,
+ "segundos": 28.2,
+ "rc": 0,
+ "error": "",
+ "peticiones": 5,
+ "entrada": 51277,
+ "entrada_cache_leida": 31040,
+ "salida": 417,
+ "razonamiento": 1011,
+ "herramientas": {
+  "skill": 1,
+  "bash": 4
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  8211,
+  9419,
+  9794,
+  11823,
+  12030
+ ],
+ "ordenes": [
+  "{\"name\": \"club-padel\"}",
+  "{\"command\": \"curl -s 'http://127.0.0.1:52582/api/socios?texto=Irene%20Sanz'\"}",
+  "{\"command\": \"curl -s 'http://127.0.0.1:52582/api/pistas'\"}",
+  "{\"command\": \"curl -s 'http://127.0.0.1:52582/api/disponibilidad?fecha=2026-11-21'\"}",
+  "{\"command\": \"curl -s -X POST http://127.0.0.1:52582/api/reservas -H 'content-type: application/json' -d '{\\\"socioId\\\":\\\"socio-004\\\",\\\"pistaId\\\":\\\"pista-2\\\",\\\"inicio\\\":\\\"2026-11-21T16:30\\\"}'\"}"
+ ],
+ "respuesta_final": "\n\n\n\n\n\n\n\n\n\n\nReserva hecha. El sábado 21/11 las pistas cubiertas son la 1 y la 2; la 15:00 está ocupada en ambas, y la primera franja libre posterior es la 16:30, libre solo en la pista 2 (la 1 está ocupada hasta la 18:00).\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "duracion_s_agente": 23.1,
+ "llamadas_api": 4,
+ "errores_api": [],
+ "operaciones_api": [
+  "buscarSocios",
+  "listarPistas",
+  "disponibilidad",
+  "crearReserva"
+ ],
+ "skill_cargada": true,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 02:04"
+}

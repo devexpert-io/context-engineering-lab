@@ -1,0 +1,19 @@
+{
+ "agente": "claude",
+ "config": "chrome-devtools",
+ "modo": "defecto",
+ "repeticion": 2,
+ "rc": 0,
+ "segundos": 5.4,
+ "servidores": [
+  "chrome-devtools"
+ ],
+ "mcp": {
+  "chrome-devtools": "connected"
+ },
+ "tools_listadas": 60,
+ "tools_mcp_listadas": 32,
+ "entrada": 31940,
+ "coste_usd": 0.0682048,
+ "respuesta": "OK"
+}
