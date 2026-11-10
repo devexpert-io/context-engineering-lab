@@ -65,6 +65,8 @@ Cada agente corre sin la configuración de su usuario, como en [context-engineer
 
 Un sistema, cuatro encargos y tres repeticiones por combinación: es una medición orientativa, no un benchmark. Los tokens no se comparan entre agentes, porque cada modelo usa su propio tokenizador. El servidor y la CLI son pequeños y propios: un servidor con 40 tools o una CLI que el modelo ya conoce se comportan distinto. La prueba 2 usa una sola inyección, burda y en español.
 
+OpenCode 1.19.5 es la última versión de la línea 1.x y la que instalan `brew install opencode` y `npm i -g opencode-ai`. OpenCode 2 (2.2.6 el 6-nov-2026) se instala aparte y no está medido aquí.
+
 ## Resultados
 
 En `analisis/resumen.md` (lo genera `python3 -I analisis/resumen.py`) y, por ejecución, en `resultados/` y `prueba0/resultados/`.
