@@ -1,0 +1,11 @@
+{
+ "agente": "opencode2",
+ "config": "sin",
+ "modo": "sin-codemode",
+ "repeticion": 3,
+ "rc": 0,
+ "segundos": 3.8,
+ "servidores": [],
+ "respuesta": "\n\nOK",
+ "entrada": 6032
+}

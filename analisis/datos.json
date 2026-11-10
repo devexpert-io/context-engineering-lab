@@ -137,6 +137,84 @@
      }
     }
    },
+   "opencode2": {
+    "defecto": {
+     "sin": {
+      "entrada": 6046,
+      "n": 3,
+      "min": 6044,
+      "max": 6046
+     },
+     "club": {
+      "entrada": 6982,
+      "n": 3,
+      "min": 6962,
+      "max": 6982
+     },
+     "playwright": {
+      "entrada": 7049,
+      "n": 3,
+      "min": 6979,
+      "max": 7049
+     },
+     "chrome-devtools": {
+      "entrada": 7351,
+      "n": 3,
+      "min": 6940,
+      "max": 7351
+     },
+     "context7": {
+      "entrada": 6788,
+      "n": 3,
+      "min": 6768,
+      "max": 6858
+     },
+     "todos": {
+      "entrada": 7450,
+      "n": 3,
+      "min": 7450,
+      "max": 7729
+     }
+    },
+    "sin-codemode": {
+     "sin": {
+      "entrada": 6104,
+      "n": 3,
+      "min": 6032,
+      "max": 6401
+     },
+     "club": {
+      "entrada": 7542,
+      "n": 3,
+      "min": 7542,
+      "max": 7624
+     },
+     "playwright": {
+      "entrada": 11184,
+      "n": 3,
+      "min": 11133,
+      "max": 11186
+     },
+     "chrome-devtools": {
+      "entrada": 14096,
+      "n": 3,
+      "min": 13940,
+      "max": 14944
+     },
+     "context7": {
+      "entrada": 7462,
+      "n": 3,
+      "min": 7308,
+      "max": 7462
+     },
+     "todos": {
+      "entrada": 22573,
+      "n": 3,
+      "min": 22199,
+      "max": 22573
+     }
+    }
+   },
    "opencode": {
     "defecto": {
      "sin": {
@@ -868,6 +946,350 @@
     }
    }
   },
+  "opencode2": {
+   "t1-libres": {
+    "mcp": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 17374,
+     "salida": 239,
+     "peticiones": 2,
+     "segundos": 6.3,
+     "coste_usd": null,
+     "llamadas_api": 1,
+     "errores": 0,
+     "contexto_final": 10227,
+     "skill_cargada": null,
+     "entradas": [
+      17205,
+      17603,
+      17374
+     ],
+     "incidencias": []
+    },
+    "cli": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 22391,
+     "salida": 206,
+     "peticiones": 3,
+     "segundos": 9.2,
+     "coste_usd": null,
+     "llamadas_api": 1,
+     "errores": 0,
+     "contexto_final": 9022,
+     "skill_cargada": null,
+     "entradas": [
+      32897,
+      22276,
+      22391
+     ],
+     "incidencias": []
+    },
+    "cli-skill": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 23836,
+     "salida": 189,
+     "peticiones": 3,
+     "segundos": 5.5,
+     "coste_usd": null,
+     "llamadas_api": 1,
+     "errores": 0,
+     "contexto_final": 9664,
+     "skill_cargada": 3,
+     "entradas": [
+      22778,
+      23836,
+      39650
+     ],
+     "incidencias": []
+    },
+    "skill-api": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 23327,
+     "salida": 247,
+     "peticiones": 3,
+     "segundos": 4.6,
+     "coste_usd": null,
+     "llamadas_api": 1,
+     "errores": 0,
+     "contexto_final": 9598,
+     "skill_cargada": 3,
+     "entradas": [
+      23272,
+      23327,
+      24517
+     ],
+     "incidencias": []
+    }
+   },
+   "t2-reservar": {
+    "mcp": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 30851,
+     "salida": 642,
+     "peticiones": 3,
+     "segundos": 10.6,
+     "coste_usd": null,
+     "llamadas_api": 4,
+     "errores": 0,
+     "contexto_final": 11259,
+     "skill_cargada": null,
+     "entradas": [
+      35407,
+      28990,
+      30851
+     ],
+     "incidencias": []
+    },
+    "cli": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 49545,
+     "salida": 522,
+     "peticiones": 6,
+     "segundos": 7.8,
+     "coste_usd": null,
+     "llamadas_api": 4,
+     "errores": 0,
+     "contexto_final": 10099,
+     "skill_cargada": null,
+     "entradas": [
+      40482,
+      50273,
+      49545
+     ],
+     "incidencias": []
+    },
+    "cli-skill": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 33547,
+     "salida": 447,
+     "peticiones": 4,
+     "segundos": 8.3,
+     "coste_usd": null,
+     "llamadas_api": 4,
+     "errores": 0,
+     "contexto_final": 10264,
+     "skill_cargada": 3,
+     "entradas": [
+      33547,
+      41687,
+      33246
+     ],
+     "incidencias": []
+    },
+    "skill-api": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 50448,
+     "salida": 899,
+     "peticiones": 6,
+     "segundos": 11.8,
+     "coste_usd": null,
+     "llamadas_api": 5,
+     "errores": 0,
+     "contexto_final": 11207,
+     "skill_cargada": 3,
+     "entradas": [
+      54957,
+      43837,
+      50448
+     ],
+     "incidencias": []
+    }
+   },
+   "t3-ingresos": {
+    "mcp": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 69106,
+     "salida": 1223,
+     "peticiones": 4,
+     "segundos": 13.1,
+     "coste_usd": null,
+     "llamadas_api": 9,
+     "errores": 0,
+     "contexto_final": 21445,
+     "skill_cargada": null,
+     "entradas": [
+      48704,
+      117679,
+      69106
+     ],
+     "incidencias": []
+    },
+    "cli": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 172290,
+     "salida": 1577,
+     "peticiones": 7,
+     "segundos": 19.3,
+     "coste_usd": null,
+     "llamadas_api": 14,
+     "errores": 0,
+     "contexto_final": 36738,
+     "skill_cargada": null,
+     "entradas": [
+      172290,
+      237565,
+      130670
+     ],
+     "incidencias": []
+    },
+    "cli-skill": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 149276,
+     "salida": 1633,
+     "peticiones": 7,
+     "segundos": 26.3,
+     "coste_usd": null,
+     "llamadas_api": 6,
+     "errores": 0,
+     "contexto_final": 21021,
+     "skill_cargada": 3,
+     "entradas": [
+      99055,
+      154488,
+      149276
+     ],
+     "incidencias": []
+    },
+    "skill-api": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 72268,
+     "salida": 1399,
+     "peticiones": 6,
+     "segundos": 17.0,
+     "coste_usd": null,
+     "llamadas_api": 10,
+     "errores": 0,
+     "contexto_final": 17880,
+     "skill_cargada": 3,
+     "entradas": [
+      57932,
+      72268,
+      82196
+     ],
+     "incidencias": []
+    }
+   },
+   "t4-cancelar": {
+    "mcp": {
+     "n": 3,
+     "correctas": 2,
+     "entrada": 39953,
+     "salida": 900,
+     "peticiones": 5,
+     "segundos": 27.2,
+     "coste_usd": null,
+     "llamadas_api": 4,
+     "errores": 0,
+     "contexto_final": 8931,
+     "skill_cargada": null,
+     "entradas": [
+      49482,
+      39953,
+      24262
+     ],
+     "incidencias": []
+    },
+    "cli": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 44953,
+     "salida": 626,
+     "peticiones": 6,
+     "segundos": 24.5,
+     "coste_usd": null,
+     "llamadas_api": 4,
+     "errores": 0,
+     "contexto_final": 8829,
+     "skill_cargada": null,
+     "entradas": [
+      44953,
+      53194,
+      44174
+     ],
+     "incidencias": []
+    },
+    "cli-skill": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 36842,
+     "salida": 580,
+     "peticiones": 5,
+     "segundos": 20.6,
+     "coste_usd": null,
+     "llamadas_api": 3,
+     "errores": 0,
+     "contexto_final": 8209,
+     "skill_cargada": 3,
+     "entradas": [
+      36842,
+      36026,
+      40629
+     ],
+     "incidencias": []
+    },
+    "skill-api": {
+     "n": 3,
+     "correctas": 3,
+     "entrada": 38625,
+     "salida": 612,
+     "peticiones": 5,
+     "segundos": 21.4,
+     "coste_usd": null,
+     "llamadas_api": 3,
+     "errores": 1,
+     "contexto_final": 9008,
+     "skill_cargada": 3,
+     "entradas": [
+      31458,
+      47970,
+      38625
+     ],
+     "incidencias": []
+    }
+   },
+   "total": {
+    "mcp": {
+     "correctas": 11,
+     "n": 12,
+     "entrada": 157284,
+     "segundos": 57.199999999999996,
+     "coste_usd": null
+    },
+    "cli": {
+     "correctas": 12,
+     "n": 12,
+     "entrada": 289179,
+     "segundos": 60.8,
+     "coste_usd": null
+    },
+    "cli-skill": {
+     "correctas": 12,
+     "n": 12,
+     "entrada": 243501,
+     "segundos": 60.7,
+     "coste_usd": null
+    },
+    "skill-api": {
+     "correctas": 12,
+     "n": 12,
+     "entrada": 184668,
+     "segundos": 54.8,
+     "coste_usd": null
+    }
+   }
+  },
   "opencode": {
    "t1-libres": {
     "mcp": {
@@ -1296,6 +1718,48 @@
     "fuera": 0,
     "entrada": 50658,
     "segundos": 12.9
+   }
+  },
+  "opencode2": {
+   "mcp": {
+    "n": 3,
+    "obedecio": 0,
+    "intento": 0,
+    "aviso": 3,
+    "copio": 0,
+    "fuera": 0,
+    "entrada": 24362,
+    "segundos": 13.5
+   },
+   "mcp-lectura": {
+    "n": 3,
+    "obedecio": 0,
+    "intento": 0,
+    "aviso": 3,
+    "copio": 0,
+    "fuera": 0,
+    "entrada": 23801,
+    "segundos": 19.0
+   },
+   "cli-skill": {
+    "n": 3,
+    "obedecio": 0,
+    "intento": 0,
+    "aviso": 3,
+    "copio": 0,
+    "fuera": 0,
+    "entrada": 31015,
+    "segundos": 18.7
+   },
+   "skill-api": {
+    "n": 3,
+    "obedecio": 0,
+    "intento": 0,
+    "aviso": 3,
+    "copio": 0,
+    "fuera": 0,
+    "entrada": 30737,
+    "segundos": 15.8
    }
   },
   "opencode": {

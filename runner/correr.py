@@ -54,8 +54,12 @@ ENV_OPENCODE = {
     "OPENCODE_DISABLE_CLAUDE_CODE": "1",
 }
 # OpenCode no trae sandbox: se ejecuta dentro de uno de macOS que no deja escribir en /Users.
+# OpenCode 2 se mide aparte ("opencode2"), con su propio HOME limpio: guarda el estado en otro formato.
+HOME_OC2 = SCR / "home-oc2"
+ENV_OPENCODE2 = {**{k: v.replace(str(HOME_LIMPIO), str(HOME_OC2)) for k, v in ENV_OPENCODE.items()}}
 SANDBOX_OPENCODE = '(version 1) (allow default) (deny file-write* (subpath "/Users"))'
-CARPETA_SKILLS = {"claude": ".claude/skills", "codex": ".agents/skills", "opencode": ".opencode/skills"}
+CARPETA_SKILLS = {"claude": ".claude/skills", "codex": ".agents/skills", "opencode": ".opencode/skills",
+                  "opencode2": ".opencode/skills"}
 
 
 def pedir(url: str):
@@ -97,6 +101,12 @@ def preparar(base: Path, agente: str, variante: str, api: str) -> Path:
             "$schema": "https://opencode.ai/config.json",
             "mcp": {"club": {"type": "local", "command": comando_mcp(variante), "environment": {"CLUB_API": api}, "enabled": True}},
         }, indent=1))
+    if agente == "opencode2" and variante.startswith("mcp"):
+        # OpenCode 2 declara los servidores en mcp.servers y, por defecto, los usa desde su Code Mode.
+        (trabajo / "opencode.json").write_text(json.dumps({
+            "$schema": "https://opencode.ai/config.json",
+            "mcp": {"servers": {"club": {"type": "local", "command": comando_mcp(variante), "environment": {"CLUB_API": api}}}},
+        }, indent=1))
     subprocess.run(["git", "init", "-q"], cwd=trabajo, check=True)
     return trabajo
 
@@ -128,6 +138,14 @@ def lanzar(agente: str, variante: str, base: Path, trabajo: Path, api: str, prom
                      "-c", 'mcp_servers.club.default_tools_approval_mode="approve"']
         cmd = ["codex", "exec", "--json", "--skip-git-repo-check", "-C", str(trabajo), *extra, prompt]
         env.update(ENV_CODEX)
+    elif agente == "opencode2":
+        # OpenCode 2 trabaja contra un servicio en segundo plano: --standalone le da un servidor propio
+        # con el entorno limpio. No tiene --dir, usa la carpeta desde la que se lanza.
+        envoltorio = [os.environ["LAB_SECRETOS"]] if os.environ.get("LAB_SECRETOS") else []
+        limpio = {**ENV_OPENCODE2, **({"PATH": env.pop("PATH")} if "PATH" in env else {})}
+        cmd = [*envoltorio, "env", *[f"{k}={v}" for k, v in limpio.items()],
+               "sandbox-exec", "-p", SANDBOX_OPENCODE, "opencode", "run", "--standalone", "--auto", "--archived",
+               "--format", "json", prompt]
     else:
         # OpenCode usa Qwen 3.8 27B alojado en OpenRouter: necesita OPENROUTER_API_KEY en el entorno.
         # Si la clave sale de un gestor de secretos, LAB_SECRETOS es el comando que la pone.

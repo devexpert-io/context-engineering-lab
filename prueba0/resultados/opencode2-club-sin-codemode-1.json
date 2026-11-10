@@ -1,0 +1,13 @@
+{
+ "agente": "opencode2",
+ "config": "club",
+ "modo": "sin-codemode",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 2.8,
+ "servidores": [
+  "club"
+ ],
+ "respuesta": "\n\nOK",
+ "entrada": 7624
+}

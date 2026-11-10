@@ -1,0 +1,13 @@
+{
+ "agente": "opencode2",
+ "config": "chrome-devtools",
+ "modo": "sin-codemode",
+ "repeticion": 2,
+ "rc": 0,
+ "segundos": 2.5,
+ "servidores": [
+  "chrome-devtools"
+ ],
+ "respuesta": "\n\nOK",
+ "entrada": 14944
+}

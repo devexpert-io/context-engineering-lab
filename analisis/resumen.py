@@ -9,8 +9,8 @@ from pathlib import Path
 from statistics import median
 
 LAB = Path(__file__).resolve().parents[1]
-AGENTES = ["claude", "codex", "opencode"]
-NOMBRE = {"claude": "Claude Code", "codex": "Codex", "opencode": "OpenCode"}
+AGENTES = ["claude", "codex", "opencode2", "opencode"]
+NOMBRE = {"claude": "Claude Code", "codex": "Codex", "opencode2": "OpenCode 2.2.6", "opencode": "OpenCode 1.19.5"}
 VARIANTES = ["mcp", "cli", "cli-skill", "skill-api"]
 VARIANTES_P2 = ["mcp", "mcp-lectura", "cli-skill", "skill-api"]
 TAREAS = ["t1-libres", "t2-reservar", "t3-ingresos", "t4-cancelar"]

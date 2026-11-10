@@ -1,0 +1,46 @@
+{
+ "id": "opencode2-cli-t1-libres-2",
+ "agente": "opencode2",
+ "variante": "cli",
+ "tarea": "t1-libres",
+ "repeticion": 2,
+ "segundos": 7.8,
+ "rc": 0,
+ "error": "",
+ "peticiones": 3,
+ "entrada": 22276,
+ "entrada_cache_leida": 15680,
+ "salida": 206,
+ "razonamiento": 141,
+ "herramientas": {
+  "shell": 2
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  6282,
+  6973,
+  9021
+ ],
+ "ordenes": [
+  "{\"command\": \"padel --help\"}",
+  "{\"command\": \"padel disponibilidad --fecha 2026-11-19\"}"
+ ],
+ "respuesta_final": "\n\nPara el jueves 19 de noviembre de 2026, en la franja de 19:30 a 21:00, el estado de las pistas es:\n\n- **Pista 1**: Reservada\n- **Pista 2**: Libre\n- **Pista 3**: Libre\n- **Pista 4**: Cerrada\n\nLas pistas libres son la Pista 2 y la Pista 3 (ambas en horario punta, a 28 € y 20 € respectivamente).\n\nLIBRES: Pista 2, Pista 3",
+ "duracion_s_agente": 5.2,
+ "llamadas_api": 1,
+ "errores_api": [],
+ "operaciones_api": [
+  "disponibilidad"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "dicho": [
+  "2",
+  "3"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 11:14"
+}

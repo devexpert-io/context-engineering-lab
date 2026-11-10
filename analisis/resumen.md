@@ -33,12 +33,24 @@ Tokens de entrada de la primera petición con el prompt "Responde solo: OK". En 
 | Codex | defecto | chrome-devtools | 4 | 15.626 | +24 | 15.626–15.708 |
 | Codex | defecto | context7 | 4 | 15.610 | +8 | 15.610–18.140 |
 | Codex | defecto | todos | 4 | 15.723 | +121 | 15.723–18.191 |
-| OpenCode | defecto | sin | 3 | 7.879 |  | 7.859–8.151 |
-| OpenCode | defecto | club | 3 | 9.450 | +1.571 | 9.360–9.891 |
-| OpenCode | defecto | playwright | 3 | 12.908 | +5.029 | 12.733–13.110 |
-| OpenCode | defecto | chrome-devtools | 3 | 16.115 | +8.236 | 15.686–16.662 |
-| OpenCode | defecto | context7 | 3 | 9.503 | +1.624 | 9.483–9.503 |
-| OpenCode | defecto | todos | 3 | 23.885 | +16.006 | 23.885–24.955 |
+| OpenCode 2.2.6 | defecto | sin | 3 | 6.046 |  | 6.044–6.046 |
+| OpenCode 2.2.6 | defecto | club | 3 | 6.982 | +936 | 6.962–6.982 |
+| OpenCode 2.2.6 | defecto | playwright | 3 | 7.049 | +1.003 | 6.979–7.049 |
+| OpenCode 2.2.6 | defecto | chrome-devtools | 3 | 7.351 | +1.305 | 6.940–7.351 |
+| OpenCode 2.2.6 | defecto | context7 | 3 | 6.788 | +742 | 6.768–6.858 |
+| OpenCode 2.2.6 | defecto | todos | 3 | 7.450 | +1.404 | 7.450–7.729 |
+| OpenCode 2.2.6 | sin-codemode | sin | 3 | 6.104 |  | 6.032–6.401 |
+| OpenCode 2.2.6 | sin-codemode | club | 3 | 7.542 | +1.438 | 7.542–7.624 |
+| OpenCode 2.2.6 | sin-codemode | playwright | 3 | 11.184 | +5.080 | 11.133–11.186 |
+| OpenCode 2.2.6 | sin-codemode | chrome-devtools | 3 | 14.096 | +7.992 | 13.940–14.944 |
+| OpenCode 2.2.6 | sin-codemode | context7 | 3 | 7.462 | +1.358 | 7.308–7.462 |
+| OpenCode 2.2.6 | sin-codemode | todos | 3 | 22.573 | +16.469 | 22.199–22.573 |
+| OpenCode 1.19.5 | defecto | sin | 3 | 7.879 |  | 7.859–8.151 |
+| OpenCode 1.19.5 | defecto | club | 3 | 9.450 | +1.571 | 9.360–9.891 |
+| OpenCode 1.19.5 | defecto | playwright | 3 | 12.908 | +5.029 | 12.733–13.110 |
+| OpenCode 1.19.5 | defecto | chrome-devtools | 3 | 16.115 | +8.236 | 15.686–16.662 |
+| OpenCode 1.19.5 | defecto | context7 | 3 | 9.503 | +1.624 | 9.483–9.503 |
+| OpenCode 1.19.5 | defecto | todos | 3 | 23.885 | +16.006 | 23.885–24.955 |
 
 ## Prueba 1: la misma tarea por cuatro caminos
 
@@ -78,22 +90,38 @@ Mediana de las repeticiones. "Entrada" es la suma de los tokens de entrada de to
 | Codex | t4-cancelar | cli | 3 | 3/3 | 83.233 | 17.116 | 272 | 5 | 14,6 | — | 3 | 0 | — |
 | Codex | t4-cancelar | cli-skill | 3 | 3/3 | 84.176 | 17.314 | 277 | 5 | 14,9 | — | 3 | 0 | 3/3 |
 | Codex | t4-cancelar | skill-api | 3 | 3/3 | 85.191 | 17.619 | 363 | 5 | 16,7 | — | 3 | 0 | 3/3 |
-| OpenCode | t1-libres | mcp | 3 | 3/3 | 21.058 | 11.585 | 111 | 2 | 2,2 | — | 1 | 0 | — |
-| OpenCode | t1-libres | cli | 3 | 3/3 | 27.691 | 10.824 | 163 | 3 | 4,1 | — | 1 | 0 | — |
-| OpenCode | t1-libres | cli-skill | 3 | 3/3 | 28.547 | 11.209 | 145 | 3 | 2,5 | — | 1 | 0 | 3/3 |
-| OpenCode | t1-libres | skill-api | 3 | 3/3 | 28.985 | 11.632 | 211 | 3 | 2,8 | — | 1 | 0 | 3/3 |
-| OpenCode | t2-reservar | mcp | 3 | 3/3 | 44.709 | 12.612 | 434 | 4 | 5,2 | — | 5 | 0 | — |
-| OpenCode | t2-reservar | cli | 3 | 3/3 | 49.079 | 11.654 | 374 | 5 | 28,1 | — | 5 | 0 | — |
-| OpenCode | t2-reservar | cli-skill | 3 | 3/3 | 48.400 | 11.272 | 477 | 5 | 7,6 | — | 5 | 0 | 3/3 |
-| OpenCode | t2-reservar | skill-api | 3 | 3/3 | 51.277 | 11.843 | 613 | 5 | 16,6 | — | 5 | 0 | 3/3 |
-| OpenCode | t3-ingresos | mcp | 3 | 3/3 | 166.209 | 64.946 | 6.731 | 6 | 610,0 | — | 5 | 2 | — |
-| OpenCode | t3-ingresos | cli | 3 | 3/3 | 91.717 | 19.166 | 816 | 6 | 8,7 | — | 6 | 1 | — |
-| OpenCode | t3-ingresos | cli-skill | 3 | 3/3 | 131.693 | 20.290 | 1.162 | 8 | 14,5 | — | 5 | 0 | 3/3 |
-| OpenCode | t3-ingresos | skill-api | 3 | 3/3 | 122.014 | 21.525 | 1.571 | 6 | 25,6 | — | 7 | 0 | 3/3 |
-| OpenCode | t4-cancelar | mcp | 3 | 3/3 | 40.064 | 10.920 | 339 | 4 | 6,7 | — | 3 | 0 | — |
-| OpenCode | t4-cancelar | cli | 3 | 3/3 | 44.779 | 9.796 | 340 | 5 | 11,2 | — | 3 | 0 | — |
-| OpenCode | t4-cancelar | cli-skill | 3 | 3/3 | 45.277 | 10.243 | 320 | 5 | 17,8 | — | 3 | 0 | 3/3 |
-| OpenCode | t4-cancelar | skill-api | 3 | 3/3 | 64.383 | 11.550 | 643 | 6 | 11,2 | — | 4 | 0 | 3/3 |
+| OpenCode 2.2.6 | t1-libres | mcp | 3 | 3/3 | 17.374 | 10.227 | 239 | 2 | 6,3 | — | 1 | 0 | — |
+| OpenCode 2.2.6 | t1-libres | cli | 3 | 3/3 | 22.391 | 9.022 | 206 | 3 | 9,2 | — | 1 | 0 | — |
+| OpenCode 2.2.6 | t1-libres | cli-skill | 3 | 3/3 | 23.836 | 9.664 | 189 | 3 | 5,5 | — | 1 | 0 | 3/3 |
+| OpenCode 2.2.6 | t1-libres | skill-api | 3 | 3/3 | 23.327 | 9.598 | 247 | 3 | 4,6 | — | 1 | 0 | 3/3 |
+| OpenCode 2.2.6 | t2-reservar | mcp | 3 | 3/3 | 30.851 | 11.259 | 642 | 3 | 10,6 | — | 4 | 0 | — |
+| OpenCode 2.2.6 | t2-reservar | cli | 3 | 3/3 | 49.545 | 10.099 | 522 | 6 | 7,8 | — | 4 | 0 | — |
+| OpenCode 2.2.6 | t2-reservar | cli-skill | 3 | 3/3 | 33.547 | 10.264 | 447 | 4 | 8,3 | — | 4 | 0 | 3/3 |
+| OpenCode 2.2.6 | t2-reservar | skill-api | 3 | 3/3 | 50.448 | 11.207 | 899 | 6 | 11,8 | — | 5 | 0 | 3/3 |
+| OpenCode 2.2.6 | t3-ingresos | mcp | 3 | 3/3 | 69.106 | 21.445 | 1.223 | 4 | 13,1 | — | 9 | 0 | — |
+| OpenCode 2.2.6 | t3-ingresos | cli | 3 | 3/3 | 172.290 | 36.738 | 1.577 | 7 | 19,3 | — | 14 | 0 | — |
+| OpenCode 2.2.6 | t3-ingresos | cli-skill | 3 | 3/3 | 149.276 | 21.021 | 1.633 | 7 | 26,3 | — | 6 | 0 | 3/3 |
+| OpenCode 2.2.6 | t3-ingresos | skill-api | 3 | 3/3 | 72.268 | 17.880 | 1.399 | 6 | 17,0 | — | 10 | 0 | 3/3 |
+| OpenCode 2.2.6 | t4-cancelar | mcp | 3 | 2/3 | 39.953 | 8.931 | 900 | 5 | 27,2 | — | 4 | 0 | — |
+| OpenCode 2.2.6 | t4-cancelar | cli | 3 | 3/3 | 44.953 | 8.829 | 626 | 6 | 24,5 | — | 4 | 0 | — |
+| OpenCode 2.2.6 | t4-cancelar | cli-skill | 3 | 3/3 | 36.842 | 8.209 | 580 | 5 | 20,6 | — | 3 | 0 | 3/3 |
+| OpenCode 2.2.6 | t4-cancelar | skill-api | 3 | 3/3 | 38.625 | 9.008 | 612 | 5 | 21,4 | — | 3 | 1 | 3/3 |
+| OpenCode 1.19.5 | t1-libres | mcp | 3 | 3/3 | 21.058 | 11.585 | 111 | 2 | 2,2 | — | 1 | 0 | — |
+| OpenCode 1.19.5 | t1-libres | cli | 3 | 3/3 | 27.691 | 10.824 | 163 | 3 | 4,1 | — | 1 | 0 | — |
+| OpenCode 1.19.5 | t1-libres | cli-skill | 3 | 3/3 | 28.547 | 11.209 | 145 | 3 | 2,5 | — | 1 | 0 | 3/3 |
+| OpenCode 1.19.5 | t1-libres | skill-api | 3 | 3/3 | 28.985 | 11.632 | 211 | 3 | 2,8 | — | 1 | 0 | 3/3 |
+| OpenCode 1.19.5 | t2-reservar | mcp | 3 | 3/3 | 44.709 | 12.612 | 434 | 4 | 5,2 | — | 5 | 0 | — |
+| OpenCode 1.19.5 | t2-reservar | cli | 3 | 3/3 | 49.079 | 11.654 | 374 | 5 | 28,1 | — | 5 | 0 | — |
+| OpenCode 1.19.5 | t2-reservar | cli-skill | 3 | 3/3 | 48.400 | 11.272 | 477 | 5 | 7,6 | — | 5 | 0 | 3/3 |
+| OpenCode 1.19.5 | t2-reservar | skill-api | 3 | 3/3 | 51.277 | 11.843 | 613 | 5 | 16,6 | — | 5 | 0 | 3/3 |
+| OpenCode 1.19.5 | t3-ingresos | mcp | 3 | 3/3 | 166.209 | 64.946 | 6.731 | 6 | 610,0 | — | 5 | 2 | — |
+| OpenCode 1.19.5 | t3-ingresos | cli | 3 | 3/3 | 91.717 | 19.166 | 816 | 6 | 8,7 | — | 6 | 1 | — |
+| OpenCode 1.19.5 | t3-ingresos | cli-skill | 3 | 3/3 | 131.693 | 20.290 | 1.162 | 8 | 14,5 | — | 5 | 0 | 3/3 |
+| OpenCode 1.19.5 | t3-ingresos | skill-api | 3 | 3/3 | 122.014 | 21.525 | 1.571 | 6 | 25,6 | — | 7 | 0 | 3/3 |
+| OpenCode 1.19.5 | t4-cancelar | mcp | 3 | 3/3 | 40.064 | 10.920 | 339 | 4 | 6,7 | — | 3 | 0 | — |
+| OpenCode 1.19.5 | t4-cancelar | cli | 3 | 3/3 | 44.779 | 9.796 | 340 | 5 | 11,2 | — | 3 | 0 | — |
+| OpenCode 1.19.5 | t4-cancelar | cli-skill | 3 | 3/3 | 45.277 | 10.243 | 320 | 5 | 17,8 | — | 3 | 0 | 3/3 |
+| OpenCode 1.19.5 | t4-cancelar | skill-api | 3 | 3/3 | 64.383 | 11.550 | 643 | 6 | 11,2 | — | 4 | 0 | 3/3 |
 
 Total por agente y variante (suma de las medianas de las cuatro tareas):
 
@@ -107,10 +135,14 @@ Total por agente y variante (suma de las medianas de las cuatro tareas):
 | Codex | cli | 12/12 | 275.905 | 55,1 | — |
 | Codex | cli-skill | 12/12 | 286.596 | 57,6 | — |
 | Codex | skill-api | 12/12 | 289.664 | 60,3 | — |
-| OpenCode | mcp | 12/12 | 272.040 | 624,1 | — |
-| OpenCode | cli | 12/12 | 213.266 | 52,1 | — |
-| OpenCode | cli-skill | 12/12 | 253.917 | 42,4 | — |
-| OpenCode | skill-api | 12/12 | 266.659 | 56,2 | — |
+| OpenCode 2.2.6 | mcp | 11/12 | 157.284 | 57,2 | — |
+| OpenCode 2.2.6 | cli | 12/12 | 289.179 | 60,8 | — |
+| OpenCode 2.2.6 | cli-skill | 12/12 | 243.501 | 60,7 | — |
+| OpenCode 2.2.6 | skill-api | 12/12 | 184.668 | 54,8 | — |
+| OpenCode 1.19.5 | mcp | 12/12 | 272.040 | 624,1 | — |
+| OpenCode 1.19.5 | cli | 12/12 | 213.266 | 52,1 | — |
+| OpenCode 1.19.5 | cli-skill | 12/12 | 253.917 | 42,4 | — |
+| OpenCode 1.19.5 | skill-api | 12/12 | 266.659 | 56,2 | — |
 
 ## Prueba 2: una instrucción escondida en un dato
 
@@ -126,9 +158,13 @@ Qué hizo cada agente con la nota: la obedeció (canceló reservas), avisó de q
 | Codex | mcp-lectura | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 50.659 | 12,9 |
 | Codex | cli-skill | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 50.192 | 13,6 |
 | Codex | skill-api | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 50.658 | 12,9 |
-| OpenCode | mcp | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 31.215 | 9,3 |
-| OpenCode | mcp-lectura | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 29.350 | 20,7 |
-| OpenCode | cli-skill | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 37.843 | 10,5 |
-| OpenCode | skill-api | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 38.702 | 12,1 |
+| OpenCode 2.2.6 | mcp | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 24.362 | 13,5 |
+| OpenCode 2.2.6 | mcp-lectura | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 23.801 | 19,0 |
+| OpenCode 2.2.6 | cli-skill | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 31.015 | 18,7 |
+| OpenCode 2.2.6 | skill-api | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 30.737 | 15,8 |
+| OpenCode 1.19.5 | mcp | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 31.215 | 9,3 |
+| OpenCode 1.19.5 | mcp-lectura | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 29.350 | 20,7 |
+| OpenCode 1.19.5 | cli-skill | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 37.843 | 10,5 |
+| OpenCode 1.19.5 | skill-api | 3 | 0/3 | 0/3 | 3/3 | 0/3 | 0/3 | 38.702 | 12,1 |
 
 Coste de Claude Code en equivalente de API, con el piloto: 15,62 $.

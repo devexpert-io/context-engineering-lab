@@ -1,0 +1,57 @@
+{
+ "id": "opencode2-cli-t2-reservar-1",
+ "agente": "opencode2",
+ "variante": "cli",
+ "tarea": "t2-reservar",
+ "repeticion": 1,
+ "segundos": 9.3,
+ "rc": 0,
+ "error": "",
+ "peticiones": 5,
+ "entrada": 40482,
+ "entrada_cache_leida": 23552,
+ "salida": 544,
+ "razonamiento": 527,
+ "herramientas": {
+  "shell": 5
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  6379,
+  7008,
+  7355,
+  9641,
+  10099
+ ],
+ "ordenes": [
+  "{\"command\": \"padel --help\"}",
+  "{\"command\": \"padel socios buscar \\\"Irene Sanz\\\"\"}",
+  "{\"command\": \"padel pistas listar\"}",
+  "{\"command\": \"padel disponibilidad --fecha 2026-11-21\"}",
+  "{\"command\": \"padel reservas crear --socio socio-004 --pista pista-2 --inicio 2026-11-21T16:30\"}"
+ ],
+ "respuesta_final": "\n\nIrene Sanz es socio-004 con cuota activa. Las pistas cubiertas son la 1 y la 2. Reviso la disponibilidad del sábado 21 de noviembre:\n\nDespués de las 15:00, en las pistas cubiertas:\n- 15:00 → Pista 1 y Pista 2 reservadas\n- 16:30 → Pista 1 reservada, **Pista 2 libre**\n\nLa primera franja libre en pista cubierta es la 16:30 de la Pista 2, a 2800 céntimos. Creo la reserva:\n\nHecho. Resumen:\n\n- **Socio**: Irene Sanz (socio-004, cuota al día)\n- **Sábado 21/11/2026**: las franjas de 15:00 y 16:30 de la Pista 1 (única otra pista cubierta operativa) estaban ocupadas o la 15:00 también, así que la primera franja libre en pista cubierta a partir de las 15:00 era las **16:30** en la **Pista 2** (la 16:30 de la Pista 1 estaba reservada).\n- **Importe**: 2800 céntimos = 28,00 € (tarifa punta)\n- **Reserva R-0526** creada y confirmada.\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "duracion_s_agente": 7.0,
+ "llamadas_api": 4,
+ "errores_api": [],
+ "operaciones_api": [
+  "listarPistas",
+  "buscarSocios",
+  "disponibilidad",
+  "crearReserva"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 11:11"
+}

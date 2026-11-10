@@ -39,7 +39,9 @@ SERVIDORES = {
 }
 CONFIGURACIONES = {"sin": [], "club": ["club"], "playwright": ["playwright"], "chrome-devtools": ["chrome-devtools"],
                    "context7": ["context7"], "todos": list(SERVIDORES)}
-MODOS = {"claude": ["defecto", "sin-diferir"], "codex": ["defecto"], "opencode": ["defecto"]}
+MODOS = {"claude": ["defecto", "sin-diferir"], "codex": ["defecto"], "opencode": ["defecto"],
+         "opencode2": ["defecto", "sin-codemode"]}
+HOME_OC2 = SCR / "home-oc2"
 ENV_OPENCODE = {
     "HOME": str(HOME_LIMPIO),
     "XDG_CONFIG_HOME": str(HOME_LIMPIO / ".config"),
@@ -91,6 +93,19 @@ def medir(agente: str, config: str, modo: str, rep: int) -> dict:
                     extra += ["-c", f"mcp_servers.{n}.env={{{pares}}}"]
         cmd = ["codex", "exec", "--json", "--skip-git-repo-check", "-C", str(trabajo), *extra, PROMPT]
         env.update({"HOME": str(HOME_LIMPIO), "CODEX_HOME": str(CODEX_HOME)})
+    elif agente == "opencode2":
+        servidores = {}
+        for n in nombres:
+            s = SERVIDORES[n]
+            servidores[n] = ({"type": "remote", "url": s["url"]} if "url" in s else
+                             {"type": "local", "command": s["command"], "environment": s.get("env", {})})
+            if modo == "sin-codemode":
+                servidores[n]["codemode"] = False
+        (trabajo / "opencode.json").write_text(json.dumps({"$schema": "https://opencode.ai/config.json", "mcp": {"servers": servidores}}, indent=1))
+        envoltorio = [os.environ["LAB_SECRETOS"]] if os.environ.get("LAB_SECRETOS") else []
+        limpio = {k: v.replace(str(HOME_LIMPIO), str(HOME_OC2)) for k, v in ENV_OPENCODE.items()}
+        cmd = [*envoltorio, "env", *[f"{k}={v}" for k, v in limpio.items()],
+               "sandbox-exec", "-p", SANDBOX_OPENCODE, "opencode", "run", "--standalone", "--auto", "--archived", "--format", "json", PROMPT]
     else:
         mcp = {}
         for n in nombres:

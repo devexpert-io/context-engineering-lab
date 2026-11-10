@@ -1,0 +1,13 @@
+{
+ "agente": "opencode2",
+ "config": "chrome-devtools",
+ "modo": "defecto",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 3.1,
+ "servidores": [
+  "chrome-devtools"
+ ],
+ "respuesta": "\n\nOK",
+ "entrada": 7351
+}

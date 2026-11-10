@@ -1,0 +1,52 @@
+{
+ "id": "opencode2-mcp-t2-reservar-3",
+ "agente": "opencode2",
+ "variante": "mcp",
+ "tarea": "t2-reservar",
+ "repeticion": 3,
+ "segundos": 13.1,
+ "rc": 0,
+ "error": "",
+ "peticiones": 3,
+ "entrada": 30851,
+ "entrada_cache_leida": 19392,
+ "salida": 763,
+ "razonamiento": 977,
+ "herramientas": {
+  "execute": 2
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  7189,
+  11494,
+  12168
+ ],
+ "ordenes": [
+  "{\"code\": \"const [socio, pistas, disp] = await Promise.allSettled([\\n  tools.club.buscar_socios({ texto: \\\"Irene Sanz\\\" }),\\n  tools.club.listar_pistas(),\\n  tools.club.consultar_disponibilidad({ fecha: \\\"2026-11-21\\\" }),\\n]);\\nreturn { socio, pistas, disp };\\n\"}",
+  "{\"code\": \"const r = await tools.club.crear_reserva({\\n  socio: \\\"socio-004\\\",\\n  pista: \\\"pista-2\\\",\\n  inicio: \\\"2026-11-21T16:30\\\",\\n  notas: \\\"Reserva de Irene Sanz (recepción)\\\",\\n});\\nreturn r;\\n\"}"
+ ],
+ "respuesta_final": "\n\n\n\nDatos recogidos:\n- **Irene Sanz** = `socio-004`, cuota al día ✓\n- Pistas cubiertas: `pista-1` y `pista-2`\n- Sábado 21/11 desde las 15:00:\n  - 15:00 → pista-1 y pista-2 reservadas\n  - 16:30 → pista-1 reservada, **pista-2 libre** ← primera franja libre en pista cubierta\n\nCreo la reserva:\n\n\n\nHecho. Resumen:\n\n- **Socia:** Irene Sanz (`socio-004`), cuota al día\n- **Día:** sábado 21/11/2026, primera franja libre a partir de las 15:00 en pista cubierta\n  - Las 15:00, las dos pistas cubiertas (1 y 2) estaban reservadas\n  - A las **16:30** la pista-2 estaba libre (la pista-1 seguía reservada), por lo que se eligió la cubierta de número más bajo disponible\n- **Reserva:** `R-0526`, pista-2, 16:30–18:00, confirmada, importe 28,00 €\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "duracion_s_agente": 10.6,
+ "llamadas_api": 4,
+ "errores_api": [],
+ "operaciones_api": [
+  "buscarSocios",
+  "listarPistas",
+  "disponibilidad",
+  "crearReserva"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 11:23"
+}

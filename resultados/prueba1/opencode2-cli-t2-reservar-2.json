@@ -1,0 +1,58 @@
+{
+ "id": "opencode2-cli-t2-reservar-2",
+ "agente": "opencode2",
+ "variante": "cli",
+ "tarea": "t2-reservar",
+ "repeticion": 2,
+ "segundos": 9.7,
+ "rc": 0,
+ "error": "",
+ "peticiones": 6,
+ "entrada": 50273,
+ "entrada_cache_leida": 44032,
+ "salida": 399,
+ "razonamiento": 913,
+ "herramientas": {
+  "shell": 5
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  6327,
+  7004,
+  7299,
+  9499,
+  9962,
+  10182
+ ],
+ "ordenes": [
+  "{\"command\": \"padel --help\"}",
+  "{\"command\": \"padel pistas listar\"}",
+  "{\"command\": \"padel disponibilidad --fecha 2026-11-21\"}",
+  "{\"command\": \"padel socios buscar \\\"Irene Sanz\\\"\"}",
+  "{\"command\": \"padel reservas crear --socio socio-004 --pista pista-2 --inicio 2026-11-21T16:30\"}"
+ ],
+ "respuesta_final": "Los cubiertos son Pista-1 y Pista-2. El 15:00 ambos están ocupados y el 16:30 solo Pista-2 está libre, así que procederé a crear la reserva.\n\nReserva confirmada. Resumen:\n\n- **Socias**: Irene Sanz (socio-004), cuota al día\n- **Fecha**: sábado 21/11/2026\n- **Franjas a partir de las 15:00 en pistas cubiertas**: a las 15:00 Pista-1 y Pista-2 están ocupadas; a las 16:30 solo Pista-2 está libre\n- **Reserva creada**: R-0526, Pista-2, 16:30–18:00, importe 28,00 € (horario punta)\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "duracion_s_agente": 7.8,
+ "llamadas_api": 4,
+ "errores_api": [],
+ "operaciones_api": [
+  "listarPistas",
+  "disponibilidad",
+  "buscarSocios",
+  "crearReserva"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 11:15"
+}
