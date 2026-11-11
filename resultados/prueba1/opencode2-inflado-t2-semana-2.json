@@ -1,0 +1,49 @@
+{
+ "id": "opencode2-inflado-t2-semana-2",
+ "agente": "opencode2",
+ "variante": "inflado",
+ "tarea": "t2-semana",
+ "repeticion": 2,
+ "segundos": 10.2,
+ "rc": 0,
+ "error": "",
+ "peticiones": 4,
+ "entrada": 78406,
+ "entrada_cache_leida": 62208,
+ "salida": 383,
+ "razonamiento": 232,
+ "herramientas": {
+  "read": 1,
+  "shell": 2,
+  "edit": 1
+ },
+ "documentos_leidos": {},
+ "contexto_por_paso": [
+  18607,
+  19664,
+  19946,
+  20189
+ ],
+ "coste_usd": 0.0103,
+ "respuesta_final": "The cause has been identified: in `src/dominio/semana.ts`, the loop in `diasDeLaSemana` uses `desplazamiento <= DIAS_POR_SEMANA` (0 through 7, inclusive on both ends), which generates 8 days instead of 7.\n\nArreglado. `npm run check` pasa en verde (62 tests).\n\n**Causa:** en `src/dominio/semana.ts`, la función `diasDeLaSemana` recorría `desplazamiento <= DIAS_POR_SEMANA`, es decir, de 0 a 7 incluidos: 8 iteraciones, de ahí el octavo día.\n\n**Arreglo:** un solo carácter, el bucle ahora va `desplazamiento < DIAS_POR_SEMANA`, de 0 a 6, generando los 7 días de lunes a domingo.",
+ "duracion_s_agente": 7.4,
+ "ficheros_cambiados": [
+  "src/dominio/semana.ts"
+ ],
+ "gate_ok": true,
+ "gate_salida": ".228ms)\n  ✔ una franja de una pista cerrada responde 409 FRANJA_NO_DISPONIBLE (0.901792ms)\n  ✔ una franja que ya ha empezado responde 409 FRANJA_PASADA (1.476958ms)\n  ✔ una franja se puede reservar hasta el minuto anterior a su inicio (1.405625ms)\n  ✔ un inicio que no es el de una franja responde 400 DATOS_INVALIDOS (1.632875ms)\n  ✔ valida el formato de los campos y los devuelve en detalles (1.144709ms)\n  ✔ una pista que no existe responde 404 PISTA_NO_ENCONTRADA (1.265208ms)\n  ✔ aplica las reglas en el orden documentado (2.570583ms)\n  ✔ no crea ninguna reserva cuando la petición falla (1.230042ms)\n✔ POST /api/reservas (50.376167ms)\n▶ GET /api/reservas/mias\n  ✔ devuelve las reservas del socio en cualquier estado, ordenadas por inicio (0.694292ms)\n  ✔ solo incluye reservas del socio identificado (1.156167ms)\n✔ GET /api/reservas/mias (1.907458ms)\n▶ dominio/tiempo\n  ✔ suma minutos y horas cruzando días, meses y años (0.380791ms)\n  ✔ suma días teniendo en cuenta los años bisiestos (0.091375ms)\n  ✔ calcula los minutos entre dos momentos (0.125458ms)\n  ✔ valida fechas y fechas con hora sin zona (0.191708ms)\n  ✔ numera los días de la semana de lunes (1) a domingo (7) (0.114875ms)\n  ✔ genera las franjas del día de 08:00 a 23:00 (0.727709ms)\n  ✔ reconoce el inicio de una franja (0.063666ms)\n  ✔ una franja ha empezado desde el minuto de su inicio (0.053166ms)\n✔ dominio/tiempo (2.325541ms)\nℹ tests 62\nℹ suites 9\nℹ pass 62\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 189.828\n",
+ "ocultos_ok": [
+  "T2.01 diasDeLaSemana devuelve 7 días de lunes a domingo",
+  "T2.02 la disponibilidad de la API devuelve los 7 días de la semana",
+  "T2.03 cada día sigue teniendo sus 10 franjas",
+  "T2.04 la disponibilidad sigue marcando reservas y pistas cerradas"
+ ],
+ "ocultos_fallan": [],
+ "ocultos_total": 4,
+ "ocultos_salida": "",
+ "glosario_infracciones": [],
+ "reloj_infracciones": [],
+ "tests_anadidos": 0,
+ "tests_existentes_tocados": [],
+ "fecha": "2026-11-10 17:36"
+}

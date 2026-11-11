@@ -46,6 +46,9 @@ ENV_OPENCODE = {
     "XDG_STATE_HOME": str(HOME_LIMPIO / ".local/state"),
     "OPENCODE_DISABLE_CLAUDE_CODE": "1",
 }
+HOME_OC2 = SCR / "home-oc2"
+ENV_OPENCODE2 = {k: v.replace(str(HOME_LIMPIO), str(HOME_OC2)) for k, v in ENV_OPENCODE.items()}
+SANDBOX_OPENCODE = '(version 1) (allow default) (deny file-write* (subpath "/Users"))'
 ENV_CODEX = {"HOME": str(HOME_LIMPIO), "CODEX_HOME": str(CODEX_HOME)}
 
 
@@ -138,10 +141,22 @@ def codex(d: Path, tipo: str, log: Path) -> dict:
     return r
 
 
-def opencode(d: Path, tipo: str, log: Path) -> dict:
-    cmd = ["opencode", "run", "--format", "json", "--dir", str(d), P_T if tipo == "T" else P_K]
-    seg, rc, err = ejecutar(cmd, d, ENV_OPENCODE, log)
-    r = {"segundos": round(seg, 1), "rc": rc, "modelo": "lmstudio/qwen3.8-27b-mlx"}
+def opencode(d: Path, tipo: str, log: Path, version: int = 1) -> dict:
+    prompt = P_T if tipo == "T" else P_K
+    if version == 1:
+        cmd = ["opencode", "run", "--format", "json", "--dir", str(d), prompt]
+        seg, rc, err = ejecutar(cmd, d, ENV_OPENCODE, log)
+        modelo = "lmstudio/qwen3.8-27b-mlx"
+    else:
+        # OpenCode 2: servidor propio (--standalone), sin --dir (usa la carpeta actual) y el mismo
+        # Qwen 3.8 27B alojado en OpenRouter que en la prueba 1. LAB_SECRETOS pone la clave.
+        envoltorio = [os.environ["LAB_SECRETOS"]] if os.environ.get("LAB_SECRETOS") else []
+        cmd = [*envoltorio, "env", *[f"{k}={v}" for k, v in ENV_OPENCODE2.items()],
+               "sandbox-exec", "-p", SANDBOX_OPENCODE, "opencode", "run", "--standalone", "--auto", "--archived",
+               "--format", "json", prompt]
+        seg, rc, err = ejecutar(cmd, d, {}, log)
+        modelo = "openrouter/qwen/qwen3.8-27b"
+    r = {"segundos": round(seg, 1), "rc": rc, "modelo": modelo}
     textos, herramientas = [], 0
     for e in eventos(log):
         part = e.get("part", {})
@@ -164,7 +179,8 @@ def opencode(d: Path, tipo: str, log: Path) -> dict:
 def main():
     SALIDA.mkdir(exist_ok=True)
     CRUDO.mkdir(parents=True, exist_ok=True)
-    funcion = {"claude": claude, "codex": codex, "opencode": opencode}
+    funcion = {"claude": claude, "codex": codex, "opencode": opencode,
+               "opencode2": lambda d, tipo, log: opencode(d, tipo, log, version=2)}
     for agente in AGENTES:
         for tam in TAMANOS:
             for tipo in (["T"] if tam == 0 else ["T", "K"]):

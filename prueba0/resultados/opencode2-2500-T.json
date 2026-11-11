@@ -1,0 +1,20 @@
+{
+ "segundos": 6.0,
+ "rc": 0,
+ "modelo": "openrouter/qwen/qwen3.8-27b",
+ "entrada": 55501,
+ "entrada_detalle": {
+  "input": 55437,
+  "output": 3,
+  "reasoning": 29,
+  "cache": {
+   "read": 64,
+   "write": 0
+  }
+ },
+ "respuesta": "OK",
+ "herramientas_usadas": 0,
+ "agente": "opencode2",
+ "lineas": 2500,
+ "tipo": "T"
+}

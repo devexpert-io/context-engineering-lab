@@ -1,0 +1,51 @@
+{
+ "id": "opencode2-mapa-t2-semana-3",
+ "agente": "opencode2",
+ "variante": "mapa",
+ "tarea": "t2-semana",
+ "repeticion": 3,
+ "segundos": 13.5,
+ "rc": 0,
+ "error": "",
+ "peticiones": 6,
+ "entrada": 59260,
+ "entrada_cache_leida": 50432,
+ "salida": 637,
+ "razonamiento": 603,
+ "herramientas": {
+  "shell": 3,
+  "read": 3,
+  "edit": 1
+ },
+ "documentos_leidos": {},
+ "contexto_por_paso": [
+  6789,
+  7690,
+  8709,
+  11715,
+  11936,
+  12421
+ ],
+ "coste_usd": 0.0095,
+ "respuesta_final": "The test fails with 8 days instead of 7. Let me look at the week logic and the availability service.\n\nFound it. In `src/dominio/semana.ts`, `diasDeLaSemana` is looping with `desplazamiento <= DIAS_POR_SEMANA` (i.e., 0..7, 8 days) instead of `<` (0..6, 7 days). Let's check what the test expects for `hasta` before fixing it:\n\nConfirmed: the test expects 7 days with `hasta` being Sunday. The off-by-one bug is on line 13 of `src/dominio/semana.ts`. The fix is to use `<` instead of `<=`:\n\nListo. La causa era un off-by-one en `src/dominio/semana.ts`:\n\n- `diasDeLaSemana` iteraba con `desplazamiento <= DIAS_POR_SEMANA`, es decir del 0 al 7, generando **8 días** (lunes al lunes siguiente) en lugar de 7.\n\nEl cambio, en la línea 13:\n\n```ts\nfor (let desplazamiento = 0; desplazamiento < DIAS_POR_SEMANA; desplazamiento++) {\n```\n\nCon 7 días, `hasta` queda en el domingo como espera el test, y el rango de la consulta de reservas en `src/servicios/disponibilidad.ts` (`inicioDelDia(hasta) + 1 día`) sigue cubriendo exactamente la semana, sin necesidad de tocar nada más.\n\n`npm run check` termina en verde: 62 tests, 0 fallos.",
+ "duracion_s_agente": 11.8,
+ "ficheros_cambiados": [
+  "src/dominio/semana.ts"
+ ],
+ "gate_ok": true,
+ "gate_salida": "E (1.184917ms)\n  ✔ una franja de una pista cerrada responde 409 FRANJA_NO_DISPONIBLE (0.77075ms)\n  ✔ una franja que ya ha empezado responde 409 FRANJA_PASADA (1.121042ms)\n  ✔ una franja se puede reservar hasta el minuto anterior a su inicio (1.022666ms)\n  ✔ un inicio que no es el de una franja responde 400 DATOS_INVALIDOS (1.510583ms)\n  ✔ valida el formato de los campos y los devuelve en detalles (1.113792ms)\n  ✔ una pista que no existe responde 404 PISTA_NO_ENCONTRADA (1.289625ms)\n  ✔ aplica las reglas en el orden documentado (2.465834ms)\n  ✔ no crea ninguna reserva cuando la petición falla (1.197584ms)\n✔ POST /api/reservas (47.42125ms)\n▶ GET /api/reservas/mias\n  ✔ devuelve las reservas del socio en cualquier estado, ordenadas por inicio (0.743458ms)\n  ✔ solo incluye reservas del socio identificado (1.168834ms)\n✔ GET /api/reservas/mias (1.973292ms)\n▶ dominio/tiempo\n  ✔ suma minutos y horas cruzando días, meses y años (0.396917ms)\n  ✔ suma días teniendo en cuenta los años bisiestos (0.065833ms)\n  ✔ calcula los minutos entre dos momentos (0.05975ms)\n  ✔ valida fechas y fechas con hora sin zona (0.16175ms)\n  ✔ numera los días de la semana de lunes (1) a domingo (7) (0.122ms)\n  ✔ genera las franjas del día de 08:00 a 23:00 (0.398416ms)\n  ✔ reconoce el inicio de una franja (0.076ms)\n  ✔ una franja ha empezado desde el minuto de su inicio (0.058083ms)\n✔ dominio/tiempo (2.192125ms)\nℹ tests 62\nℹ suites 9\nℹ pass 62\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 194.593125\n",
+ "ocultos_ok": [
+  "T2.01 diasDeLaSemana devuelve 7 días de lunes a domingo",
+  "T2.02 la disponibilidad de la API devuelve los 7 días de la semana",
+  "T2.03 cada día sigue teniendo sus 10 franjas",
+  "T2.04 la disponibilidad sigue marcando reservas y pistas cerradas"
+ ],
+ "ocultos_fallan": [],
+ "ocultos_total": 4,
+ "ocultos_salida": "",
+ "glosario_infracciones": [],
+ "reloj_infracciones": [],
+ "tests_anadidos": 0,
+ "tests_existentes_tocados": [],
+ "fecha": "2026-11-10 17:36"
+}

@@ -51,6 +51,9 @@ ENV_OPENCODE = {
     "XDG_STATE_HOME": str(HOME_LIMPIO / ".local/state"),
     "OPENCODE_DISABLE_CLAUDE_CODE": "1",
 }
+# OpenCode 2 se mide aparte ("opencode2"), con su propio HOME limpio: guarda el estado en otro formato.
+HOME_OC2 = SCR / "home-oc2"
+ENV_OPENCODE2 = {k: v.replace(str(HOME_LIMPIO), str(HOME_OC2)) for k, v in ENV_OPENCODE.items()}
 # OpenCode no trae sandbox: se ejecuta dentro de uno de macOS que no deja escribir en /Users.
 SANDBOX_OPENCODE = '(version 1) (allow default) (deny file-write* (subpath "/Users"))'
 DOCUMENTOS = re.compile(r"(docs/[\w.-]+\.md|CONTEXT\.md|AGENTS\.md|README\.md)")
@@ -97,6 +100,14 @@ def lanzar(agente: str, repo: Path, prompt: str, log: Path):
     elif agente == "codex":
         cmd = ["codex", "exec", "--json", "-C", str(repo), prompt]
         env = ENV_CODEX
+    elif agente == "opencode2":
+        # OpenCode 2 trabaja contra un servicio en segundo plano: --standalone le da un servidor propio
+        # con el entorno limpio. No tiene --dir: usa la carpeta desde la que se lanza (cwd=repo).
+        envoltorio = [os.environ["LAB_SECRETOS"]] if os.environ.get("LAB_SECRETOS") else []
+        cmd = [*envoltorio, "env", *[f"{k}={v}" for k, v in ENV_OPENCODE2.items()],
+               "sandbox-exec", "-p", SANDBOX_OPENCODE, "opencode", "run", "--standalone", "--auto", "--archived",
+               "--format", "json", prompt]
+        env = {}
     else:
         # OpenCode usa Qwen 3.8 27B alojado en OpenRouter: necesita OPENROUTER_API_KEY en el entorno.
         # Si la clave sale de un gestor de secretos, LAB_SECRETOS es el comando que la pone (en las
@@ -111,7 +122,7 @@ def lanzar(agente: str, repo: Path, prompt: str, log: Path):
     # Grupo de procesos propio: si se pasa del límite, se mata el agente con todo lo que haya lanzado.
     # Vigilante: si el registro del agente no cambia en este tiempo, la ejecución está estancada
     # (pasó con Codex: el modelo dejó de responder y el proceso siguió vivo).
-    silencio_max = 15 * 60 if agente == "opencode" else 10 * 60
+    silencio_max = 15 * 60 if agente.startswith("opencode") else 10 * 60
     with open(log, "w") as out, open(errores, "w") as err_out:
         p = subprocess.Popen(cmd, cwd=repo, env={**os.environ, **env}, stdin=subprocess.DEVNULL,
                              stdout=out, stderr=err_out, start_new_session=True)
@@ -230,6 +241,8 @@ def metricas_opencode(log: Path) -> dict:
             m["salida"] += tk.get("output", 0)
             m["razonamiento"] += tk.get("reasoning", 0)
             m["contexto_por_paso"].append(total)
+            # Lo que cobra el proveedor (OpenRouter) por cada paso.
+            m["coste_usd"] = round(m.get("coste_usd", 0) + (part.get("cost") or 0), 4)
         if e.get("type") == "tool_use":
             nombre = part.get("tool", "?")
             m["herramientas"][nombre] = m["herramientas"].get(nombre, 0) + 1

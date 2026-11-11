@@ -20,7 +20,7 @@ from pathlib import Path
 LAB = Path(__file__).resolve().parents[1]
 RES = LAB / "resultados" / "prueba1"
 SCR = Path(os.environ.get("LAB_SCRATCH", "/tmp"))
-AGENTES = ["claude", "codex", "opencode"]
+AGENTES = ["claude", "codex", "opencode2", "opencode"]
 TAREAS = ["t1-cancelar", "t2-semana", "t3-bloqueos"]
 VARIANTES = ["mapa", "inflado", "sin"]
 

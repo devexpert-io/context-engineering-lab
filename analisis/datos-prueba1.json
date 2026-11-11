@@ -376,6 +376,156 @@
    "estancadas": 0
   },
   {
+   "agente": "opencode2",
+   "tarea": "t1-cancelar",
+   "variante": "mapa",
+   "n": 3,
+   "entrada_med": 1712317,
+   "entrada_rango": [
+    1194252,
+    2060405
+   ],
+   "sin_cache_med": 137420,
+   "salida_med": 11358,
+   "peticiones_med": 32,
+   "segundos_med": 470.8,
+   "segundos_rango": [
+    156.3,
+    857.5
+   ],
+   "coste_med": 0.1724,
+   "ocultos": "42/42",
+   "gate": "3/3",
+   "docs_med": 9,
+   "leyo_dominio": 3,
+   "estancadas": 0
+  },
+  {
+   "agente": "opencode2",
+   "tarea": "t1-cancelar",
+   "variante": "inflado",
+   "n": 3,
+   "entrada_med": 1945850,
+   "entrada_rango": [
+    1846630,
+    2383863
+   ],
+   "sin_cache_med": 180730,
+   "salida_med": 21400,
+   "peticiones_med": 34,
+   "segundos_med": 505.4,
+   "segundos_rango": [
+    262.7,
+    728.1
+   ],
+   "coste_med": 0.2791,
+   "ocultos": "42/42",
+   "gate": "3/3",
+   "docs_med": 1,
+   "leyo_dominio": 0,
+   "estancadas": 0
+  },
+  {
+   "agente": "opencode2",
+   "tarea": "t2-semana",
+   "variante": "mapa",
+   "n": 3,
+   "entrada_med": 59260,
+   "entrada_rango": [
+    54815,
+    76992
+   ],
+   "sin_cache_med": 8828,
+   "salida_med": 804,
+   "peticiones_med": 6,
+   "segundos_med": 14.7,
+   "segundos_rango": [
+    11.8,
+    22.2
+   ],
+   "coste_med": 0.0086,
+   "ocultos": "12/12",
+   "gate": "3/3",
+   "docs_med": 0,
+   "leyo_dominio": 0,
+   "estancadas": 0
+  },
+  {
+   "agente": "opencode2",
+   "tarea": "t2-semana",
+   "variante": "inflado",
+   "n": 3,
+   "entrada_med": 110407,
+   "entrada_rango": [
+    78406,
+    163460
+   ],
+   "sin_cache_med": 25095,
+   "salida_med": 870,
+   "peticiones_med": 5,
+   "segundos_med": 10.2,
+   "segundos_rango": [
+    7.4,
+    14.4
+   ],
+   "coste_med": 0.0091,
+   "ocultos": "12/12",
+   "gate": "3/3",
+   "docs_med": 0,
+   "leyo_dominio": 0,
+   "estancadas": 0
+  },
+  {
+   "agente": "opencode2",
+   "tarea": "t3-bloqueos",
+   "variante": "mapa",
+   "n": 3,
+   "entrada_med": 5320328,
+   "entrada_rango": [
+    4418650,
+    5824921
+   ],
+   "sin_cache_med": 125402,
+   "salida_med": 29366,
+   "peticiones_med": 56,
+   "segundos_med": 459.5,
+   "segundos_rango": [
+    215.8,
+    585.6
+   ],
+   "coste_med": 0.7125,
+   "ocultos": "54/54",
+   "gate": "3/3",
+   "docs_med": 10,
+   "leyo_dominio": 3,
+   "estancadas": 0
+  },
+  {
+   "agente": "opencode2",
+   "tarea": "t3-bloqueos",
+   "variante": "inflado",
+   "n": 3,
+   "entrada_med": 4078384,
+   "entrada_rango": [
+    3153323,
+    4510306
+   ],
+   "sin_cache_med": 425323,
+   "salida_med": 28033,
+   "peticiones_med": 52,
+   "segundos_med": 861.1,
+   "segundos_rango": [
+    511.0,
+    972.4
+   ],
+   "coste_med": 0.5646,
+   "ocultos": "54/54",
+   "gate": "3/3",
+   "docs_med": 1,
+   "leyo_dominio": 0,
+   "estancadas": 0
+  },
+  {
    "agente": "opencode",
    "tarea": "t1-cancelar",
    "variante": "mapa",

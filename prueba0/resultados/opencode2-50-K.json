@@ -1,0 +1,30 @@
+{
+ "segundos": 3.3,
+ "rc": 0,
+ "modelo": "openrouter/qwen/qwen3.8-27b",
+ "entrada": 7086,
+ "entrada_detalle": {
+  "input": 7086,
+  "output": 7,
+  "reasoning": 98,
+  "cache": {
+   "read": 0,
+   "write": 0
+  }
+ },
+ "respuesta": "KW_CSAYZ",
+ "herramientas_usadas": 0,
+ "agente": "opencode2",
+ "lineas": 50,
+ "tipo": "K",
+ "marcas_esperadas": 1,
+ "marcas_vistas": [
+  "KW_CSAYZ"
+ ],
+ "marcas_inventadas": [],
+ "ultima_marca_vista": {
+  "marca": "KW_CSAYZ",
+  "linea": 50,
+  "byte": 3718
+ }
+}

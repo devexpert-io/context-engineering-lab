@@ -1,0 +1,53 @@
+{
+ "id": "opencode2-inflado-t2-semana-3",
+ "agente": "opencode2",
+ "variante": "inflado",
+ "tarea": "t2-semana",
+ "repeticion": 3,
+ "segundos": 17.9,
+ "rc": 0,
+ "error": "",
+ "peticiones": 7,
+ "entrada": 163460,
+ "entrada_cache_leida": 137280,
+ "salida": 1330,
+ "razonamiento": 493,
+ "herramientas": {
+  "read": 3,
+  "grep": 2,
+  "edit": 1,
+  "shell": 1
+ },
+ "documentos_leidos": {},
+ "contexto_por_paso": [
+  18659,
+  22000,
+  23002,
+  23879,
+  24260,
+  24668,
+  26992
+ ],
+ "coste_usd": 0.008,
+ "respuesta_final": "ous: line 13 of `src/dominio/semana.ts` is looping with `<= DIAS_POR_SEMANA` instead of `<`, which ends up generating 8 days' worth. Before fixing it, let me verify how the service is using it.\n\n\n\n\n\nI've identified the cause. In `src/dominio/semana.ts`, the loop in `diasDeLaSemana` uses `<= DIAS_POR_SEMANA`, so the offsets become 0 through 7, and the week ends up including Monday of the following week as well. Since the service also derives `hasta` from the last element of the array, it was returning the wrong Sunday and loading one extra day's worth of reservations. I'll fix the loop:\n\n\n\n\n\nAhora compruebo que todo pasa:\n\n\n\nArreglado. `npm run check` termina en verde (62/62 tests).\n\n**Causa:** en `src/dominio/semana.ts`, la función `diasDeLaSemana` recorría los desplazamientos con `<= DIAS_POR_SEMANA` en lugar de `<`:\n\n```ts\nfor (let desplazamiento = 0; desplazamiento <= DIAS_POR_SEMANA; desplazamiento++) {\n```\n\nCon eso generaba los desplazamientos 0–7, es decir, lunes **hasta el lunes siguiente**: 8 días. Además, como el servicio de disponibilidad (`src/servicios/disponibilidad.ts`) deriva `hasta` del último elemento del array, la respuesta traía `hasta` en el lunes y cargaba reservas de 8 días en vez de 7.\n\n**Arreglo:** un carácter en la condición del bucle (`<=` → `<`), sin tocar el test:\n\n```ts\nfor (let desplazamiento = 0; desplazamiento < DIAS_POR_SEMANA; desplazamiento++) {\n```\n\nEs la única función del dominio que usaba ese bucle, así que el cambio no afecta a nada más.",
+ "duracion_s_agente": 14.4,
+ "ficheros_cambiados": [
+  "src/dominio/semana.ts"
+ ],
+ "gate_ok": true,
+ "gate_salida": "07417ms)\n  ✔ una franja de una pista cerrada responde 409 FRANJA_NO_DISPONIBLE (0.840708ms)\n  ✔ una franja que ya ha empezado responde 409 FRANJA_PASADA (1.377208ms)\n  ✔ una franja se puede reservar hasta el minuto anterior a su inicio (1.171833ms)\n  ✔ un inicio que no es el de una franja responde 400 DATOS_INVALIDOS (1.60125ms)\n  ✔ valida el formato de los campos y los devuelve en detalles (1.055791ms)\n  ✔ una pista que no existe responde 404 PISTA_NO_ENCONTRADA (1.426666ms)\n  ✔ aplica las reglas en el orden documentado (2.31475ms)\n  ✔ no crea ninguna reserva cuando la petición falla (1.169375ms)\n✔ POST /api/reservas (48.065083ms)\n▶ GET /api/reservas/mias\n  ✔ devuelve las reservas del socio en cualquier estado, ordenadas por inicio (0.673083ms)\n  ✔ solo incluye reservas del socio identificado (1.104208ms)\n✔ GET /api/reservas/mias (1.832792ms)\n▶ dominio/tiempo\n  ✔ suma minutos y horas cruzando días, meses y años (0.502292ms)\n  ✔ suma días teniendo en cuenta los años bisiestos (0.093708ms)\n  ✔ calcula los minutos entre dos momentos (0.067459ms)\n  ✔ valida fechas y fechas con hora sin zona (0.1895ms)\n  ✔ numera los días de la semana de lunes (1) a domingo (7) (0.055208ms)\n  ✔ genera las franjas del día de 08:00 a 23:00 (0.852375ms)\n  ✔ reconoce el inicio de una franja (0.094666ms)\n  ✔ una franja ha empezado desde el minuto de su inicio (0.065208ms)\n✔ dominio/tiempo (2.562417ms)\nℹ tests 62\nℹ suites 9\nℹ pass 62\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 191.127666\n",
+ "ocultos_ok": [
+  "T2.01 diasDeLaSemana devuelve 7 días de lunes a domingo",
+  "T2.02 la disponibilidad de la API devuelve los 7 días de la semana",
+  "T2.03 cada día sigue teniendo sus 10 franjas",
+  "T2.04 la disponibilidad sigue marcando reservas y pistas cerradas"
+ ],
+ "ocultos_fallan": [],
+ "ocultos_total": 4,
+ "ocultos_salida": "",
+ "glosario_infracciones": [],
+ "reloj_infracciones": [],
+ "tests_anadidos": 0,
+ "tests_existentes_tocados": [],
+ "fecha": "2026-11-10 17:36"
+}

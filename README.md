@@ -2,7 +2,9 @@
 
 Experimentos del artículo [Context engineering](https://devexpert.io/blog/context-engineering) de DevExpert (noviembre de 2026): qué carga cada agente de código al empezar y qué cambia cuando el AGENTS.md hace de mapa o lo lleva todo dentro.
 
-Agentes medidos: Claude Code 2.1.319 (Opus 5.5), Codex CLI 0.167.0 (gpt-6.1-sol, razonamiento medio) y OpenCode 1.19.5 (Qwen 3.8 27B en local, con LM Studio y MLX, en un MacBook Pro M5 Pro de 64 GB).
+Agentes medidos: Claude Code 2.1.319 (Opus 5.5), Codex CLI 0.167.0 (gpt-6.1-sol, razonamiento medio) y OpenCode 2.2.6 con Qwen 3.8 27B alojado en OpenRouter (`opencode2` en los resultados).
+
+La primera versión del laboratorio (8-nov-2026) midió OpenCode 1.19.5, que es la que instalan `brew install opencode` y `npm i -g opencode-ai`, cuando OpenCode 2 ya iba por la 2.2.6 (se instala aparte, con `brew install anomalyco/tap/opencode-v2` o `@opencode/cli`). El 10-nov-2026 se repitieron con la 2.2.6 la prueba 0 y la prueba 1 de OpenCode. Los resultados de la 1.19.5 se quedan en el repositorio (`opencode` en los resultados), con su prueba 0 hecha con el modelo en local (LM Studio y MLX, en un MacBook Pro M5 Pro de 64 GB).
 
 ## Prueba 0: qué carga cada agente al empezar
 
@@ -39,7 +41,7 @@ Cada agente corre sin la configuración de su usuario: sin instrucciones globale
 
 - **Claude Code:** `--setting-sources project,local --strict-mcp-config --disable-slash-commands`, permisos abiertos dentro del sandbox de Claude Code (con `allowLocalBinding`, porque los tests abren un servidor en 127.0.0.1, y sin la opción de salir del sandbox) y escritura fuera del repo denegada.
 - **Codex:** un `CODEX_HOME` y un `HOME` vacíos (solo con la sesión iniciada), `sandbox_mode = "workspace-write"` con `network_access = true` (por el mismo motivo) y `approval_policy = "never"`. En la prueba 1, `project_doc_max_bytes = 65536`, para que el AGENTS.md inflado (41,2 KB) llegue entero: con el valor por defecto, 32 KiB, Codex lo cortaría (ver la prueba 0).
-- **OpenCode:** `HOME` y `XDG_*` vacíos, `OPENCODE_DISABLE_CLAUDE_CODE=1`, y el proceso dentro de `sandbox-exec` sin permiso de escritura en `/Users`.
+- **OpenCode:** `HOME` y `XDG_*` vacíos, `OPENCODE_DISABLE_CLAUDE_CODE=1`, y el proceso dentro de `sandbox-exec` sin permiso de escritura en `/Users`. OpenCode 2 trabaja contra un servicio en segundo plano: se lanza con `--standalone --auto --archived` para que cada ejecución tenga su propio servidor con el entorno limpio, y con su propio `HOME` (`$LAB_SCRATCH/home-oc2`), porque guarda el estado en otro formato. No tiene `--dir`: usa la carpeta desde la que se lanza.
 
 Una ejecución piloto (`resultados/piloto/`) destapó el problema de los puertos: con el sandbox por defecto, los tests se quedaban colgados y el agente tardaba 7,7 minutos en un cambio de una línea. No entra en el análisis.
 
@@ -63,8 +65,9 @@ Mediana de tres ejecuciones (detalle en `analisis/resumen.md`):
 - **Calidad:** las 63 ejecuciones de la prueba 1 pasan todos los tests ocultos y el gate, con el mapa, con todo dentro y sin AGENTS.md, en los tres agentes.
 - **Codex:** con todo dentro procesa más tokens que con el mapa: +36 % al cancelar reservas, +72 % al arreglar el fallo y +20 % al bloquear pistas.
 - **Claude Code:** con el mapa lee los diez documentos al empezar las tareas que los necesitan, así que no ahorra tokens. El coste es parecido, salvo en la tarea corta, donde todo dentro cuesta un 46 % más.
-- **OpenCode:** depende de la tarea. Al bloquear pistas, todo dentro cuesta un 63 % más y tarda el doble. Al cancelar reservas, con el mapa procesa un 28 % más.
-- **Prueba 0:** Codex 0.167.0 corta la cadena de AGENTS.md a los 32 KiB sin avisar. Claude Code y OpenCode cargan el fichero entero.
+- **OpenCode 2.2.6:** depende de la tarea, y varía mucho entre ejecuciones. Al cancelar reservas, todo dentro procesa un 14 % más de tokens y cuesta un 62 % más. Al arreglar el fallo, un 86 % más de tokens, por menos de un céntimo en los dos casos. Al bloquear pistas, con el mapa procesa un 30 % más y cuesta un 26 % más, pero todo dentro tarda casi el doble. Cinco ejecuciones se repitieron el 11-nov-2026 porque la clave de OpenRouter llegó a su límite diario (están en `resultados/descartados/`).
+- **OpenCode 1.19.5** (primera versión del laboratorio): al bloquear pistas, todo dentro cuesta un 63 % más y tarda el doble. Al cancelar reservas, con el mapa procesa un 28 % más.
+- **Prueba 0:** Codex 0.167.0 corta la cadena de AGENTS.md a los 32 KiB sin avisar. Claude Code y OpenCode cargan el fichero entero. OpenCode 2.2.6 arranca con 6.104 tokens sin AGENTS.md (la 1.19.5, con 7.517).
 - **Prueba 0b:** en Claude Code, las rutas con `@` cargan los documentos al arrancar (+48 % de contexto). En Codex, `@` no hace nada.
 
 Lo cuenta el artículo [Context engineering](https://devexpert.io/blog/context-engineering).
@@ -79,14 +82,14 @@ export LAB_SCRATCH=/tmp/context-lab        # carpeta de trabajo: copias del repo
 export OPENROUTER_API_KEY=...              # para OpenCode (o LAB_SECRETOS=<comando que la ponga>)
 
 python3 -I prueba0/generar.py 1000 prueba0/agents/AGENTS-1000.md
-python3 -I prueba0/medir.py "$LAB_SCRATCH" claude codex opencode
+python3 -I prueba0/medir.py "$LAB_SCRATCH" claude codex opencode2   # opencode = la 1.19.5
 python3 -I prueba0/medir_arroba.py "$LAB_SCRATCH"
 python3 -I variantes/generar_inflado.py
-runner/lote.sh claude          # y lo mismo con codex y opencode
+runner/lote.sh claude          # y lo mismo con codex y opencode2
 python3 -I analisis/resumen.py
 ```
 
-Antes de lanzarlo, prepara el aislamiento descrito arriba: `$LAB_SCRATCH/home-limpio` con la configuración de OpenCode y `$LAB_SCRATCH/codex-home` con un `config.toml` mínimo y tu `auth.json`.
+Antes de lanzarlo, prepara el aislamiento descrito arriba: `$LAB_SCRATCH/home-oc2` (OpenCode 2) o `$LAB_SCRATCH/home-limpio` (OpenCode 1.x) con la configuración de OpenCode y `$LAB_SCRATCH/codex-home` con un `config.toml` mínimo y tu `auth.json`.
 
 ## Licencia
 

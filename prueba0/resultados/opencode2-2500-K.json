@@ -1,0 +1,63 @@
+{
+ "segundos": 6.8,
+ "rc": 0,
+ "modelo": "openrouter/qwen/qwen3.8-27b",
+ "entrada": 55834,
+ "entrada_detalle": {
+  "input": 55770,
+  "output": 189,
+  "reasoning": 2891,
+  "cache": {
+   "read": 64,
+   "write": 0
+  }
+ },
+ "respuesta": "KW_CSAY, KW_BGKV, KW_9GR7, KW_WBV0, KW_0P60, KW_UTLS, KW_6FAV, KW_TVIH, KW_71QF, KW_MA3P, KW_QZOD, KW_ME7O, KW_NAO0, KW_ZD05, KW_7ASI, KW_EC8Z, KW_0420, KW_AR96, KW_QQYM, KW_L8HB, KW_PDX1, KW_ZTMN, KW_E9Y1, KW_BYZB, KW_54AR, KW_EKQG, KW_AGIH, KW_1QOP, KW_WZ8Z, KW_F954, KW_65M9, KW_2F04, KW_5R78, KW_OX2IZ",
+ "herramientas_usadas": 0,
+ "agente": "opencode2",
+ "lineas": 2500,
+ "tipo": "K",
+ "marcas_esperadas": 50,
+ "marcas_vistas": [
+  "KW_CSAY",
+  "KW_BGKV",
+  "KW_9GR7",
+  "KW_WBV0",
+  "KW_0P60",
+  "KW_UTLS",
+  "KW_6FAV",
+  "KW_TVIH",
+  "KW_71QF",
+  "KW_MA3P",
+  "KW_QZOD",
+  "KW_ME7O",
+  "KW_NAO0",
+  "KW_ZD05",
+  "KW_7ASI",
+  "KW_EC8Z",
+  "KW_0420",
+  "KW_AR96",
+  "KW_QQYM",
+  "KW_L8HB",
+  "KW_PDX1",
+  "KW_ZTMN",
+  "KW_E9Y1",
+  "KW_BYZB",
+  "KW_54AR",
+  "KW_EKQG",
+  "KW_AGIH",
+  "KW_1QOP",
+  "KW_WZ8Z",
+  "KW_F954",
+  "KW_65M9",
+  "KW_2F04",
+  "KW_5R78",
+  "KW_OX2IZ"
+ ],
+ "marcas_inventadas": [],
+ "ultima_marca_vista": {
+  "marca": "KW_OX2IZ",
+  "linea": 2500,
+  "byte": 196577
+ }
+}
