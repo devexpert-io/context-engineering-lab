@@ -1,0 +1,54 @@
+{
+ "id": "codex-mcp-t2-reservar-1",
+ "agente": "codex",
+ "variante": "mcp",
+ "tarea": "t2-reservar",
+ "repeticion": 1,
+ "segundos": 16.4,
+ "rc": 0,
+ "error": "",
+ "peticiones": 4,
+ "herramientas": {
+  "agent_message": 2,
+  "mcp:buscar_socios": 1,
+  "mcp:consultar_disponibilidad": 1,
+  "mcp:listar_pistas": 1,
+  "mcp:crear_reserva": 1
+ },
+ "errores_herramienta": 1,
+ "contexto_por_paso": [
+  15892,
+  17866,
+  19757,
+  19861
+ ],
+ "ordenes": [
+  "{\"texto\": \"Irene Sanz\"}",
+  "{\"fecha\": \"2026-11-21\"}",
+  "{}",
+  "{\"inicio\": \"2026-11-21T16:30\", \"pista\": \"pista-2\", \"socio\": \"socio-004\"}"
+ ],
+ "respuesta_final": "La primera franja disponible es el 21 de noviembre, de 16:30 a 18:00, en la pista cubierta 2, por 28,00 €. El sistema ha bloqueado la creación porque exige una aprobación que esta sesión no permite; no se ha generado ningún id de reserva.\n\nRESERVA: no creada, pista-2, 16:30, 28.00",
+ "entrada": 73376,
+ "entrada_cache_leida": 65408,
+ "salida": 367,
+ "razonamiento": 84,
+ "duracion_s_agente": 15.3,
+ "llamadas_api": 3,
+ "errores_api": [],
+ "operaciones_api": [
+  "buscarSocios",
+  "disponibilidad",
+  "listarPistas"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": false,
+ "informe_ok": true,
+ "reservado": [],
+ "correcto": false,
+ "fecha": "2026-11-10 01:09"
+}

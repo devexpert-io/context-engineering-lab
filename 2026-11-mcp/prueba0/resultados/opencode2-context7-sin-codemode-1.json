@@ -1,0 +1,13 @@
+{
+ "agente": "opencode2",
+ "config": "context7",
+ "modo": "sin-codemode",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 21.0,
+ "servidores": [
+  "context7"
+ ],
+ "respuesta": "\n\nOK",
+ "entrada": 7462
+}

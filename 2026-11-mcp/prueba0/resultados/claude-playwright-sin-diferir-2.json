@@ -1,0 +1,19 @@
+{
+ "agente": "claude",
+ "config": "playwright",
+ "modo": "sin-diferir",
+ "repeticion": 2,
+ "rc": 0,
+ "segundos": 5.4,
+ "servidores": [
+  "playwright"
+ ],
+ "mcp": {
+  "playwright": "connected"
+ },
+ "tools_listadas": 52,
+ "tools_mcp_listadas": 25,
+ "entrada": 61474,
+ "coste_usd": 0.0681836,
+ "respuesta": "OK"
+}

@@ -1,0 +1,19 @@
+{
+ "agente": "claude",
+ "config": "context7",
+ "modo": "sin-diferir",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 8.8,
+ "servidores": [
+  "context7"
+ ],
+ "mcp": {
+  "context7": "connected"
+ },
+ "tools_listadas": 32,
+ "tools_mcp_listadas": 2,
+ "entrada": 57243,
+ "coste_usd": 0.458016,
+ "respuesta": "OK"
+}

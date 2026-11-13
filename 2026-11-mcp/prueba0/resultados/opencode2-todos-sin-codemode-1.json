@@ -1,0 +1,16 @@
+{
+ "agente": "opencode2",
+ "config": "todos",
+ "modo": "sin-codemode",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 5.2,
+ "servidores": [
+  "club",
+  "playwright",
+  "chrome-devtools",
+  "context7"
+ ],
+ "respuesta": "\n\nOK",
+ "entrada": 22573
+}

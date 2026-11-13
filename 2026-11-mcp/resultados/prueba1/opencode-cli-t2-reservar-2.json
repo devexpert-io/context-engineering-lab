@@ -1,0 +1,57 @@
+{
+ "id": "opencode-cli-t2-reservar-2",
+ "agente": "opencode",
+ "variante": "cli",
+ "tarea": "t2-reservar",
+ "repeticion": 2,
+ "segundos": 12.9,
+ "rc": 0,
+ "error": "",
+ "peticiones": 5,
+ "entrada": 49079,
+ "entrada_cache_leida": 29056,
+ "salida": 280,
+ "razonamiento": 558,
+ "herramientas": {
+  "bash": 5
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  8158,
+  8838,
+  9188,
+  11241,
+  11654
+ ],
+ "ordenes": [
+  "{\"command\": \"padel --help\"}",
+  "{\"command\": \"padel socios buscar \\\"Irene Sanz\\\"\"}",
+  "{\"command\": \"padel pistas listar\"}",
+  "{\"command\": \"padel disponibilidad --fecha 2026-11-21\"}",
+  "{\"command\": \"padel reservas crear --socio socio-004 --pista pista-2 --inicio 2026-11-21T16:30\"}"
+ ],
+ "respuesta_final": "\n\n\n\n\n\n\n\n\n\n\nLa primera franja libre a partir de las 15:00 en una pista cubierta es a las **16:30** en **pista-2** (la pista-1 estaba reservada en esa franja).\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "duracion_s_agente": 6.2,
+ "llamadas_api": 4,
+ "errores_api": [],
+ "operaciones_api": [
+  "buscarSocios",
+  "listarPistas",
+  "disponibilidad",
+  "crearReserva"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 01:56"
+}

@@ -1,0 +1,58 @@
+{
+ "id": "opencode2-cli-skill-t2-reservar-2",
+ "agente": "opencode2",
+ "variante": "cli-skill",
+ "tarea": "t2-reservar",
+ "repeticion": 2,
+ "segundos": 9.8,
+ "rc": 0,
+ "error": "",
+ "peticiones": 5,
+ "entrada": 41687,
+ "entrada_cache_leida": 35328,
+ "salida": 476,
+ "razonamiento": 848,
+ "herramientas": {
+  "skill": 1,
+  "shell": 4
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  6287,
+  7270,
+  7643,
+  9860,
+  10627
+ ],
+ "ordenes": [
+  "{\"id\": \"club-padel\"}",
+  "{\"command\": \"padel pistas listar\"}",
+  "{\"command\": \"padel socios buscar \\\"Irene Sanz\\\"\"}",
+  "{\"command\": \"padel disponibilidad --fecha 2026-11-21\"}",
+  "{\"command\": \"padel reservas crear --socio socio-004 --pista pista-2 --inicio 2026-11-21T16:30\"}"
+ ],
+ "respuesta_final": "Both of the indoor courts (Pista 1 and Pista 2) are in service. From 15:00 on Saturday the 21st: at 15:00 both are already booked; at 16:30, Pista 1 is still booked, but Pista 2 is open. Therefore, the first available time slot is **16:30 on Pista 2**.\n\nIrene Sanz is `socio-004` (membership fee up to date). I'll create the reservation:\n\nReserva creada para Irene Sanz:\n\n- **Sábado 21/11/2026, 16:30–18:00** en **Pista 2** (cubierta)\n- Es la primera franja libre a partir de las 15:00: a las 15:00 y 16:30 Pista 1 estaba reservada, y a las 15:00 Pista 2 también; la primera disponibilidad es 16:30 en Pista 2.\n- Importe: 2800 céntimos = 28,00 € (horario punta de sábado)\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "duracion_s_agente": 8.3,
+ "llamadas_api": 4,
+ "errores_api": [],
+ "operaciones_api": [
+  "listarPistas",
+  "buscarSocios",
+  "disponibilidad",
+  "crearReserva"
+ ],
+ "skill_cargada": true,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 11:15"
+}

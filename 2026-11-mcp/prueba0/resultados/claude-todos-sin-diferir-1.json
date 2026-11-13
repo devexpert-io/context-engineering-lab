@@ -1,0 +1,25 @@
+{
+ "agente": "claude",
+ "config": "todos",
+ "modo": "sin-diferir",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 6.9,
+ "servidores": [
+  "club",
+  "playwright",
+  "chrome-devtools",
+  "context7"
+ ],
+ "mcp": {
+  "club": "connected",
+  "playwright": "connected",
+  "chrome-devtools": "connected",
+  "context7": "connected"
+ },
+ "tools_listadas": 97,
+ "tools_mcp_listadas": 67,
+ "entrada": 77434,
+ "coste_usd": 0.619544,
+ "respuesta": "OK"
+}

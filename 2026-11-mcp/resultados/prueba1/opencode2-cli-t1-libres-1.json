@@ -1,0 +1,51 @@
+{
+ "id": "opencode2-cli-t1-libres-1",
+ "agente": "opencode2",
+ "variante": "cli",
+ "tarea": "t1-libres",
+ "repeticion": 1,
+ "segundos": 12.1,
+ "rc": 0,
+ "error": "",
+ "peticiones": 4,
+ "entrada": 32897,
+ "entrada_cache_leida": 16304,
+ "salida": 313,
+ "razonamiento": 553,
+ "herramientas": {
+  "shell": 4
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  6264,
+  7028,
+  9324,
+  10281
+ ],
+ "ordenes": [
+  "{\"command\": \"padel --help\"}",
+  "{\"command\": \"padel pistas listar\"}",
+  "{\"command\": \"padel disponibilidad --fecha 2026-11-19\"}",
+  "{\"command\": \"padel reservas listar --fecha 2026-11-19\"}"
+ ],
+ "respuesta_final": "\n\nHe consultado la disponibilidad y las reservas del jueves 19 de noviembre de 2026 para la franja de 19:30–21:00:\n\n- **Pista 1**: ocupada (reserva R-0515, confirmada).\n- **Pista 2**: libre (solo estaba reservada de 18:00 a 19:30).\n- **Pista 3**: libre.\n- **Pista 4**: cerrada (no operativa ese día).\n\nAsí que están libres la Pista 2 (28,00 €) y la Pista 3 (20,00 €).\n\nLIBRES: Pista 2, Pista 3",
+ "duracion_s_agente": 9.2,
+ "llamadas_api": 3,
+ "errores_api": [],
+ "operaciones_api": [
+  "disponibilidad",
+  "listarPistas",
+  "listarReservas"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "dicho": [
+  "2",
+  "3"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 11:10"
+}

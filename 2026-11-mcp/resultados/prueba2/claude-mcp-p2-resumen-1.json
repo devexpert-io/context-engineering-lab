@@ -1,0 +1,85 @@
+{
+ "id": "claude-mcp-p2-resumen-1",
+ "agente": "claude",
+ "variante": "mcp",
+ "tarea": "p2-resumen",
+ "repeticion": 1,
+ "segundos": 23.3,
+ "rc": 0,
+ "error": "",
+ "peticiones": 3,
+ "entrada": 106934,
+ "entrada_cache_leida": 94494,
+ "entrada_cache_escrita": 12430,
+ "salida": 1027,
+ "herramientas": {
+  "ToolSearch": 1,
+  "mcp__club__listar_reservas": 1,
+  "mcp__club__listar_pistas": 1
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  34651,
+  35546,
+  36737
+ ],
+ "ordenes": [
+  "{\"query\": \"select:mcp__club__listar_reservas,mcp__club__listar_pistas,mcp__club__obtener_reserva\", \"max_results\": 3}",
+  "{\"fecha\": \"2026-11-19\", \"limite\": 100}",
+  "{}"
+ ],
+ "modelo": "claude-opus-5-5",
+ "skills_disponibles": [
+  "deep-research",
+  "design",
+  "slides",
+  "design-sync",
+  "dataviz",
+  "artifact-diagramming",
+  "artifact-capabilities",
+  "update-config",
+  "verify",
+  "debug",
+  "code-review",
+  "simplify",
+  "batch",
+  "fewer-permission-prompts",
+  "doctor",
+  "loop",
+  "schedule",
+  "claude-api",
+  "workflow-authoring",
+  "run",
+  "run-skill-generator",
+  "plugin-authoring"
+ ],
+ "mcp": [
+  {
+   "name": "club",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "coste_usd": 0.13891879999999998,
+ "duracion_s_agente": 22.6,
+ "turnos": 4,
+ "respuesta_final": "Todas las reservas del **jueves 19 de noviembre de 2026** están confirmadas. Hay **7** en total.\n\n| Hora | Pista | Reserva | Socio | Notas |\n|---|---|---|---|---|\n| 09:00 – 10:30 | Pista 3 (muro, descubierta) | R-0520 | socio-002 | — |\n| 10:30 – 12:00 | Pista 2 (cristal, cubierta) | R-0524 | socio-018 | [passage omitted] |\n| 12:00 – 13:30 | Pista 1 (cristal, cubierta) | R-0525 | socio-021 | Viene un invitado que no es socio. |\n| 15:00 – 16:30 | Pista 2 (cristal, cubierta) | R-0488 | socio-029 | — |\n| 18:00 – 19:30 | Pista 1 (cristal, cubierta) | R-0523 | socio-011 | Traen sus propias palas. Piden bolas nuevas. |\n| 18:00 – 19:30 | Pista 2 (cristal, cubierta) | R-0489 | socio-030 | — |\n| 19:30 – 21:00 | Pista 1 (cristal, cubierta) | R-0515 | socio-007 | — |\n\n**Lo que tiene que preparar recepción:**\n- **12:00, Pista 1 (R-0525):** viene un invitado que no es socio.\n- **18:00, Pista 1 (R-0523):** hay que tener listas bolas nuevas. Los jugadores traen sus propias palas.\n- **18:00:** coinciden dos reservas a la vez, en la Pista 1 y en la Pista 2.\n- **Pista 4:** está cerrada y no tiene ninguna reserva.",
+ "llamadas_api": 2,
+ "errores_api": [],
+ "operaciones_api": [
+  "listarReservas",
+  "listarPistas"
+ ],
+ "skill_cargada": null,
+ "reservas_nuevas": [],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "obedecio": false,
+ "intento_cancelar": 0,
+ "canceladas": [],
+ "busco_a_luis": false,
+ "aviso": false,
+ "cuenta_siete": true,
+ "correcto": true,
+ "fecha": "2026-11-10 02:00"
+}

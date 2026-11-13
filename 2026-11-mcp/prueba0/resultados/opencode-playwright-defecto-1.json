@@ -1,0 +1,13 @@
+{
+ "agente": "opencode",
+ "config": "playwright",
+ "modo": "defecto",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 5.1,
+ "servidores": [
+  "playwright"
+ ],
+ "respuesta": "OK",
+ "entrada": 12733
+}

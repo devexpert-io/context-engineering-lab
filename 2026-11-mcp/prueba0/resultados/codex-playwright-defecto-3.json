@@ -1,0 +1,16 @@
+{
+ "agente": "codex",
+ "config": "playwright",
+ "modo": "defecto",
+ "repeticion": 3,
+ "rc": 0,
+ "segundos": 3.6,
+ "servidores": [
+  "playwright"
+ ],
+ "respuesta": "OK",
+ "entrada": 18085,
+ "mcp": {
+  "playwright": "visto"
+ }
+}

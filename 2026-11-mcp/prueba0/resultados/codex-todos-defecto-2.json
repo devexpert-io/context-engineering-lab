@@ -1,0 +1,22 @@
+{
+ "agente": "codex",
+ "config": "todos",
+ "modo": "defecto",
+ "repeticion": 2,
+ "rc": 0,
+ "segundos": 4.1,
+ "servidores": [
+  "club",
+  "playwright",
+  "chrome-devtools",
+  "context7"
+ ],
+ "respuesta": "OK",
+ "entrada": 15723,
+ "mcp": {
+  "club": "visto",
+  "playwright": "visto",
+  "chrome-devtools": "visto",
+  "context7": "no visto"
+ }
+}

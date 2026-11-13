@@ -1,0 +1,47 @@
+{
+ "id": "opencode2-skill-api-t1-libres-2",
+ "agente": "opencode2",
+ "variante": "skill-api",
+ "tarea": "t1-libres",
+ "repeticion": 2,
+ "segundos": 11.5,
+ "rc": 0,
+ "error": "",
+ "peticiones": 3,
+ "entrada": 23327,
+ "entrada_cache_leida": 8000,
+ "salida": 318,
+ "razonamiento": 210,
+ "herramientas": {
+  "skill": 1,
+  "shell": 1
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  6242,
+  7487,
+  9598
+ ],
+ "ordenes": [
+  "{\"id\": \"club-padel\"}",
+  "{\"command\": \"curl -s 'http://127.0.0.1:56638/api/disponibilidad?fecha=2026-11-19'\"}"
+ ],
+ "respuesta_final": "\n\nHe consultado la disponibilidad para el jueves 19 de noviembre de 2026 en la franja de las 19:30 a las 21:00:\n\n- **Pista 1** (cubierta): ❌ reservada\n- **Pista 2** (cubierta): ✅ libre — 28 €\n- **Pista 3** (descubierta): ✅ libre — 20 €\n- **Pista 4** (descubierta): ⛔ cerrada (pista cerrada)\n\nLIBRES: Pista 2, Pista 3",
+ "duracion_s_agente": 8.4,
+ "llamadas_api": 1,
+ "errores_api": [],
+ "operaciones_api": [
+  "disponibilidad"
+ ],
+ "skill_cargada": true,
+ "reservas_nuevas": [],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "dicho": [
+  "2",
+  "3"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 11:14"
+}

@@ -1,0 +1,16 @@
+{
+ "agente": "codex",
+ "config": "chrome-devtools",
+ "modo": "defecto",
+ "repeticion": 4,
+ "rc": 0,
+ "segundos": 2.8,
+ "servidores": [
+  "chrome-devtools"
+ ],
+ "respuesta": "OK",
+ "entrada": 15626,
+ "mcp": {
+  "chrome-devtools": "visto"
+ }
+}

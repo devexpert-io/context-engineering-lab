@@ -1,0 +1,16 @@
+{
+ "agente": "opencode2",
+ "config": "todos",
+ "modo": "defecto",
+ "repeticion": 2,
+ "rc": 0,
+ "segundos": 2.8,
+ "servidores": [
+  "club",
+  "playwright",
+  "chrome-devtools",
+  "context7"
+ ],
+ "respuesta": "\n\nOK",
+ "entrada": 7729
+}

@@ -1,0 +1,15 @@
+{
+ "agente": "claude",
+ "config": "sin",
+ "modo": "defecto",
+ "repeticion": 1,
+ "rc": 0,
+ "segundos": 5.4,
+ "servidores": [],
+ "mcp": {},
+ "tools_listadas": 28,
+ "tools_mcp_listadas": 0,
+ "entrada": 31356,
+ "coste_usd": 0.0635328,
+ "respuesta": "OK"
+}

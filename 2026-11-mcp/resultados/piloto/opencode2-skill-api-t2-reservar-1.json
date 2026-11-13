@@ -1,0 +1,59 @@
+{
+ "id": "opencode2-skill-api-t2-reservar-1",
+ "agente": "opencode2",
+ "variante": "skill-api",
+ "tarea": "t2-reservar",
+ "repeticion": 1,
+ "segundos": 45.8,
+ "rc": 0,
+ "error": "",
+ "peticiones": 5,
+ "entrada": 46354,
+ "entrada_cache_leida": 30311,
+ "salida": 1105,
+ "razonamiento": 868,
+ "herramientas": {
+  "skill": 1,
+  "shell": 5
+ },
+ "errores_herramienta": 1,
+ "contexto_por_paso": [
+  6224,
+  7532,
+  10291,
+  10942,
+  11365
+ ],
+ "ordenes": [
+  "{\"id\": \"club-padel\"}",
+  "{\"command\": \"curl -s 'http://127.0.0.1:54492/api/socios?texto=Irene Sanz'\"}",
+  "{\"command\": \"curl -s 'http://127.0.0.1:54492/api/disponibilidad?fecha=2026-11-21'\"}",
+  "{\"command\": \"curl -s http://127.0.0.1:54492/api/pistas\"}",
+  "{\"command\": \"curl -s 'http://127.0.0.1:54492/api/socios?texto=Irene%20Sanz'\"}",
+  "{\"command\": \"curl -s -X POST http://127.0.0.1:54492/api/reservas -H 'content-type: application/json' -d '{\\\"socioId\\\":\\\"socio-004\\\",\\\"pistaId\\\":\\\"pista-2\\\",\\\"inicio\\\":\\\"2026-11-21T16:30\\\",\\\"notas\\\":\\\"Solicitud recepción para Irene Sanz\\\"}'\"}"
+ ],
+ "respuesta_final": "\n\nVoy a usar la API del club. Primero consulto las pistas, busco a Irene Sanz y compruebo la disponibilidad del sábado 21 de noviembre.\n\n\n\n\n\nLas pistas cubiertas y operativas son la **pista-1** y la **pista-2**. El sábado 21 a las 15:00 ambas están reservadas; la siguiente franja es 16:30. Ahora busco a Irene Sanz (el espacio debe ir codificado en la URL):\n\n\n\nIrene Sanz es `socio-004` con cuota al día. Creo la reserva: 2026-11-21, 16:30, pista-2.\n\n\n\nReserva creada correctamente.\n\n**Detalle:**\n- **Socio:** Irene Sanz (`socio-004`), cuota al día.\n- **Lógica de selección:** Las únicas pistas cubiertas operativas son la 1 y la 2. El sábado 21/11, a las 15:00 ambas están reservadas. En la siguiente franja (16:30), la pista-1 sigue reservada y la pista-2 está libre, por lo que es la primera franja libre disponible a partir de las 15:00 en pista cubierta.\n- **Reserva:** `R-0526` — pista-2, sábado 21/11/2026 de 16:30 a 18:00, confirmada.\n- **Importe:** 28,00 € (tarifa punta, 2800 céntimos).\n\nRESERVA: R-0526, pista-2, 16:30, 28.00",
+ "duracion_s_agente": 42.9,
+ "llamadas_api": 4,
+ "errores_api": [],
+ "operaciones_api": [
+  "disponibilidad",
+  "listarPistas",
+  "buscarSocios",
+  "crearReserva"
+ ],
+ "skill_cargada": true,
+ "reservas_nuevas": [
+  "R-0526"
+ ],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "reserva_ok": true,
+ "informe_ok": true,
+ "reservado": [
+  "socio-004 pista-2 2026-11-21T16:30"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 11:04"
+}

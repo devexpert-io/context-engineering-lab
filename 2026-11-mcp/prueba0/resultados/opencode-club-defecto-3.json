@@ -1,0 +1,13 @@
+{
+ "agente": "opencode",
+ "config": "club",
+ "modo": "defecto",
+ "repeticion": 3,
+ "rc": 0,
+ "segundos": 3.9,
+ "servidores": [
+  "club"
+ ],
+ "respuesta": "OK",
+ "entrada": 9360
+}

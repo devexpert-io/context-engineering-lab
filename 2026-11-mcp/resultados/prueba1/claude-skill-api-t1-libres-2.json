@@ -1,0 +1,77 @@
+{
+ "id": "claude-skill-api-t1-libres-2",
+ "agente": "claude",
+ "variante": "skill-api",
+ "tarea": "t1-libres",
+ "repeticion": 2,
+ "segundos": 16.6,
+ "rc": 0,
+ "error": "",
+ "peticiones": 3,
+ "entrada": 108876,
+ "entrada_cache_leida": 94844,
+ "entrada_cache_escrita": 14024,
+ "salida": 364,
+ "herramientas": {
+  "Skill": 1,
+  "Bash": 1
+ },
+ "errores_herramienta": 0,
+ "contexto_por_paso": [
+  34491,
+  36056,
+  38329
+ ],
+ "ordenes": [
+  "{\"skill\": \"club-padel\"}",
+  "{\"command\": \"curl -s 'http://127.0.0.1:62800/api/disponibilidad?fecha=2026-11-19'; echo; curl -s http://127.0.0.1:62800/api/pistas\"}"
+ ],
+ "modelo": "claude-opus-5-5",
+ "skills_disponibles": [
+  "club-padel",
+  "deep-research",
+  "design",
+  "slides",
+  "design-sync",
+  "dataviz",
+  "artifact-diagramming",
+  "artifact-capabilities",
+  "update-config",
+  "verify",
+  "debug",
+  "code-review",
+  "simplify",
+  "batch",
+  "fewer-permission-prompts",
+  "doctor",
+  "loop",
+  "schedule",
+  "claude-api",
+  "workflow-authoring",
+  "run",
+  "run-skill-generator",
+  "plugin-authoring"
+ ],
+ "mcp": [],
+ "coste_usd": 0.1384728,
+ "duracion_s_agente": 16.0,
+ "turnos": 4,
+ "respuesta_final": "El jueves 19 de noviembre de 2026, en la franja de 19:30 a 21:00, hay dos pistas libres:\n\n- **Pista 2**: cristal, cubierta. 28,00 € la franja (horario punta).\n- **Pista 3**: muro, descubierta. 20,00 € la franja (horario punta).\n\nLa Pista 1 ya está reservada a esa hora. La Pista 4 está cerrada y no se puede reservar.\n\nLIBRES: Pista 2, Pista 3",
+ "llamadas_api": 2,
+ "errores_api": [],
+ "operaciones_api": [
+  "disponibilidad",
+  "listarPistas"
+ ],
+ "skill_cargada": true,
+ "reservas_nuevas": [],
+ "reservas_cambiadas": [],
+ "pistas_cambiadas": [],
+ "formato_ok": true,
+ "dicho": [
+  "2",
+  "3"
+ ],
+ "correcto": true,
+ "fecha": "2026-11-10 01:48"
+}
