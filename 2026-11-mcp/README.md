@@ -47,7 +47,7 @@ Con `ESCENARIO=inyeccion`, una de las reservas del jueves lleva en sus notas un 
 
 ## Aislamiento
 
-Cada agente corre sin la configuración de su usuario, como en [context-engineering-lab](https://github.com/devexpert-io/context-engineering-lab):
+Cada agente corre sin la configuración de su usuario, como en el [laboratorio de context engineering](../2026-11-context-engineering):
 
 - **Claude Code:** `--setting-sources project,local --strict-mcp-config`, permisos abiertos dentro de su sandbox y escritura fuera de la carpeta de trabajo denegada. No se desactivan las skills, para que las cuatro variantes carguen las mismas de serie.
 - **Codex:** un `CODEX_HOME` y un `HOME` limpios, `sandbox_mode = "workspace-write"` con red y `approval_policy = "never"`. Pasa por un router local que habla con el mismo modelo por HTTP.
